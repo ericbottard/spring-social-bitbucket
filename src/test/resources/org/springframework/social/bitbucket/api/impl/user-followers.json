@@ -1,0 +1,82 @@
+{
+    "count": 11,
+    "followers": [
+        {
+            "username": "tobami",
+            "first_name": "Miquel",
+            "last_name": "Torres",
+            "avatar": "https://secure.gravatar.com/avatar/a804ab4bb149c5c612a087e75d2c656c?d=identicon&s=32",
+            "resource_uri": "/1.0/users/tobami"
+        },
+        {
+            "username": "tromer47",
+            "first_name": "",
+            "last_name": "",
+            "avatar": "https://dwz7u9t8u8usb.cloudfront.net/m/057de5aa4e4d/img/no_avatar.png",
+            "resource_uri": "/1.0/users/tromer47"
+        },
+        {
+            "username": "longpshorn",
+            "first_name": "Patrick",
+            "last_name": "Smith",
+            "avatar": "https://secure.gravatar.com/avatar/ab91544d39c981654af6e24da846a3d1?d=identicon&s=32",
+            "resource_uri": "/1.0/users/longpshorn"
+        },
+        {
+            "username": "stringfellow",
+            "first_name": "",
+            "last_name": "",
+            "avatar": "https://secure.gravatar.com/avatar/d47055e1420c2e3d5dadfc8beec20e86?d=identicon&s=32",
+            "resource_uri": "/1.0/users/stringfellow"
+        },
+        {
+            "username": "gamesbook",
+            "first_name": "",
+            "last_name": "",
+            "avatar": "https://bitbucket-assetroot.s3.amazonaws.com/c/photos/2010/Aug/11/me-side_avatar_avatar.png",
+            "resource_uri": "/1.0/users/gamesbook"
+        },
+        {
+            "username": "mdsol",
+            "first_name": "",
+            "last_name": "",
+            "avatar": "https://secure.gravatar.com/avatar/7166d5073d0997e7f827ab2623cef32b?d=identicon&s=32",
+            "resource_uri": "/1.0/users/mdsol"
+        },
+        {
+            "username": "VeresZoltan",
+            "first_name": "Veres",
+            "last_name": "Zoltan",
+            "avatar": "https://secure.gravatar.com/avatar/950a88b62f76339f8e8c8c26a457cb45?d=identicon&s=32",
+            "resource_uri": "/1.0/users/VeresZoltan"
+        },
+        {
+            "username": "svenjacobs",
+            "first_name": "Sven",
+            "last_name": "Jacobs",
+            "avatar": "https://secure.gravatar.com/avatar/b7f14cb85dedfbe883f1ebaed61b9851?d=identicon&s=32",
+            "resource_uri": "/1.0/users/svenjacobs"
+        },
+        {
+            "username": "thejeshgn",
+            "first_name": "Thejesh",
+            "last_name": "GN",
+            "avatar": "https://secure.gravatar.com/avatar/4545b2a84b0ae407abc97ad8f23cc28b?d=identicon&s=32",
+            "resource_uri": "/1.0/users/thejeshgn"
+        },
+        {
+            "username": "gzorzi",
+            "first_name": "Gianluca",
+            "last_name": "Zorzi",
+            "avatar": "https://secure.gravatar.com/avatar/5b833d37b7b5dbad388975cb380bd0a7?d=identicon&s=32",
+            "resource_uri": "/1.0/users/gzorzi"
+        },
+        {
+            "username": "ilovenwd",
+            "first_name": "",
+            "last_name": "",
+            "avatar": "https://secure.gravatar.com/avatar/c67fc70c3ecaa0e493b77d3a07a72bf3?d=identicon&s=32",
+            "resource_uri": "/1.0/users/ilovenwd"
+        }
+    ]
+}

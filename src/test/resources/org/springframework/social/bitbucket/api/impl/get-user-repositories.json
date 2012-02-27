@@ -1,0 +1,23 @@
+[
+    {
+        "owner": "ericbottard",
+        "scm": "git",
+        "slug": "mahjong",
+        "is_private": true,
+        "name": "mahjong"
+    },
+    {
+        "owner": "ericbottard",
+        "scm": "git",
+        "slug": "presidentielles-dataviz",
+        "is_private": true,
+        "name": "presidentielles-dataviz"
+    },
+    {
+        "owner": "someoneelse",
+        "scm": "git",
+        "slug": "opendata",
+        "is_private": true,
+        "name": "opendata"
+    }
+]

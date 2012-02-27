@@ -1,0 +1,479 @@
+{
+    "count": 12594,
+    "start": null,
+    "limit": 15,
+    "changesets": [
+        {
+            "node": "dbfb47ecca2d",
+            "files": [
+                {
+                    "type": "modified",
+                    "file": "tortoisehg/hgqt/manifestmodel.py"
+                }
+            ],
+            "raw_author": "Yuya Nishihara <yuya@tcha.org>",
+            "utctimestamp": "2012-02-06 16:47:22+00:00",
+            "author": "yuja",
+            "timestamp": "2012-02-06 17:47:22",
+            "raw_node": "dbfb47ecca2d742e148f0c0f58682f41c5f8ef85",
+            "parents": [
+                "4230823499de"
+            ],
+            "branch": "stable",
+            "message": "manifestmodel: suppress extra _buildrootentry on initial setNameFilter('')",
+            "revision": 12579,
+            "size": -1
+        },
+        {
+            "node": "e33dc5186200",
+            "files": [
+                {
+                    "type": "modified",
+                    "file": "tortoisehg/hgqt/settings.py"
+                }
+            ],
+            "raw_author": "André Sintzoff <andre.sintzoff@gmail.com>",
+            "utctimestamp": "2012-02-06 17:41:58+00:00",
+            "author": "sintzoff",
+            "timestamp": "2012-02-06 18:41:58",
+            "raw_node": "e33dc5186200e7adae939a91b0d21ad0446ab66e",
+            "parents": [
+                "dbfb47ecca2d"
+            ],
+            "branch": "stable",
+            "message": "settings: remove trailing spaces",
+            "revision": 12580,
+            "size": -1
+        },
+        {
+            "node": "3aacc518fa2d",
+            "files": [
+                {
+                    "type": "modified",
+                    "file": "tortoisehg/hgqt/settings.py"
+                }
+            ],
+            "raw_author": "André Sintzoff <andre.sintzoff@gmail.com>",
+            "utctimestamp": "2012-02-06 17:44:02+00:00",
+            "author": "sintzoff",
+            "timestamp": "2012-02-06 18:44:02",
+            "raw_node": "3aacc518fa2dfbb61c9595acf684c57b14769229",
+            "parents": [
+                "e33dc5186200"
+            ],
+            "branch": "stable",
+            "message": "settings: fix phase support detection",
+            "revision": 12581,
+            "size": -1
+        },
+        {
+            "node": "b75b8327a9fb",
+            "files": [
+                {
+                    "type": "modified",
+                    "file": "tortoisehg/hgqt/repowidget.py"
+                }
+            ],
+            "raw_author": "Angel Ezquerra <angel.ezquerra@gmail.com>",
+            "utctimestamp": "2012-02-05 19:56:19+00:00",
+            "author": "Angel Ezquerra",
+            "timestamp": "2012-02-05 20:56:19",
+            "raw_node": "b75b8327a9fbc8140b79a7c93aff4e73676362e7",
+            "parents": [
+                "67f8b46d9415"
+            ],
+            "branch": "default",
+            "message": "repowidget: limit infobar error messages to 2 lines of up to 140 chars by default\n\nLonger lines and longer messages are cut with a '...' string appended at their\nends.",
+            "revision": 12582,
+            "size": -1
+        },
+        {
+            "node": "64aa29085120",
+            "files": [
+                {
+                    "type": "modified",
+                    "file": "tortoisehg/hgqt/repowidget.py"
+                }
+            ],
+            "raw_author": "Angel Ezquerra",
+            "utctimestamp": "2012-02-05 19:56:19+00:00",
+            "author": "Angel Ezquerra",
+            "timestamp": "2012-02-05 20:56:19",
+            "raw_node": "64aa29085120cb44613b6619a3ed893df08b32e4",
+            "parents": [
+                "b75b8327a9fb"
+            ],
+            "branch": "default",
+            "message": "repowidget: show all errors on infobar\n\nThis makes sure that the user will not miss any mercurial errors when the output\nwindow is hidden.",
+            "revision": 12583,
+            "size": -1
+        },
+        {
+            "node": "bd50adc9633e",
+            "files": [
+                {
+                    "type": "modified",
+                    "file": "tortoisehg/hgqt/settings.py"
+                }
+            ],
+            "raw_author": "Angel Ezquerra",
+            "utctimestamp": "2012-02-06 15:38:30+00:00",
+            "author": "Angel Ezquerra",
+            "timestamp": "2012-02-06 16:38:30",
+            "raw_node": "bd50adc9633e542a03d7f47475c336a7f4d4b28c",
+            "parents": [
+                "64aa29085120"
+            ],
+            "branch": "default",
+            "message": "settings: add genLineEditBox function\n\nThis function creates a simple line edit box widget. This is similar to the\ngenPasswordEntry, except that the contents of the line edit box are not masked.",
+            "revision": 12584,
+            "size": -1
+        },
+        {
+            "node": "57b674da82e0",
+            "files": [
+                {
+                    "type": "modified",
+                    "file": "tortoisehg/hgqt/settings.py"
+                }
+            ],
+            "raw_author": "Angel Ezquerra",
+            "utctimestamp": "2012-02-06 15:42:47+00:00",
+            "author": "Angel Ezquerra",
+            "timestamp": "2012-02-06 16:42:47",
+            "raw_node": "57b674da82e0fe24baa183b97b9ae495c163703f",
+            "parents": [
+                "bd50adc9633e"
+            ],
+            "branch": "default",
+            "message": "settings: add genTextEntry function\n\nThis function creates a multi-line text edit widget that can be associated to\nsettings configuration keys.\n\nThis type of widget can contain settings whose value spans several lines.\n\nThe INI file format that is used to save mercurial's configuration settings does\nsupports having keys whose value spans more than line. However, it does not\nsupport having empty lines in such a field. This revision takes this into,\naccount, removing any empty lines from the contents of the text fields before\nsaving them into the mercurial configuration files.",
+            "revision": 12585,
+            "size": -1
+        },
+        {
+            "node": "ce5dcd9289a6",
+            "files": [
+                {
+                    "type": "modified",
+                    "file": "tortoisehg/hgqt/qscilib.py"
+                }
+            ],
+            "raw_author": "Angel Ezquerra",
+            "utctimestamp": "2012-02-08 12:36:11+00:00",
+            "author": "Angel Ezquerra",
+            "timestamp": "2012-02-08 13:36:11",
+            "raw_node": "ce5dcd9289a671056d2252f21873ab95b493830c",
+            "parents": [
+                "3aacc518fa2d"
+            ],
+            "branch": "stable",
+            "message": "qscilib: give the filEditor dialog a maximize button",
+            "revision": 12586,
+            "size": -1
+        },
+        {
+            "node": "78fd9d1b820d",
+            "files": [
+                {
+                    "type": "modified",
+                    "file": "tortoisehg/hgqt/visdiff.py"
+                }
+            ],
+            "raw_author": "Steve Borho <steve@borho.org>",
+            "utctimestamp": "2012-02-10 05:42:51+00:00",
+            "author": "sborho",
+            "timestamp": "2012-02-10 06:42:51",
+            "raw_node": "78fd9d1b820dc585d103d2d5e15fd6ac0d670bdd",
+            "parents": [
+                "ce5dcd9289a6"
+            ],
+            "branch": "stable",
+            "message": "visdiff: do not translate a debug message (closes #1595)",
+            "revision": 12587,
+            "size": -1
+        },
+        {
+            "node": "7328c655a2d7",
+            "files": [
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/ar.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/ca.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/cs.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/da.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/de.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/en_AU.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/en_GB.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/es.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/et.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/fa.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/fr.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/he.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/hr.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/hu.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/id.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/it.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/ja.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/jv.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/ko.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/lv.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/nb.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/nl.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/nn.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/oc.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/pl.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/pt.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/pt_BR.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/ru.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/sr.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/sv.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/tr.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/uk.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/zh_CN.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/zh_TW.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "tortoisehg/hgqt/manifestmodel.py"
+                },
+                {
+                    "type": "modified",
+                    "file": "tortoisehg/hgqt/qscilib.py"
+                },
+                {
+                    "type": "modified",
+                    "file": "tortoisehg/hgqt/settings.py"
+                },
+                {
+                    "type": "modified",
+                    "file": "tortoisehg/hgqt/visdiff.py"
+                }
+            ],
+            "raw_author": "Steve Borho <steve@borho.org>",
+            "utctimestamp": "2012-02-10 05:55:58+00:00",
+            "author": "sborho",
+            "timestamp": "2012-02-10 06:55:58",
+            "raw_node": "7328c655a2d7449b262134f560a30137b0fa36e8",
+            "parents": [
+                "57b674da82e0",
+                "78fd9d1b820d"
+            ],
+            "branch": "default",
+            "message": "Merge with stable",
+            "revision": 12588,
+            "size": -1
+        },
+        {
+            "node": "aeebb47e8707",
+            "files": [
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/pt_BR.po"
+                }
+            ],
+            "raw_author": "Wagner Bruna <wbruna@softwareexpress.com.br>",
+            "utctimestamp": "2012-02-10 19:12:06+00:00",
+            "author": "wbruna",
+            "timestamp": "2012-02-10 20:12:06",
+            "raw_node": "aeebb47e8707f89dfd31b99d9c559a6f73a9914d",
+            "parents": [
+                "78fd9d1b820d"
+            ],
+            "branch": "stable",
+            "message": "i18n: pull latest pt_BR translations from Launchpad",
+            "revision": 12589,
+            "size": -1
+        },
+        {
+            "node": "ff0a221e51d5",
+            "files": [
+                {
+                    "type": "modified",
+                    "file": "tortoisehg/hgqt/revdetails.py"
+                }
+            ],
+            "raw_author": "Yuya Nishihara <yuya@tcha.org>",
+            "utctimestamp": "2012-02-12 05:11:00+00:00",
+            "author": "yuja",
+            "timestamp": "2012-02-12 06:11:00",
+            "raw_node": "ff0a221e51d504aa9fdc101d76d372e415bc0e0b",
+            "parents": [
+                "aeebb47e8707"
+            ],
+            "branch": "stable",
+            "message": "revdetails: fall back to tip on reload if current rev is unknown (fixes #1581)",
+            "revision": 12590,
+            "size": -1
+        },
+        {
+            "node": "53b666310f3a",
+            "files": [
+                {
+                    "type": "modified",
+                    "file": ".hgtags"
+                }
+            ],
+            "raw_author": "Steve Borho <steve@borho.org>",
+            "utctimestamp": "2012-02-14 00:08:55+00:00",
+            "author": "sborho",
+            "timestamp": "2012-02-14 01:08:55",
+            "raw_node": "53b666310f3a52af2f8e9f51c3511544d685cdd4",
+            "parents": [
+                "ff0a221e51d5"
+            ],
+            "branch": "stable",
+            "message": "Added tag 2.3 for changeset ff0a221e51d5",
+            "revision": 12591,
+            "size": -1
+        },
+        {
+            "node": "5c3390659440",
+            "files": [
+                {
+                    "type": "modified",
+                    "file": "tortoisehg/hgqt/revdetails.py"
+                }
+            ],
+            "raw_author": "Yuya Nishihara <yuya@tcha.org>",
+            "utctimestamp": "2012-02-16 14:32:47+00:00",
+            "author": "yuja",
+            "timestamp": "2012-02-16 15:32:47",
+            "raw_node": "5c3390659440341da2be4949f09e40674da8929e",
+            "parents": [
+                "53b666310f3a"
+            ],
+            "branch": "stable",
+            "message": "revdetails: don't test revison existence for workingctx (fixes #1617)",
+            "revision": 12592,
+            "size": -1
+        },
+        {
+            "node": "b0f8429bd59b",
+            "files": [
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/da.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/de.po"
+                },
+                {
+                    "type": "modified",
+                    "file": "i18n/tortoisehg/pt_BR.po"
+                }
+            ],
+            "raw_author": "Wagner Bruna <wbruna@softwareexpress.com.br>",
+            "utctimestamp": "2012-02-24 22:08:34+00:00",
+            "author": "wbruna",
+            "timestamp": "2012-02-24 23:08:34",
+            "raw_node": "b0f8429bd59b6ab659369e1aa48422fb9be87c2e",
+            "parents": [
+                "5c3390659440"
+            ],
+            "branch": "stable",
+            "message": "i18n: pull latest da, de and pt_BR translations from Launchpad",
+            "revision": 12593,
+            "size": -1
+        }
+    ]
+}

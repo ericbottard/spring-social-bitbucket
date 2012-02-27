@@ -1,0 +1,1792 @@
+{
+    "0.9": {
+        "node": "400e85fa0b84", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/uk.po"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2009-11-17 01:57:47+00:00", 
+        "author": "sborho", 
+        "timestamp": "2009-11-17 02:57:47", 
+        "raw_node": "400e85fa0b8442af109d00081e8840359f095a67", 
+        "parents": [
+            "e6bec1d7925b"
+        ], 
+        "branch": "stable", 
+        "message": "i18n: pull final Ukranian translation for 0.9", 
+        "revision": 4922, 
+        "size": -1
+    }, 
+    "0.8": {
+        "node": "ecf6fc1b0c9f", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "win32/shellext/ContextMenu.cpp"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2009-07-02 01:58:56+00:00", 
+        "author": "sborho", 
+        "timestamp": "2009-07-02 03:58:56", 
+        "raw_node": "ecf6fc1b0c9fd11e8ffe314c68ee75752371ac5f", 
+        "parents": [
+            "a3e4ef402ea4"
+        ], 
+        "branch": "default", 
+        "message": "cmenu: use refresh_overlays.ico for 'Update Icons'", 
+        "revision": 3077, 
+        "size": -1
+    }, 
+    "1.1.3": {
+        "node": "92d509e1d10c", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "doc/source/conf.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2010-08-26 23:11:00+00:00", 
+        "author": "sborho", 
+        "timestamp": "2010-08-27 01:11:00", 
+        "raw_node": "92d509e1d10c8929f7bc25e8cf794423b991893a", 
+        "parents": [
+            "bb36c4fce82c"
+        ], 
+        "branch": "stable", 
+        "message": "doc: Update revision number 1.1.3", 
+        "revision": 8227, 
+        "size": -1
+    }, 
+    "1.1.2": {
+        "node": "c596e0e5856e", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/fr.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/ko.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/ru.po"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2010-08-02 15:07:05+00:00", 
+        "author": "sborho", 
+        "timestamp": "2010-08-02 17:07:05", 
+        "raw_node": "c596e0e5856e68af20a4980f0a97d462f2f57a49", 
+        "parents": [
+            "9609a2febe4c"
+        ], 
+        "branch": "stable", 
+        "message": "i18n: pull latest translations", 
+        "revision": 7986, 
+        "size": -1
+    }, 
+    "1.0": {
+        "node": "bb37ccc53f71", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "ReleaseNotes.txt"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2010-03-05 22:31:23+00:00", 
+        "author": "sborho", 
+        "timestamp": "2010-03-05 23:31:23", 
+        "raw_node": "bb37ccc53f7157714b407075ed71f63d27e469f4", 
+        "parents": [
+            "77861fa897dc"
+        ], 
+        "branch": "stable", 
+        "message": "ReleaseNotes: Add 1.0", 
+        "revision": 6045, 
+        "size": -1
+    }, 
+    "1.0.1": {
+        "node": "bcf0eaf6db6a", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "doc/source/conf.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2010-04-01 22:16:19+00:00", 
+        "author": "sborho", 
+        "timestamp": "2010-04-02 00:16:19", 
+        "raw_node": "bcf0eaf6db6af3537d2d691b9f0b7deee550d179", 
+        "parents": [
+            "5d318ad02963"
+        ], 
+        "branch": "stable", 
+        "message": "doc: bump documentation version to 1.0.1", 
+        "revision": 6318, 
+        "size": -1
+    }, 
+    "1.0.2": {
+        "node": "eeed481b2ff2", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "tortoisehg/hgtk/status.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2010-05-01 22:55:48+00:00", 
+        "author": "sborho", 
+        "timestamp": "2010-05-02 00:55:48", 
+        "raw_node": "eeed481b2ff29ed6192245a1b7c27a1a3e45b753", 
+        "parents": [
+            "486e3dc32155"
+        ], 
+        "branch": "stable", 
+        "message": "status: catch util.Abort from repo.parents()\n\nis_merge() is the place this is usually caught first in the commit tool.\nPlace a warning in the status bar telling the user to refresh.\n\nCloses #1200", 
+        "revision": 7597, 
+        "size": -1
+    }, 
+    "1.0.3": {
+        "node": "a0c18113363a", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "doc/source/conf.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2010-05-13 16:42:43+00:00", 
+        "author": "sborho", 
+        "timestamp": "2010-05-13 18:42:43", 
+        "raw_node": "a0c18113363a28abc40960f500c911ac0d15496a", 
+        "parents": [
+            "e24ffc43d1da"
+        ], 
+        "branch": "stable", 
+        "message": "doc: bump version to 1.0.3", 
+        "revision": 7620, 
+        "size": -1
+    }, 
+    "0.1": {
+        "node": "5c5f39324c00", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "hggtk/hgcmd.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2008-01-02 07:56:36+00:00", 
+        "author": "sborho", 
+        "timestamp": "2008-01-02 08:56:36", 
+        "raw_node": "5c5f39324c00e5fd31d717215b60d452dab55cc6", 
+        "parents": [
+            "6e0c1f2cde75"
+        ], 
+        "branch": "default", 
+        "message": "hggtk/hgcmd: cleaner method for closing dialog\n\nalso fixes a long-standing copy-paste bug", 
+        "revision": 531, 
+        "size": -1
+    }, 
+    "1.1.8": {
+        "node": "edc8ec8b18a9", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "doc/source/conf.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2011-01-02 04:36:47+00:00", 
+        "author": "sborho", 
+        "timestamp": "2011-01-02 05:36:47", 
+        "raw_node": "edc8ec8b18a98abada33fb312e2c5cfb8e336eb4", 
+        "parents": [
+            "28207c2c2f85"
+        ], 
+        "branch": "stable", 
+        "message": "doc: bump version number to 1.1.8", 
+        "revision": 9764, 
+        "size": -1
+    }, 
+    "0.3": {
+        "node": "6b0e5d2a70ca", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "ReleaseNotes.txt"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2008-02-01 19:07:06+00:00", 
+        "author": "sborho", 
+        "timestamp": "2008-02-01 20:07:06", 
+        "raw_node": "6b0e5d2a70cafadcfed86aeabef5f224aa5e2366", 
+        "parents": [
+            "789936ed3a35"
+        ], 
+        "branch": "default", 
+        "message": "release: credit Peer Sommerlund with new installer bitmap", 
+        "revision": 981, 
+        "size": -1
+    }, 
+    "0.2": {
+        "node": "71fa0ab981e8", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "hggtk/history.py"
+            }
+        ], 
+        "raw_author": "TK Soh <teekaysoh@yahoo.com>", 
+        "utctimestamp": "2008-01-13 06:17:30+00:00", 
+        "author": "TK Soh", 
+        "timestamp": "2008-01-13 07:17:30", 
+        "raw_node": "71fa0ab981e8c433a7a86897660350cceee7655c", 
+        "parents": [
+            "f668034aeda3"
+        ], 
+        "branch": "default", 
+        "message": "hggtk/history: only refresh log window if new rev is checked out", 
+        "revision": 653, 
+        "size": -1
+    }, 
+    "0.5": {
+        "node": "93df004457ac", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "ReleaseNotes.txt"
+            }
+        ], 
+        "raw_author": "TK Soh <teekaysoh@yahoo.com>", 
+        "utctimestamp": "2008-09-28 05:56:36+00:00", 
+        "author": "TK Soh", 
+        "timestamp": "2008-09-28 07:56:36", 
+        "raw_node": "93df004457accaba3651c6534115aa4b98d94ce7", 
+        "parents": [
+            "69f1243cfc7b"
+        ], 
+        "branch": "default", 
+        "message": "update release note for 0.5", 
+        "revision": 1236, 
+        "size": -1
+    }, 
+    "0.4": {
+        "node": "f62724426363", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "ReleaseNotes.txt"
+            }
+        ], 
+        "raw_author": "TK Soh <teekaysoh@yahoo.com>", 
+        "utctimestamp": "2008-08-16 12:40:25+00:00", 
+        "author": "TK Soh", 
+        "timestamp": "2008-08-16 14:40:25", 
+        "raw_node": "f627244263631682216716cde477d05bebc0d934", 
+        "parents": [
+            "85e0f41b782a"
+        ], 
+        "branch": "default", 
+        "message": "update release note for 0.4", 
+        "revision": 1194, 
+        "size": -1
+    }, 
+    "0.7": {
+        "node": "b42ad74af550", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "hggtk/synch.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2009-03-04 14:49:22+00:00", 
+        "author": "sborho", 
+        "timestamp": "2009-03-04 15:49:22", 
+        "raw_node": "b42ad74af55054c231fc2d1763c2e8e0f2c0f49e", 
+        "parents": [
+            "b6d25fb0822c"
+        ], 
+        "branch": "default", 
+        "message": "synch: strip white space around path\n\nfixes #46", 
+        "revision": 1655, 
+        "size": -1
+    }, 
+    "0.6": {
+        "node": "f22f5ce0a2f4", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "ReleaseNotes.txt"
+            }
+        ], 
+        "raw_author": "TK Soh <teekaysoh@gmail.com>", 
+        "utctimestamp": "2009-01-17 07:45:53+00:00", 
+        "author": "tksoh", 
+        "timestamp": "2009-01-17 08:45:53", 
+        "raw_node": "f22f5ce0a2f40ff9d814efd5314d85e426df632f", 
+        "parents": [
+            "fd6602d77a19"
+        ], 
+        "branch": "default", 
+        "message": "more release note update for 0.6", 
+        "revision": 1315, 
+        "size": -1
+    }, 
+    "0.9.1.1": {
+        "node": "2e352922a7cd", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "doc/source/extensions.txt"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2009-12-03 00:49:42+00:00", 
+        "author": "sborho", 
+        "timestamp": "2009-12-03 01:49:42", 
+        "raw_node": "2e352922a7cd8e571c5ca6407d6a9012a52ff6bb", 
+        "parents": [
+            "7e8868a30a34"
+        ], 
+        "branch": "stable", 
+        "message": "doc: schemes extension now ships with hg", 
+        "revision": 5078, 
+        "size": -1
+    }, 
+    "2.3": {
+        "node": "ff0a221e51d5", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "tortoisehg/hgqt/revdetails.py"
+            }
+        ], 
+        "raw_author": "Yuya Nishihara <yuya@tcha.org>", 
+        "utctimestamp": "2012-02-12 05:11:00+00:00", 
+        "author": "yuja", 
+        "timestamp": "2012-02-12 06:11:00", 
+        "raw_node": "ff0a221e51d504aa9fdc101d76d372e415bc0e0b", 
+        "parents": [
+            "aeebb47e8707"
+        ], 
+        "branch": "stable", 
+        "message": "revdetails: fall back to tip on reload if current rev is unknown (fixes #1581)", 
+        "revision": 12590, 
+        "size": -1
+    }, 
+    "2.0.4": {
+        "node": "26a8187ef879", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "doc/source/conf.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2011-05-01 23:07:04+00:00", 
+        "author": "sborho", 
+        "timestamp": "2011-05-02 01:07:04", 
+        "raw_node": "26a8187ef879c83c2055044fa2080a640145d542", 
+        "parents": [
+            "23ce73fb7add"
+        ], 
+        "branch": "stable", 
+        "message": "doc: bump documentation version to 2.0.4", 
+        "revision": 11638, 
+        "size": -1
+    }, 
+    "2.2.1": {
+        "node": "d3d9c6af529a", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "tortoisehg/hgqt/commit.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2011-12-01 05:51:08+00:00", 
+        "author": "sborho", 
+        "timestamp": "2011-12-01 06:51:08", 
+        "raw_node": "d3d9c6af529a0dc9fe69389a9b851b7339c2f5b2", 
+        "parents": [
+            "ddc0828f0c28"
+        ], 
+        "branch": "stable", 
+        "message": "commit: fix a typo", 
+        "revision": 12437, 
+        "size": -1
+    }, 
+    "2.0.3": {
+        "node": "d5cd872f61fd", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "tortoisehg/hgqt/purge.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2011-04-01 18:50:10+00:00", 
+        "author": "sborho", 
+        "timestamp": "2011-04-01 20:50:10", 
+        "raw_node": "d5cd872f61fde0c1d1b279af4f3b90ff6ade3161", 
+        "parents": [
+            "868ccf195869"
+        ], 
+        "branch": "stable", 
+        "message": "purge: give confirmation dialog a proper parent", 
+        "revision": 11325, 
+        "size": -1
+    }, 
+    "2.1.2": {
+        "node": "d9e84b581ef3", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "tortoisehg/hgqt/repoview.py"
+            }
+        ], 
+        "raw_author": "Andrea Stagi <stagi.andrea@gmail.com>", 
+        "utctimestamp": "2011-08-01 14:23:42+00:00", 
+        "author": "4ndreaSt4gi", 
+        "timestamp": "2011-08-01 16:23:42", 
+        "raw_node": "d9e84b581ef3961a12fe695a566ffafb9944920e", 
+        "parents": [
+            "10976018a45f"
+        ], 
+        "branch": "stable", 
+        "message": "repoview: fixes ctrl click behavior reported in #1019", 
+        "revision": 12159, 
+        "size": -1
+    }, 
+    "2.1.3": {
+        "node": "e0c8e706f60e", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "win32/wix/dist.wxs"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2011-08-28 03:10:33+00:00", 
+        "author": "sborho", 
+        "timestamp": "2011-08-28 05:10:33", 
+        "raw_node": "e0c8e706f60ef1f73510b9645604860af0eb3bbc", 
+        "parents": [
+            "670cf1f59f9f"
+        ], 
+        "branch": "stable", 
+        "message": "wix: no longer ship win32_crypto.pyd\n\nthe keyring library now uses ctypes to interface with the Windows crypto API", 
+        "revision": 12313, 
+        "size": -1
+    }, 
+    "2.1": {
+        "node": "2a970d5e40fe", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "ReleaseProcedure.txt"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2011-07-01 20:29:03+00:00", 
+        "author": "sborho", 
+        "timestamp": "2011-07-01 22:29:03", 
+        "raw_node": "2a970d5e40fe4f757347464d820218809d58251b", 
+        "parents": [
+            "b5189b69f8bd"
+        ], 
+        "branch": "stable", 
+        "message": "ReleaseProcedure: fix obvious oder-of-operations issue", 
+        "revision": 11971, 
+        "size": -1
+    }, 
+    "2.0": {
+        "node": "81a60ce2dba7", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "tortoisehg/util/hgversion.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2011-03-01 18:53:18+00:00", 
+        "author": "sborho", 
+        "timestamp": "2011-03-01 19:53:18", 
+        "raw_node": "81a60ce2dba7178e834ac46b0c996bee38380e77", 
+        "parents": [
+            "998b7fa5956e"
+        ], 
+        "branch": "stable", 
+        "message": "hgversion: require Mercurial 1.8", 
+        "revision": 10843, 
+        "size": -1
+    }, 
+    "2.1.4": {
+        "node": "e8f307afce46", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "tortoisehg/hgqt/repowidget.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2011-10-05 22:57:57+00:00", 
+        "author": "sborho", 
+        "timestamp": "2011-10-06 00:57:57", 
+        "raw_node": "e8f307afce466dae16e2a74768a414286eab9fde", 
+        "parents": [
+            "87275895779c"
+        ], 
+        "branch": "stable", 
+        "message": "repowidget: catch ValueError from rebuildGraph() (closes #1269)", 
+        "revision": 12342, 
+        "size": -1
+    }, 
+    "1.1": {
+        "node": "945f9c1f21fb", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "doc/source/patches.txt"
+            }, 
+            {
+                "type": "modified", 
+                "file": "doc/source/quick.txt"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2010-07-01 22:21:09+00:00", 
+        "author": "sborho", 
+        "timestamp": "2010-07-02 00:21:09", 
+        "raw_node": "945f9c1f21fbce1dc8940afa0627f355197dc5f9", 
+        "parents": [
+            "82583ca3d165"
+        ], 
+        "branch": "stable", 
+        "message": "doc: fixup links to hgbook to use our 1.6 build", 
+        "revision": 7844, 
+        "size": -1
+    }, 
+    "2.1.1": {
+        "node": "65a385cf4238", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "tortoisehg/hgqt/wctxactions.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2011-07-07 04:23:00+00:00", 
+        "author": "sborho", 
+        "timestamp": "2011-07-07 06:23:00", 
+        "raw_node": "65a385cf4238af969487dc1a7a2b5ee60cf388cc", 
+        "parents": [
+            "e934dca90bb0"
+        ], 
+        "branch": "stable", 
+        "message": "wctxactions: give parent to transient menus (closes #716)", 
+        "revision": 12010, 
+        "size": -1
+    }, 
+    "0.0.1": {
+        "node": "1f161ca182e3", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "tortoise/contextmenu.py"
+            }
+        ], 
+        "raw_author": "TK Soh <teekaysoh@yahoo.com>", 
+        "utctimestamp": "2007-12-01 16:25:19+00:00", 
+        "author": "TK Soh", 
+        "timestamp": "2007-12-01 17:25:19", 
+        "raw_node": "1f161ca182e30619768feb3c32a0c130126a486e", 
+        "parents": [
+            "8c38569461b5"
+        ], 
+        "branch": "default", 
+        "message": "cmenu: use different menu for hgk/hgview", 
+        "revision": 337, 
+        "size": -1
+    }, 
+    "2.0.1": {
+        "node": "ee531052f78b", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/ca.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/cs.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/da.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/de.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/en_AU.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/en_GB.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/es.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/et.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/fa.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/fr.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/he.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/hr.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/hu.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/it.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/ja.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/ko.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/nb.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/nl.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/nn.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/oc.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/pl.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/pt.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/pt_BR.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/ru.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/sv.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/tr.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/uk.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/zh_CN.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/zh_TW.po"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2011-03-10 19:33:04+00:00", 
+        "author": "sborho", 
+        "timestamp": "2011-03-10 20:33:04", 
+        "raw_node": "ee531052f78b11dafe1d8c7ab9cfb95b4854be38", 
+        "parents": [
+            "90821b209461"
+        ], 
+        "branch": "stable", 
+        "message": "i18n: pull latest translations", 
+        "revision": 11011, 
+        "size": -1
+    }, 
+    "0.0.2": {
+        "node": "6c59b89d84f1", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "hggtk/merge.py"
+            }
+        ], 
+        "raw_author": "TK Soh <teekaysoh@yahoo.com>", 
+        "utctimestamp": "2007-12-12 11:43:42+00:00", 
+        "author": "TK Soh", 
+        "timestamp": "2007-12-12 12:43:42", 
+        "raw_node": "6c59b89d84f19935b5da4b385677b44448d89241", 
+        "parents": [
+            "11579e28f35a"
+        ], 
+        "branch": "default", 
+        "message": "hggtk/merge: clear rev input after merging", 
+        "revision": 363, 
+        "size": -1
+    }, 
+    "0.7.6": {
+        "node": "525469f83de5", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "hggtk/history.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2009-05-14 15:06:22+00:00", 
+        "author": "sborho", 
+        "timestamp": "2009-05-14 17:06:22", 
+        "raw_node": "525469f83de5473ab3d00fd5111ee91020251e62", 
+        "parents": [
+            "3cf9c40cd9de"
+        ], 
+        "branch": "default", 
+        "message": "history: handle cmenu requests on empty treeview areas\n\nFixes #227", 
+        "revision": 2623, 
+        "size": -1
+    }, 
+    "0.7.4": {
+        "node": "ef5ab6bccf5e", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "hggtk/thgconfig.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2009-04-18 17:02:01+00:00", 
+        "author": "sborho", 
+        "timestamp": "2009-04-18 19:02:01", 
+        "raw_node": "ef5ab6bccf5ee5356a0d5f42987f55af0f75330f", 
+        "parents": [
+            "d43e8ebc0490"
+        ], 
+        "branch": "default", 
+        "message": "thgconfig: do not set active row of empty combo\n\nprevents a GTK warning on Windows", 
+        "revision": 1990, 
+        "size": -1
+    }, 
+    "0.7.5": {
+        "node": "a88261eec1f4", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "hggtk/datamine.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2009-04-30 03:04:18+00:00", 
+        "author": "sborho", 
+        "timestamp": "2009-04-30 05:04:18", 
+        "raw_node": "a88261eec1f43d37786bfdb492322bddd94dcf8d", 
+        "parents": [
+            "b5d6b46c0a2e"
+        ], 
+        "branch": "default", 
+        "message": "datamine: truncate treeview text data at 128 chars\n\nFixes #128", 
+        "revision": 2036, 
+        "size": -1
+    }, 
+    "0.7.2": {
+        "node": "39d55a62a43e", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "tortoisehg.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2009-03-22 18:22:28+00:00", 
+        "author": "sborho", 
+        "timestamp": "2009-03-22 19:22:28", 
+        "raw_node": "39d55a62a43e01e3382fe29319cd9ff7ce7626b2", 
+        "parents": [
+            "af9896ad2b4b"
+        ], 
+        "branch": "default", 
+        "message": "shell: tortoisehg.dll should not be using os.popen()\n\nThis call was added by me in January before I understood how tortoisehg.py\nwas used as a both COM server and as a registration script.  It's all kinds of\nbad that it is trying to run python every time this script is executed.\n\nfixes #113", 
+        "revision": 1775, 
+        "size": -1
+    }, 
+    "2.0.2": {
+        "node": "5333ccf11848", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "tortoisehg/hgqt/workbench.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2011-03-10 21:54:24+00:00", 
+        "author": "sborho", 
+        "timestamp": "2011-03-10 22:54:24", 
+        "raw_node": "5333ccf1184864720c1d3690df94fa47df80bf02", 
+        "parents": [
+            "0773daf9d19e"
+        ], 
+        "branch": "stable", 
+        "message": "Backed out changeset: 5aba622d4a65\n\nFavor memory leaks over crashes until we can arrive at a safe solution to the\nshared/demand widgets.  Refs #309", 
+        "revision": 11021, 
+        "size": -1
+    }, 
+    "0.7.1": {
+        "node": "a4a7861b9245", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "hggtk/hgshelve.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2009-03-19 01:55:03+00:00", 
+        "author": "sborho", 
+        "timestamp": "2009-03-19 02:55:03", 
+        "raw_node": "a4a7861b92459c4049d09064707d96e54662e506", 
+        "parents": [
+            "0ff2308c8c18"
+        ], 
+        "branch": "default", 
+        "message": "hgshelve: get file list from qdiffs when necessary\n\nfixes #107", 
+        "revision": 1751, 
+        "size": -1
+    }, 
+    "1.1.9": {
+        "node": "065d9654030e", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "doc/source/conf.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2011-02-02 01:34:47+00:00", 
+        "author": "sborho", 
+        "timestamp": "2011-02-02 02:34:47", 
+        "raw_node": "065d9654030e19ba2c92a9c3616f37d2ab427caa", 
+        "parents": [
+            "cb2a898f1ac4"
+        ], 
+        "branch": "stable", 
+        "message": "docs: bump revision number to 1.1.9", 
+        "revision": 10197, 
+        "size": -1
+    }, 
+    "0.4rc4": {
+        "node": "864497951b6b", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "ReleaseNotes.txt"
+            }
+        ], 
+        "raw_author": "TK Soh <teekaysoh@yahoo.com>", 
+        "utctimestamp": "2008-08-04 02:39:12+00:00", 
+        "author": "TK Soh", 
+        "timestamp": "2008-08-04 04:39:12", 
+        "raw_node": "864497951b6b801cfacbac16eec5b7edb4f1be3c", 
+        "parents": [
+            "136f415d18ee"
+        ], 
+        "branch": "default", 
+        "message": "update release note for 0.4rc4", 
+        "revision": 1189, 
+        "size": -1
+    }, 
+    "0.4rc3": {
+        "node": "e2211f1985b0", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "ReleaseNotes.txt"
+            }
+        ], 
+        "raw_author": "TK Soh <teekaysoh@yahoo.com>", 
+        "utctimestamp": "2008-07-13 08:53:18+00:00", 
+        "author": "TK Soh", 
+        "timestamp": "2008-07-13 10:53:18", 
+        "raw_node": "e2211f1985b01b1edd3fc1abe0b7c97fb37fd9d1", 
+        "parents": [
+            "997eb001c711"
+        ], 
+        "branch": "default", 
+        "message": "update release note for 0.4rc3", 
+        "revision": 1177, 
+        "size": -1
+    }, 
+    "0.4rc2": {
+        "node": "e677decc9814", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "hggtk/changeset.py"
+            }, 
+            {
+                "type": "modified", 
+                "file": "hggtk/thgconfig.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2008-05-03 16:19:11+00:00", 
+        "author": "sborho", 
+        "timestamp": "2008-05-03 18:19:11", 
+        "raw_node": "e677decc9814e94fe3b325ec13077a01e1ccbb87", 
+        "parents": [
+            "68a01cdebb39"
+        ], 
+        "branch": "default", 
+        "message": "changeset: copy hash to clipboard is now optional, default: False", 
+        "revision": 1153, 
+        "size": -1
+    }, 
+    "0.4rc1": {
+        "node": "5a9d20cfcb29", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "ReleaseNotes.txt"
+            }
+        ], 
+        "raw_author": "TK Soh <teekaysoh@yahoo.com>", 
+        "utctimestamp": "2008-04-06 10:33:06+00:00", 
+        "author": "TK Soh", 
+        "timestamp": "2008-04-06 12:33:06", 
+        "raw_node": "5a9d20cfcb2911b5a35234f38a7897c9c654c9d5", 
+        "parents": [
+            "ebb9a8b7e155"
+        ], 
+        "branch": "default", 
+        "message": "update release notes for 0.4", 
+        "revision": 1108, 
+        "size": -1
+    }, 
+    "2.3-rc": {
+        "node": "ce3f08f23d44", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "contrib/mergetools.rc"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/ar.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/ca.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/cs.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/da.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/de.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/en_AU.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/en_GB.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/es.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/et.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/fa.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/fr.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/he.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/hr.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/hu.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/id.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/it.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/ja.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/jv.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/ko.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/lv.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/nb.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/nl.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/nn.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/oc.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/pl.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/pt.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/pt_BR.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/ru.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/sr.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/sv.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/tr.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/uk.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/zh_CN.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/zh_TW.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "tortoisehg/hgqt/filedata.py"
+            }, 
+            {
+                "type": "modified", 
+                "file": "tortoisehg/hgqt/repomodel.py"
+            }, 
+            {
+                "type": "modified", 
+                "file": "tortoisehg/hgqt/repowidget.py"
+            }, 
+            {
+                "type": "modified", 
+                "file": "tortoisehg/hgqt/settings.py"
+            }, 
+            {
+                "type": "modified", 
+                "file": "tortoisehg/hgqt/shelve.py"
+            }, 
+            {
+                "type": "modified", 
+                "file": "tortoisehg/hgqt/sync.py"
+            }, 
+            {
+                "type": "modified", 
+                "file": "tortoisehg/hgqt/thgrepo.py"
+            }, 
+            {
+                "type": "modified", 
+                "file": "tortoisehg/hgqt/workbench.py"
+            }, 
+            {
+                "type": "modified", 
+                "file": "win32/wix/guids.wxi"
+            }, 
+            {
+                "type": "modified", 
+                "file": "win32/wix/tortoisehg.wxs"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2012-02-04 20:45:42+00:00", 
+        "author": "sborho", 
+        "timestamp": "2012-02-04 21:45:42", 
+        "raw_node": "ce3f08f23d44daab96ccd770409d8539de261004", 
+        "parents": [
+            "54a694b1e3e5", 
+            "232db94f7bff"
+        ], 
+        "branch": "default", 
+        "message": "Merge with stable", 
+        "revision": 12575, 
+        "size": -1
+    }, 
+    "0.4.1": {
+        "node": "491a94666fc3", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "ReleaseNotes.txt"
+            }
+        ], 
+        "raw_author": "TK Soh <teekaysoh@yahoo.com>", 
+        "utctimestamp": "2008-08-24 03:24:29+00:00", 
+        "author": "TK Soh", 
+        "timestamp": "2008-08-24 05:24:29", 
+        "raw_node": "491a94666fc3498827066b8aa65aab34d3a3e623", 
+        "parents": [
+            "402c8f30b767"
+        ], 
+        "branch": "default", 
+        "message": "update release note for 0.4.1", 
+        "revision": 1197, 
+        "size": -1
+    }, 
+    "1.1.5": {
+        "node": "8bcca12afbce", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "doc/source-cs/patches.txt"
+            }, 
+            {
+                "type": "modified", 
+                "file": "doc/source-cs/quick.txt"
+            }, 
+            {
+                "type": "modified", 
+                "file": "doc/source/patches.txt"
+            }, 
+            {
+                "type": "modified", 
+                "file": "doc/source/quick.txt"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2010-11-02 00:07:44+00:00", 
+        "author": "sborho", 
+        "timestamp": "2010-11-02 01:07:44", 
+        "raw_node": "8bcca12afbce1fd58f686d86d1c00d8b8471dbe5", 
+        "parents": [
+            "1abbfc58178e"
+        ], 
+        "branch": "stable", 
+        "message": "doc: bump hgbook links to 1.7", 
+        "revision": 9260, 
+        "size": -1
+    }, 
+    "1.9.2": {
+        "node": "dc23fbf83194", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "tortoisehg/hgqt/filedialogs.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2011-02-02 03:14:50+00:00", 
+        "author": "sborho", 
+        "timestamp": "2011-02-02 04:14:50", 
+        "raw_node": "dc23fbf831944fdf894cade250161131c11c9ce4", 
+        "parents": [
+            "b3521efd44bd"
+        ], 
+        "branch": "default", 
+        "message": "filedialogs: add a revpanel widget above the HgFileView", 
+        "revision": 10194, 
+        "size": -1
+    }, 
+    "0.3rc1": {
+        "node": "14f88fd90ba1", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "ReleaseNotes.txt"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2008-02-01 00:30:11+00:00", 
+        "author": "sborho", 
+        "timestamp": "2008-02-01 01:30:11", 
+        "raw_node": "14f88fd90ba1053b4db51c3a5a3b3c2da2b122f5", 
+        "parents": [
+            "da04b6473003"
+        ], 
+        "branch": "default", 
+        "message": "ReleaseNotes: remove note about TortoisePlink\n\nAs it turns out, the version shipped with TortoiseSvn hasn't changed in many\nyears.  The Wiki will just need to point to the original Plink for users that\nhave trouble with TortoisePlink.", 
+        "revision": 974, 
+        "size": -1
+    }, 
+    "2.2.2": {
+        "node": "055b98684ae5", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "tests/wconfig_test.py"
+            }, 
+            {
+                "type": "modified", 
+                "file": "tortoisehg/util/wconfig.py"
+            }
+        ], 
+        "raw_author": "Yuya Nishihara <yuya@tcha.org>", 
+        "utctimestamp": "2012-01-02 12:25:38+00:00", 
+        "author": "yuja", 
+        "timestamp": "2012-01-02 13:25:38", 
+        "raw_node": "055b98684ae5e54d3e4eaf3a2b949977ced89f55", 
+        "parents": [
+            "67c50247f6ee"
+        ], 
+        "branch": "stable", 
+        "message": "wconfig: translate ParsingError of iniparse to error.ParseError (refs #1512)\n\nBecause wconfig is a kind of Mercurial's config object, it should hide\niniparse behavior.\n\nWith this change, ParsingError can be caught at global exception handler.", 
+        "revision": 12461, 
+        "size": -1
+    }, 
+    "0.9.1": {
+        "node": "e5f7c3a255ef", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "contrib/win32/mercurial.iss"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2009-12-02 04:24:43+00:00", 
+        "author": "sborho", 
+        "timestamp": "2009-12-02 05:24:43", 
+        "raw_node": "e5f7c3a255ef88c33b28350b2c9ac0e04ce4048d", 
+        "parents": [
+            "cd663652a3ca"
+        ], 
+        "branch": "stable", 
+        "message": "iss: html man pages need style.css to be shipped\n\nWithout the css file, the documents are very underwhelming", 
+        "revision": 5073, 
+        "size": -1
+    }, 
+    "1.1.1": {
+        "node": "39351b7f08eb", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "contrib/wix/help.wxs"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2010-07-13 00:14:22+00:00", 
+        "author": "sborho", 
+        "timestamp": "2010-07-13 02:14:22", 
+        "raw_node": "39351b7f08eb0f256b736ebaead6bba37b084894", 
+        "parents": [
+            "b6a13820f634"
+        ], 
+        "branch": "stable", 
+        "message": "wix: pull help.wxs updates from Mercurial", 
+        "revision": 7892, 
+        "size": -1
+    }, 
+    "0.9.3": {
+        "node": "c32abb03fa33", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/uk.po"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2010-02-01 18:03:36+00:00", 
+        "author": "sborho", 
+        "timestamp": "2010-02-01 19:03:36", 
+        "raw_node": "c32abb03fa33368314460e2878a4c44de1014b27", 
+        "parents": [
+            "91ef4d98b1b8"
+        ], 
+        "branch": "stable", 
+        "message": "i18n: pull latest Ukranian translations", 
+        "revision": 5715, 
+        "size": -1
+    }, 
+    "1.1.9.1": {
+        "node": "031e24094f53", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "tortoisehg/hgtk/hgthread.py"
+            }
+        ], 
+        "raw_author": "Wagner Bruna <wbruna@softwareexpress.com.br>", 
+        "utctimestamp": "2011-02-02 14:38:21+00:00", 
+        "author": "wbruna", 
+        "timestamp": "2011-02-02 15:38:21", 
+        "raw_node": "031e24094f5337ffdb4eee32f54773ecd5a1adc1", 
+        "parents": [
+            "a4f6bc63bf03"
+        ], 
+        "branch": "hgtk", 
+        "message": "thread: fix display of SSL error messages", 
+        "revision": 10204, 
+        "size": -1
+    }, 
+    "2.0.5": {
+        "node": "f2165388e687", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "doc/source/conf.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2011-06-02 01:20:43+00:00", 
+        "author": "sborho", 
+        "timestamp": "2011-06-02 03:20:43", 
+        "raw_node": "f2165388e6870c643636a0a74f1ebd1d008bdf3e", 
+        "parents": [
+            "2efaa9269e3a"
+        ], 
+        "branch": "stable", 
+        "message": "doc: bump documentation version to 2.0.5", 
+        "revision": 11853, 
+        "size": -1
+    }, 
+    "0.8.1": {
+        "node": "f515725f8f30", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "contrib/win32/mercurial.iss"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2009-07-24 02:09:38+00:00", 
+        "author": "sborho", 
+        "timestamp": "2009-07-24 04:09:38", 
+        "raw_node": "f515725f8f30e70571a6b39c648b8fdf1ee51132", 
+        "parents": [
+            "926265201c37"
+        ], 
+        "branch": "default", 
+        "message": "iss: bump revision number to 0.8.1", 
+        "revision": 3276, 
+        "size": -1
+    }, 
+    "1.1.6.1": {
+        "node": "b740366bf49f", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "tortoisehg/hgtk/changeset.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2010-11-16 15:28:02+00:00", 
+        "author": "sborho", 
+        "timestamp": "2010-11-16 16:28:02", 
+        "raw_node": "b740366bf49f2ad67ff923fa30e875acfba05892", 
+        "parents": [
+            "491dba876006"
+        ], 
+        "branch": "stable", 
+        "message": "changeset: provide filtered changes to patch.diff\n\nThe repo.status() call in patch.diff() was how the provided matcher was used\nto build the list of files to be diffed.  So now we directly filter the cached\nrepo.status() results and pass those to patch.diff()", 
+        "revision": 9395, 
+        "size": -1
+    }, 
+    "0.8.2": {
+        "node": "33dc0a0820f2", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "contrib/win32/mercurial.iss"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2009-09-11 01:20:10+00:00", 
+        "author": "sborho", 
+        "timestamp": "2009-09-11 03:20:10", 
+        "raw_node": "33dc0a0820f2fd2c4cc2f49bad0b15c9b465db1a", 
+        "parents": [
+            "af32c5eef6ef"
+        ], 
+        "branch": "stable", 
+        "message": "iss: put back global mutex lock for 0.8.2 release\n\nForce the user to shutdown the taskbar app manually, since the automated\nmethod seems to cause the taskbar app to crash messily in some circumstances.\nTrade-off a little annoyance for less user confusion.", 
+        "revision": 3945, 
+        "size": -1
+    }, 
+    "0.9.2": {
+        "node": "8a272de28213", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/uk.po"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2010-01-01 19:56:37+00:00", 
+        "author": "sborho", 
+        "timestamp": "2010-01-01 20:56:37", 
+        "raw_node": "8a272de2821330a3ddef5a1d7fbee0a6e599fd1a", 
+        "parents": [
+            "6d7658a294f9"
+        ], 
+        "branch": "stable", 
+        "message": "i18n: pull latest Ukranian translations", 
+        "revision": 5337, 
+        "size": -1
+    }, 
+    "1.9.1": {
+        "node": "6f97499d3d53", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "tortoisehg/hgqt/shelve.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2011-01-06 01:11:56+00:00", 
+        "author": "sborho", 
+        "timestamp": "2011-01-06 02:11:56", 
+        "raw_node": "6f97499d3d53aaf4cc1ec3c626191b13eb3aed58", 
+        "parents": [
+            "bbd25e9f3d16"
+        ], 
+        "branch": "default", 
+        "message": "shelve: decorate more slots", 
+        "revision": 9815, 
+        "size": -1
+    }, 
+    "0.8.3": {
+        "node": "cd50b769e235", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "hggtk/hgtk.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2009-10-07 03:07:28+00:00", 
+        "author": "sborho", 
+        "timestamp": "2009-10-07 05:07:28", 
+        "raw_node": "cd50b769e235833ef490eb1847d2099fb4ea74e0", 
+        "parents": [
+            "1392a2455b20"
+        ], 
+        "branch": "stable", 
+        "message": "hgtk: correct arguments to dispatch() when launching qct\n\nFixes #615", 
+        "revision": 4436, 
+        "size": -1
+    }, 
+    "1.1.4": {
+        "node": "5a769d9a01ae", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "doc/source/conf.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2010-10-02 20:25:45+00:00", 
+        "author": "sborho", 
+        "timestamp": "2010-10-02 22:25:45", 
+        "raw_node": "5a769d9a01ae36f5c2c5c6b2b69e396e48d9cc25", 
+        "parents": [
+            "0c82a15c196b"
+        ], 
+        "branch": "stable", 
+        "message": "doc: bump version to 1.1.4", 
+        "revision": 8856, 
+        "size": -1
+    }, 
+    "0.7.3": {
+        "node": "5215e780e916", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "hggtk/shlib.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2009-04-01 03:26:29+00:00", 
+        "author": "sborho", 
+        "timestamp": "2009-04-01 05:26:29", 
+        "raw_node": "5215e780e9163cd7f2ce377692d7e719a6e82520", 
+        "parents": [
+            "7e3488848e2c"
+        ], 
+        "branch": "default", 
+        "message": "shlib: only send one shell notification per directory\n\nThis should improve the performance and possibly robustness\nof large repository operations.  It should not adversely effect\nthe shell overlays since it will get fewer refresh events and the\noverlay code is already optimized to re-read entire directories.", 
+        "revision": 1870, 
+        "size": -1
+    }, 
+    "1.1.6": {
+        "node": "d7070fe8ed54", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/cs.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/zh_CN.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/zh_TW.po"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2010-11-15 19:41:35+00:00", 
+        "author": "sborho", 
+        "timestamp": "2010-11-15 20:41:35", 
+        "raw_node": "d7070fe8ed54ffec748ba98918f59f40c2ae4976", 
+        "parents": [
+            "dd5abd491d33"
+        ], 
+        "branch": "stable", 
+        "message": "i18n: pull latest translations", 
+        "revision": 9381, 
+        "size": -1
+    }, 
+    "2.2": {
+        "node": "cf58f9af67f6", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "tortoisehg/hgqt/commit.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2011-11-06 20:07:51+00:00", 
+        "author": "sborho", 
+        "timestamp": "2011-11-06 21:07:51", 
+        "raw_node": "cf58f9af67f674534d71ac5bad37dda6fe793622", 
+        "parents": [
+            "891fa9bb7e58"
+        ], 
+        "branch": "stable", 
+        "message": "commit: fix ErrorMsgBox strings", 
+        "revision": 12393, 
+        "size": -1
+    }, 
+    "1.9.3": {
+        "node": "36a2bd08a405", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "tortoisehg/hgqt/hgemail.py"
+            }
+        ], 
+        "raw_author": "Adrian Buehlmann <adrian@cadifra.com>", 
+        "utctimestamp": "2011-02-18 15:06:22+00:00", 
+        "author": "abuehl", 
+        "timestamp": "2011-02-18 16:06:22", 
+        "raw_node": "36a2bd08a405438ec776ad506c71fe581b8ce0b5", 
+        "parents": [
+            "245bbfcfcec6"
+        ], 
+        "branch": "stable", 
+        "message": "hgemail: do not close main dialog when emails sent\n\nI often do a test send to myself before sending a patch\nto the \"real\" recipient, so I would like to decide myself\nwhen the main email dialog window should be closed.\n\nThis is especially important when I've written an intro.\nIf the dialog is closed on send implicitly, I do have to\nenter the intro text again for the real send.", 
+        "revision": 10447, 
+        "size": -1
+    }, 
+    "1.0.4": {
+        "node": "710568596bcd", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "doc/source/conf.py"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2010-06-01 22:03:02+00:00", 
+        "author": "sborho", 
+        "timestamp": "2010-06-02 00:03:02", 
+        "raw_node": "710568596bcd65c57ff553f10a7859d64bea34ef", 
+        "parents": [
+            "a032e7c47503"
+        ], 
+        "branch": "stable", 
+        "message": "doc: bump release number to 1.0.4", 
+        "revision": 7667, 
+        "size": -1
+    }, 
+    "1.9": {
+        "node": "653ff9fb4ccf", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": ".hgtags"
+            }, 
+            {
+                "type": "modified", 
+                "file": "doc/source/conf.py"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/da.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/uk.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/zh_TW.po"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2010-12-02 02:29:35+00:00", 
+        "author": "sborho", 
+        "timestamp": "2010-12-02 03:29:35", 
+        "raw_node": "653ff9fb4ccf16833bab58fbc765ff8829dc1265", 
+        "parents": [
+            "b68983e1f8a1", 
+            "2b427db941eb"
+        ], 
+        "branch": "default", 
+        "message": "Merge with stable", 
+        "revision": 9552, 
+        "size": -1
+    }, 
+    "tip": {
+        "node": "b0f8429bd59b", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/da.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/de.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/pt_BR.po"
+            }
+        ], 
+        "raw_author": "Wagner Bruna <wbruna@softwareexpress.com.br>", 
+        "utctimestamp": "2012-02-24 22:08:34+00:00", 
+        "author": "wbruna", 
+        "timestamp": "2012-02-24 23:08:34", 
+        "raw_node": "b0f8429bd59b6ab659369e1aa48422fb9be87c2e", 
+        "parents": [
+            "5c3390659440"
+        ], 
+        "branch": "stable", 
+        "message": "i18n: pull latest da, de and pt_BR translations from Launchpad", 
+        "revision": 12593, 
+        "size": -1
+    }, 
+    "1.1.7": {
+        "node": "d5840485b342", 
+        "files": [
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/da.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/uk.po"
+            }, 
+            {
+                "type": "modified", 
+                "file": "i18n/tortoisehg/zh_TW.po"
+            }
+        ], 
+        "raw_author": "Steve Borho <steve@borho.org>", 
+        "utctimestamp": "2010-12-01 23:03:52+00:00", 
+        "author": "sborho", 
+        "timestamp": "2010-12-02 00:03:52", 
+        "raw_node": "d5840485b34265572ffb4d5bb1226b1577163115", 
+        "parents": [
+            "f4bd6f81013d"
+        ], 
+        "branch": "stable", 
+        "message": "i18n: pull latest translations", 
+        "revision": 9550, 
+        "size": -1
+    }
+}

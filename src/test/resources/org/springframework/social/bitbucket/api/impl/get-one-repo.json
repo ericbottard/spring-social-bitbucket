@@ -1,0 +1,11 @@
+{
+    "website": "http://bitbucket.org/jespern/",
+    "scm": "hg",
+    "name": "django-piston",
+    "followers_count": 958,
+    "owner": "jespern",
+    "logo": null,
+    "resource_uri": "/api/1.0/repositories/jespern/django-piston",
+    "slug": "django-piston",
+    "description": "Piston is a Django mini-framework creating APIs."
+}
