@@ -8,7 +8,7 @@
 	<packaging>jar</packaging>
 
 	<name>spring-social-bitbucket</name>
-	<url>http://maven.apache.org</url>
+	<url>https://github.com/ericbottard/spring-social-bitbucket</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,11 +21,6 @@
 		<dependency>
 			<groupId>org.springframework.social</groupId>
 			<artifactId>spring-social-core</artifactId>
-			<version>${org.springframework.social.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.social</groupId>
-			<artifactId>spring-social-test</artifactId>
 			<version>${org.springframework.social.version}</version>
 		</dependency>
 		<dependency>
@@ -69,6 +64,11 @@
 			<artifactId>commons-logging</artifactId>
 			<version>1.1.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test-mvc</artifactId>
+			<version>1.0.0.BUILD-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -101,7 +101,13 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
+	<repositories>
+		<repository>
+			<id>spring-snapshots</id>
+			<url>http://maven.springframework.org/snapshot</url>
+			<snapshots><enabled>true</enabled></snapshots>
+		</repository>
+	</repositories>
 	<build>
 		<resources>
 			<resource>

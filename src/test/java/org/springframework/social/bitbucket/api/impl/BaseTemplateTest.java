@@ -18,7 +18,7 @@ package org.springframework.social.bitbucket.api.impl;
 import org.junit.Before;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
-import org.springframework.social.test.client.MockRestServiceServer;
+import org.springframework.test.web.client.MockRestServiceServer;
 
 public class BaseTemplateTest {
 
