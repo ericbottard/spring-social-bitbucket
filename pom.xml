@@ -15,6 +15,7 @@
 
 		<org.springframework.social.version>1.0.1.RELEASE</org.springframework.social.version>
 		<org.springframework.version>3.1.0.RELEASE</org.springframework.version>
+		<org.codehaus.jackson.version>1.8.5</org.codehaus.jackson.version>
 	</properties>
 
 	<dependencies>
@@ -23,25 +24,7 @@
 			<artifactId>spring-social-core</artifactId>
 			<version>${org.springframework.social.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-core</artifactId>
-			<version>3.1.0.RELEASE</version>
-			<scope>test</scope>
-		</dependency>
 
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-all</artifactId>
-			<version>1.8.5</version>
-			<scope>test</scope>
-		</dependency>
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
@@ -55,20 +38,26 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<version>${org.springframework.version}</version>
+			<artifactId>spring-test-mvc</artifactId>
+			<version>1.0.0.BUILD-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			<version>1.1.1</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${org.springframework.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-test-mvc</artifactId>
-			<version>1.0.0.BUILD-SNAPSHOT</version>
+			<artifactId>spring-web</artifactId>
+			<version>${org.springframework.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-asl</artifactId>
+			<version>${org.codehaus.jackson.version}</version>
+		</dependency>
+		
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -92,11 +81,6 @@
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-aop</artifactId>
-				<version>${org.springframework.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-core</artifactId>
 				<version>${org.springframework.version}</version>
 			</dependency>
 		</dependencies>
