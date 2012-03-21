@@ -15,6 +15,7 @@
  */
 package org.springframework.social.bitbucket.api.impl;
 
+import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 import static org.springframework.http.HttpMethod.*;
 import static org.springframework.test.web.client.RequestMatchers.*;
@@ -30,6 +31,9 @@ import org.springframework.http.MediaType;
 import org.springframework.social.bitbucket.api.BitBucketChangeset;
 import org.springframework.social.bitbucket.api.BitBucketChangeset.FileModificationType;
 import org.springframework.social.bitbucket.api.BitBucketChangesets;
+import org.springframework.social.bitbucket.api.BitBucketDirectory;
+import org.springframework.social.bitbucket.api.BitBucketFile;
+import org.springframework.social.bitbucket.api.BitBucketFileMetadata;
 import org.springframework.social.bitbucket.api.BitBucketRepository;
 import org.springframework.social.bitbucket.api.BitBucketSCM;
 import org.springframework.social.bitbucket.api.BitBucketUser;
@@ -206,4 +210,56 @@ public class RepoTemplateTest extends BaseTemplateTest {
 
     }
 
+    @Test
+    public void testRepoDirectoryListing() {
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.setContentType(MediaType.APPLICATION_JSON);
+
+        mockServer
+                .expect(requestTo("https://api.bitbucket.org/1.0/repositories/jespern/django-piston/src/tip/piston/"))
+                .andExpect(method(GET))
+                .andRespond(
+                        withResponse(jsonResource("repo-directories"),
+                                responseHeaders));
+
+        BitBucketDirectory directory = bitBucket.repoOperations().getDirectory(
+                "jespern", "django-piston", "tip", "piston");
+
+        assertThat(directory.getNode(), equalTo("4fe8af1db59d"));
+        assertThat(directory.getPath(), equalTo("piston/"));
+
+        assertThat(directory.getDirectories().size(), equalTo(2));
+        assertThat(directory.getDirectories(),
+                hasItems("fixtures", "templates"));
+
+        BitBucketFileMetadata metadata = directory.getFiles().get(0);
+        assertThat(metadata.getPath(), equalTo("piston/utils.py"));
+        assertThat(metadata.getRevision(), equalTo("112311f7d7ce"));
+        assertThat(metadata.getSize(), equalTo(12275));
+
+    }
+
+    @Test
+    public void testRepoFile() {
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.setContentType(MediaType.APPLICATION_JSON);
+
+        mockServer
+                .expect(requestTo("https://api.bitbucket.org/1.0/repositories/jespern/django-piston/src/tip/piston/utils.py"))
+                .andExpect(method(GET))
+                .andRespond(
+                        withResponse(jsonResource("repo-file"), responseHeaders));
+
+        BitBucketFile file = bitBucket.repoOperations().getFile("jespern",
+                "django-piston", "tip", "piston/utils.py");
+
+        assertThat(file.getNode(), equalTo("4fe8af1db59d"));
+        assertThat(file.getPath(), equalTo("piston/utils.py"));
+        assertThat(file.getData().length(), equalTo(12275));
+        // The following makes sure that newline escapes are correcly handled
+        assertThat(
+                file.getData(),
+                startsWith("import time\nfrom django.http import HttpResponseNotAllowed,"));
+
+    }
 }

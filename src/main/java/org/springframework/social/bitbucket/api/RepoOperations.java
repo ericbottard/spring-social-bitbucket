@@ -64,4 +64,18 @@ public interface RepoOperations {
      */
     public BitBucketChangesets getChangesets(String user, String repoSlug,
             String start, int limit);
+
+    /**
+     * Returns information about a known directory, including children
+     * directories and files.
+     */
+    public BitBucketDirectory getDirectory(String user, String repoSlug,
+            String revision, String path);
+
+    /**
+     * Returns information and actual contents (as a String) about a known file
+     * path.
+     */
+    public BitBucketFile getFile(String string, String string2, String string3,
+            String string4);
 }

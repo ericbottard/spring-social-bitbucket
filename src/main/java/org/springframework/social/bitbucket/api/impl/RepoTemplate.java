@@ -23,9 +23,11 @@ import java.util.Map;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
-import org.springframework.social.bitbucket.api.BitBucketChangesets;
-import org.springframework.social.bitbucket.api.BitBucketRepository;
 import org.springframework.social.bitbucket.api.BitBucketChangeset;
+import org.springframework.social.bitbucket.api.BitBucketChangesets;
+import org.springframework.social.bitbucket.api.BitBucketDirectory;
+import org.springframework.social.bitbucket.api.BitBucketFile;
+import org.springframework.social.bitbucket.api.BitBucketRepository;
 import org.springframework.social.bitbucket.api.BitBucketUser;
 import org.springframework.social.bitbucket.api.RepoOperations;
 import org.springframework.web.client.RestTemplate;
@@ -90,6 +92,24 @@ public class RepoTemplate extends AbstractBitBucketOperations implements
                                 "/repositories/{user}/{slug}/changesets/?start={start}&limit={limit}")
                                 .toString(), BitBucketChangesets.class, user,
                         repoSlug, start, limit);
+    }
+
+    @Override
+    public BitBucketDirectory getDirectory(String user, String repoSlug,
+            String revision, String path) {
+        return restTemplate.getForObject(
+                buildUrl("/repositories/{user}/{slug}/src/{rev}/{path}/")
+                        .toString(), BitBucketDirectory.class, user, repoSlug,
+                revision, path);
+    }
+
+    @Override
+    public BitBucketFile getFile(String user, String repoSlug, String revision,
+            String path) {
+        return restTemplate.getForObject(
+                buildUrl("/repositories/{user}/{slug}/src/{rev}/{path}")
+                        .toString(), BitBucketFile.class, user, repoSlug,
+                revision, path);
     }
 
     /**
