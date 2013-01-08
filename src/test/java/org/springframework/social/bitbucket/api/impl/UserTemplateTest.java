@@ -17,15 +17,14 @@ package org.springframework.social.bitbucket.api.impl;
 
 import static org.junit.Assert.*;
 import static org.springframework.http.HttpMethod.*;
-import static org.springframework.test.web.client.RequestMatchers.*;
-import static org.springframework.test.web.client.ResponseCreators.*;
+import static org.springframework.test.web.client.match.MockRestRequestMatchers.*;
+import static org.springframework.test.web.client.response.MockRestResponseCreators.*;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.TimeZone;
 
 import org.junit.Test;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.social.bitbucket.api.BitBucketRepository;
 import org.springframework.social.bitbucket.api.BitBucketSCM;
@@ -36,14 +35,13 @@ public class UserTemplateTest extends BaseTemplateTest {
 
     @Test
     public void testGetUser() throws Exception {
-        HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 
         mockServer
                 .expect(requestTo("https://api.bitbucket.org/1.0/user"))
                 .andExpect(method(GET))
                 .andRespond(
-                        withResponse(jsonResource("get-user"), responseHeaders));
+                        withSuccess(jsonResource("get-user"),
+                                MediaType.APPLICATION_JSON));
 
         UserWithRepositories profile = bitBucket.userOperations()
                 .getUserWithRepositories();
@@ -75,15 +73,13 @@ public class UserTemplateTest extends BaseTemplateTest {
 
     @Test
     public void testGetUserFollowers() throws Exception {
-        HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 
         mockServer
                 .expect(requestTo("https://api.bitbucket.org/1.0/users/cleonello/followers"))
                 .andExpect(method(GET))
                 .andRespond(
-                        withResponse(jsonResource("user-followers"),
-                                responseHeaders));
+                        withSuccess(jsonResource("user-followers"),
+                                MediaType.APPLICATION_JSON));
 
         List<BitBucketUser> followers = bitBucket.userOperations()
                 .getFollowers("cleonello");

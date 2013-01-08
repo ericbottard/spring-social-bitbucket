@@ -18,8 +18,8 @@ package org.springframework.social.bitbucket.api.impl;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 import static org.springframework.http.HttpMethod.*;
-import static org.springframework.test.web.client.RequestMatchers.*;
-import static org.springframework.test.web.client.ResponseCreators.*;
+import static org.springframework.test.web.client.match.MockRestRequestMatchers.*;
+import static org.springframework.test.web.client.response.MockRestResponseCreators.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -42,15 +42,13 @@ public class RepoTemplateTest extends BaseTemplateTest {
 
     @Test
     public void testGetOneRepo() {
-        HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 
         mockServer
                 .expect(requestTo("https://api.bitbucket.org/1.0/repositories/jespen/django-piston/"))
                 .andExpect(method(GET))
                 .andRespond(
-                        withResponse(jsonResource("get-one-repo"),
-                                responseHeaders));
+                        withSuccess(jsonResource("get-one-repo"),
+                                MediaType.APPLICATION_JSON));
 
         BitBucketRepository repo = bitBucket.repoOperations().getRepository(
                 "jespen", "django-piston");
@@ -65,15 +63,13 @@ public class RepoTemplateTest extends BaseTemplateTest {
 
     @Test
     public void testGetUserRepositories() {
-        HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 
         mockServer
                 .expect(requestTo("https://api.bitbucket.org/1.0/user/repositories/"))
                 .andExpect(method(GET))
                 .andRespond(
-                        withResponse(jsonResource("get-user-repositories"),
-                                responseHeaders));
+                        withSuccess(jsonResource("get-user-repositories"),
+                                MediaType.APPLICATION_JSON));
 
         List<BitBucketRepository> repos = bitBucket.repoOperations()
                 .getUserRepositories();
@@ -89,15 +85,13 @@ public class RepoTemplateTest extends BaseTemplateTest {
 
     @Test
     public void testSearchForRepos() {
-        HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 
         mockServer
                 .expect(requestTo("https://api.bitbucket.org/1.0/repositories/?name=box2d"))
                 .andExpect(method(GET))
                 .andRespond(
-                        withResponse(jsonResource("search-repos"),
-                                responseHeaders));
+                        withSuccess(jsonResource("search-repos"),
+                                MediaType.APPLICATION_JSON));
 
         List<BitBucketRepository> results = bitBucket.repoOperations().search(
                 "box2d");
@@ -115,14 +109,13 @@ public class RepoTemplateTest extends BaseTemplateTest {
 
     @Test
     public void testRepoTags() {
-        HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 
         mockServer
                 .expect(requestTo("https://api.bitbucket.org/1.0/repositories/tortoisehg/thg/tags/"))
                 .andExpect(method(GET))
                 .andRespond(
-                        withResponse(jsonResource("get-tags"), responseHeaders));
+                        withSuccess(jsonResource("get-tags"),
+                                MediaType.APPLICATION_JSON));
 
         Map<String, BitBucketChangeset> tags = bitBucket.repoOperations()
                 .getTags("tortoisehg", "thg");
@@ -148,15 +141,13 @@ public class RepoTemplateTest extends BaseTemplateTest {
 
     @Test
     public void testRepoFollowers() {
-        HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 
         mockServer
                 .expect(requestTo("https://api.bitbucket.org/1.0/repositories/tortoisehg/thg/followers/"))
                 .andExpect(method(GET))
                 .andRespond(
-                        withResponse(jsonResource("repo-followers"),
-                                responseHeaders));
+                        withSuccess(jsonResource("repo-followers"),
+                                MediaType.APPLICATION_JSON));
 
         List<BitBucketUser> followers = bitBucket.repoOperations()
                 .getFollowers("tortoisehg", "thg");
@@ -173,15 +164,13 @@ public class RepoTemplateTest extends BaseTemplateTest {
 
     @Test
     public void testRepoChangesets() {
-        HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 
         mockServer
                 .expect(requestTo("https://api.bitbucket.org/1.0/repositories/tortoisehg/thg/changesets/"))
                 .andExpect(method(GET))
                 .andRespond(
-                        withResponse(jsonResource("repo-changesets"),
-                                responseHeaders));
+                        withSuccess(jsonResource("repo-changesets"),
+                                MediaType.APPLICATION_JSON));
 
         BitBucketChangesets changesets = bitBucket.repoOperations()
                 .getChangesets("tortoisehg", "thg");
@@ -212,15 +201,13 @@ public class RepoTemplateTest extends BaseTemplateTest {
 
     @Test
     public void testRepoDirectoryListing() {
-        HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 
         mockServer
                 .expect(requestTo("https://api.bitbucket.org/1.0/repositories/jespern/django-piston/src/tip/piston/"))
                 .andExpect(method(GET))
                 .andRespond(
-                        withResponse(jsonResource("repo-directories"),
-                                responseHeaders));
+                        withSuccess(jsonResource("repo-directories"),
+                                MediaType.APPLICATION_JSON));
 
         BitBucketDirectory directory = bitBucket.repoOperations().getDirectory(
                 "jespern", "django-piston", "tip", "piston");
@@ -248,7 +235,8 @@ public class RepoTemplateTest extends BaseTemplateTest {
                 .expect(requestTo("https://api.bitbucket.org/1.0/repositories/jespern/django-piston/src/tip/piston/utils.py"))
                 .andExpect(method(GET))
                 .andRespond(
-                        withResponse(jsonResource("repo-file"), responseHeaders));
+                        withSuccess(jsonResource("repo-file"),
+                                MediaType.APPLICATION_JSON));
 
         BitBucketFile file = bitBucket.repoOperations().getFile("jespern",
                 "django-piston", "tip", "piston/utils.py");
