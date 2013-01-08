@@ -29,6 +29,7 @@ import org.springframework.social.bitbucket.api.BitBucketDirectory;
 import org.springframework.social.bitbucket.api.BitBucketFile;
 import org.springframework.social.bitbucket.api.BitBucketRepository;
 import org.springframework.social.bitbucket.api.BitBucketUser;
+import org.springframework.social.bitbucket.api.RepoCreation;
 import org.springframework.social.bitbucket.api.RepoOperations;
 import org.springframework.web.client.RestTemplate;
 
@@ -110,6 +111,12 @@ public class RepoTemplate extends AbstractBitBucketOperations implements
                 buildUrl("/repositories/{user}/{slug}/src/{rev}/{path}")
                         .toString(), BitBucketFile.class, user, repoSlug,
                 revision, path);
+    }
+
+    @Override
+    public BitBucketRepository createRepository(RepoCreation options) {
+        return restTemplate.postForObject(buildUrl("/repositories"), options,
+                BitBucketRepository.class);
     }
 
     /**

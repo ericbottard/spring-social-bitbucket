@@ -26,7 +26,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.junit.Test;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.social.bitbucket.api.BitBucketChangeset;
 import org.springframework.social.bitbucket.api.BitBucketChangeset.FileModificationType;
@@ -37,6 +36,7 @@ import org.springframework.social.bitbucket.api.BitBucketFileMetadata;
 import org.springframework.social.bitbucket.api.BitBucketRepository;
 import org.springframework.social.bitbucket.api.BitBucketSCM;
 import org.springframework.social.bitbucket.api.BitBucketUser;
+import org.springframework.social.bitbucket.api.RepoCreation;
 
 public class RepoTemplateTest extends BaseTemplateTest {
 
@@ -228,8 +228,6 @@ public class RepoTemplateTest extends BaseTemplateTest {
 
     @Test
     public void testRepoFile() {
-        HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 
         mockServer
                 .expect(requestTo("https://api.bitbucket.org/1.0/repositories/jespern/django-piston/src/tip/piston/utils.py"))
@@ -249,5 +247,22 @@ public class RepoTemplateTest extends BaseTemplateTest {
                 file.getData(),
                 startsWith("import time\nfrom django.http import HttpResponseNotAllowed,"));
 
+    }
+
+    @Test
+    public void testRepoCreation() {
+        mockServer
+                .expect(requestTo("https://api.bitbucket.org/1.0/repositories"))
+                .andExpect(method(POST))
+                .andExpect(content().string("name=mynewrepo"))
+                .andRespond(
+                        withSuccess(jsonResource("create-repo"),
+                                MediaType.APPLICATION_JSON));
+
+        RepoCreation options = new RepoCreation("mynewrepo");
+        BitBucketRepository repository = bitBucket.repoOperations()
+                .createRepository(options);
+
+        assertThat(repository.getName(), equalTo("mynewrepo"));
     }
 }

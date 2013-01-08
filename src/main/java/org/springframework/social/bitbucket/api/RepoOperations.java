@@ -78,4 +78,10 @@ public interface RepoOperations {
      */
     public BitBucketFile getFile(String string, String string2, String string3,
             String string4);
+
+    /**
+     * Creates a new repository under the account of the currently authenticated
+     * user. The account automatically becomes the owner.
+     */
+    public BitBucketRepository createRepository(RepoCreation options);
 }
