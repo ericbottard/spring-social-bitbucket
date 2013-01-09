@@ -117,6 +117,10 @@
 				<artifactId>maven-license-plugin</artifactId>
 				<configuration>
 					<header>src/etc/header.txt</header>
+					<includes>
+						<include>src/main/java/**/*.java</include>
+					</includes>
+					<strictCheck>true</strictCheck>
 				</configuration>
 				<executions>
 					<execution>

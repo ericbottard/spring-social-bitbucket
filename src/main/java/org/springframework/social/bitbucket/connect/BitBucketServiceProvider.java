@@ -26,10 +26,9 @@ public class BitBucketServiceProvider extends
     public BitBucketServiceProvider(String consumerKey, String consumerSecret) {
         super(consumerKey, consumerSecret, new OAuth1Template(consumerKey,
                 consumerSecret,
-                "https://api.bitbucket.org/1.0/oauth/request_token/",
-                "https://api.bitbucket.org/1.0/oauth/authorize/",
-                "https://api.bitbucket.org/1.0/oauth/authenticate/",
-                "https://bitbucket.org/api/1.0/oauth/access_token/"));
+                "https://bitbucket.org/!api/1.0/oauth/request_token",
+                "https://bitbucket.org/!api/1.0/oauth/authenticate",
+                "https://bitbucket.org/!api/1.0/oauth/access_token"));
     }
 
     @Override
