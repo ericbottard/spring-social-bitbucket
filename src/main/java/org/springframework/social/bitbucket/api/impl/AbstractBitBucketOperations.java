@@ -15,14 +15,20 @@
  */
 package org.springframework.social.bitbucket.api.impl;
 
+import org.springframework.web.client.RestTemplate;
+
 public class AbstractBitBucketOperations {
 
     protected final boolean authorized;
 
+    protected final RestTemplate restTemplate;
+
     private static final String BASE_API_URL = "https://api.bitbucket.org/1.0";
 
-    public AbstractBitBucketOperations(boolean authorized) {
+    public AbstractBitBucketOperations(RestTemplate restTemplate,
+            boolean authorized) {
         this.authorized = authorized;
+        this.restTemplate = restTemplate;
     }
 
     protected String buildUrl(String string) {

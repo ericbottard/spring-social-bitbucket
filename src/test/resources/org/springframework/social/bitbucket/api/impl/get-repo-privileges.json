@@ -1,0 +1,38 @@
+[
+    {
+        "repo": "evzijst/test",
+        "privilege": "read",
+        "user": {
+            "username": "jespern",
+            "first_name": "Jesper",
+            "last_name": "Noehr"
+        }
+    },
+    {
+        "repo": "evzijst/test",
+        "privilege": "read",
+        "user": {
+            "username": "detkin",
+            "first_name": "Dylan",
+            "last_name": "Etkin"
+        }
+    },
+    {
+        "repo": "evzijst/test",
+        "privilege": "write",
+        "user": {
+            "username": "davidchambers",
+            "first_name": "David",
+            "last_name": "Chambers"
+        }
+    },
+    {
+        "repo": "evzijst/test",
+        "privilege": "admin",
+        "user": {
+            "username": "nvenegas",
+            "first_name": "Nicolas",
+            "last_name": "Venegas"
+        }
+    }
+]

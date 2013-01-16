@@ -36,11 +36,8 @@ import org.springframework.web.client.RestTemplate;
 public class RepoTemplate extends AbstractBitBucketOperations implements
         RepoOperations {
 
-    private final RestTemplate restTemplate;
-
     public RepoTemplate(RestTemplate restTemplate, boolean authorized) {
-        super(authorized);
-        this.restTemplate = restTemplate;
+        super(restTemplate, authorized);
     }
 
     @Override

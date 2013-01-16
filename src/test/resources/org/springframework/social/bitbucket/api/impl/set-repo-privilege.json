@@ -1,0 +1,24 @@
+[
+    {
+        "repo": "tutorials/mydvcsproject",
+        "privilege": "write",
+        "user": {
+            "username": "atlassian_tutorial",
+            "first_name": "Atlassian Tutorials",
+            "last_name": "",
+            "avatar": "https://secure.gravatar.com/avatar/eb4e0ad6934518b3e335345a4ceeef21?d=https%3A%2F%2Fdwz7u9t8u8usb.cloudfront.net%2Fm%2F8319cb1efac9%2Fimg%2Fteam_no_avatar_32.png&s=32",
+            "is_team": true
+        },
+        "repository": {
+            "owner": {
+                "username": "tutorials",
+                "first_name": "",
+                "last_name": "",
+                "avatar": "https://secure.gravatar.com/avatar/0bc5bd490000b8e63c35c0f54e667b9e?d=identicon&s=32",
+                "is_team": false
+            },
+            "name": "mydvcsproject",
+            "slug": "mydvcsproject"
+        }
+    }
+]

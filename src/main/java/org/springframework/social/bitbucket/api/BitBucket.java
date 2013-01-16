@@ -36,4 +36,10 @@ public interface BitBucket extends ApiBinding {
      * accounts.
      */
     UserOperations userOperations();
+
+    /**
+     * Returns the portion of the BitBucket API that allow messing with
+     * privileges.
+     */
+    PrivilegeOperations privelegesOperations();
 }

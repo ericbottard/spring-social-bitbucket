@@ -27,11 +27,8 @@ import org.springframework.web.client.RestTemplate;
 class UserTemplate extends AbstractBitBucketOperations implements
         UserOperations {
 
-    private final RestTemplate restTemplate;
-
     public UserTemplate(RestTemplate restTemplate, boolean authorized) {
-        super(authorized);
-        this.restTemplate = restTemplate;
+        super(restTemplate, authorized);
     }
 
     @Override
