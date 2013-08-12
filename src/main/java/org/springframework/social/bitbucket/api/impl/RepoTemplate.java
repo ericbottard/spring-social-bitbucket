@@ -21,8 +21,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-import org.codehaus.jackson.annotate.JsonProperty;
 import org.springframework.social.bitbucket.api.BitBucketChangeset;
 import org.springframework.social.bitbucket.api.BitBucketChangesets;
 import org.springframework.social.bitbucket.api.BitBucketDirectory;
@@ -32,6 +30,9 @@ import org.springframework.social.bitbucket.api.BitBucketUser;
 import org.springframework.social.bitbucket.api.RepoCreation;
 import org.springframework.social.bitbucket.api.RepoOperations;
 import org.springframework.web.client.RestTemplate;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class RepoTemplate extends AbstractBitBucketOperations implements
         RepoOperations {

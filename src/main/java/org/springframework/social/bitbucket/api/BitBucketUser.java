@@ -17,13 +17,13 @@ package org.springframework.social.bitbucket.api;
 
 import java.io.Serializable;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * A BitBucket user account.
  * 
- * @author ericbottard
+ * @author Eric Bottard
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BitBucketUser implements Serializable {

@@ -17,14 +17,14 @@ package org.springframework.social.bitbucket.api;
 
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Metadata about the contents of a repository directory. Contains files,
  * directories and metadata about the selected directory.
  * 
- * @author ericbottard
+ * @author Eric Bottard
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BitBucketDirectory {

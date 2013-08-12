@@ -17,15 +17,16 @@ package org.springframework.social.bitbucket.api;
 
 import java.util.Date;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonDeserialize;
 import org.springframework.social.bitbucket.api.impl.UTCDateDeserializer;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 /**
  * Metadata about a file in a repository.
  * 
- * @author ericbottard
+ * @author Eric Bottard
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BitBucketFileMetadata {

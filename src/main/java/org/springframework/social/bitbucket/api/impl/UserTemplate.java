@@ -17,12 +17,13 @@ package org.springframework.social.bitbucket.api.impl;
 
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-import org.codehaus.jackson.annotate.JsonProperty;
 import org.springframework.social.bitbucket.api.BitBucketUser;
 import org.springframework.social.bitbucket.api.UserOperations;
 import org.springframework.social.bitbucket.api.UserWithRepositories;
 import org.springframework.web.client.RestTemplate;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 class UserTemplate extends AbstractBitBucketOperations implements
         UserOperations {
