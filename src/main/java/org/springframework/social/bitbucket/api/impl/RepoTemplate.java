@@ -38,7 +38,7 @@ public class RepoTemplate extends AbstractBitBucketOperations implements
         RepoOperations {
 
     public RepoTemplate(RestTemplate restTemplate, boolean authorized) {
-        super(restTemplate, authorized);
+        super(restTemplate, authorized, V1);
     }
 
     @Override

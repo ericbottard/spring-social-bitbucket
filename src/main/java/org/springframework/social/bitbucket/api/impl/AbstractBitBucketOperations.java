@@ -23,16 +23,22 @@ public class AbstractBitBucketOperations {
 
     protected final RestTemplate restTemplate;
 
-    private static final String BASE_API_URL = "https://api.bitbucket.org/1.0";
+    private final String version;
+
+    public static final String V1 = "1.0";
+    public static final String V2 = "2.0";
+
+    private static final String BASE_API_URL = "https://api.bitbucket.org/";
 
     public AbstractBitBucketOperations(RestTemplate restTemplate,
-            boolean authorized) {
+                                       boolean authorized, String version) {
         this.authorized = authorized;
         this.restTemplate = restTemplate;
+        this.version = version;
     }
 
     protected String buildUrl(String string) {
-        return BASE_API_URL + string;
+        return BASE_API_URL + version + string;
     }
 
 }

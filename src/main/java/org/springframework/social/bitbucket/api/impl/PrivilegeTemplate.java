@@ -30,7 +30,7 @@ public class PrivilegeTemplate extends AbstractBitBucketOperations implements
         PrivilegeOperations {
 
     public PrivilegeTemplate(RestTemplate restTemplate, boolean authorized) {
-        super(restTemplate, authorized);
+        super(restTemplate, authorized, V1);
     }
 
     @Override

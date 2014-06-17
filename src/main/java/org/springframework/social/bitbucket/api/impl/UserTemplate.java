@@ -29,7 +29,7 @@ class UserTemplate extends AbstractBitBucketOperations implements
         UserOperations {
 
     public UserTemplate(RestTemplate restTemplate, boolean authorized) {
-        super(restTemplate, authorized);
+        super(restTemplate, authorized, V1);
     }
 
     @Override

@@ -2,7 +2,7 @@ Spring Social BitBucket
 =======================
 Spring Social BitBucket is an extension to Spring Social to enable connectivity
 with the BitBucket API.
-See http://confluence.atlassian.com/display/BITBUCKET/Using+the+bitbucket+REST+APIs
+See https://confluence.atlassian.com/display/BITBUCKET/Use+the+Bitbucket+REST+APIs
 
 Authors
 -------
