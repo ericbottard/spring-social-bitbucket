@@ -17,6 +17,7 @@ package org.springframework.social.bitbucket.api.v2;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 
@@ -38,6 +39,9 @@ public class BitBucketV2Page<T> {
     @JsonProperty
     private String next;
 
+    @JsonProperty
+    private String previous;
+
     public int getPageLength() {
         return pageLength;
     }
@@ -56,5 +60,17 @@ public class BitBucketV2Page<T> {
 
     public String getNext() {
         return next;
+    }
+
+    public String getPrevious() {
+        return previous;
+    }
+
+    public boolean hasNext() {
+        return StringUtils.hasText(next);
+    }
+
+    public boolean hasPrevious() {
+        return StringUtils.hasText(previous);
     }
 }

@@ -21,6 +21,10 @@ public interface RepoV2Operations {
 
     RepositoryPage getRepositories(String owner);
 
+    BitBucketV2Repository getRepository(String owner, String repoSlug);
+
+    BitBucketV2Repository getRepository(BitBucketV2User owner, String repoSlug);
+
     RepositoryPage getRepositories(BitBucketV2User user);
 
     RepositoryPage getNextPage(RepositoryPage page);

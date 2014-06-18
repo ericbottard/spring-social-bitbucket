@@ -45,6 +45,18 @@ public class RepoV2Template extends AbstractBitBucketOperations implements RepoV
     }
 
     @Override
+    public BitBucketV2Repository getRepository(String owner, String repoSlug) {
+        return restTemplate.getForObject(
+                buildUrl("/repositories/{owner}/{repo_slug}"),
+                BitBucketV2Repository.class, owner, repoSlug);
+    }
+
+    @Override
+    public BitBucketV2Repository getRepository(BitBucketV2User owner, String repoSlug) {
+        return getRepository(owner.getUsername(), repoSlug);
+    }
+
+    @Override
     public RepositoryPage getNextPage(RepositoryPage page) {
         return restTemplate.getForObject(
                 page.getNext(),
