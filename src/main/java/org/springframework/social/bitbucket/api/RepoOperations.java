@@ -1,5 +1,5 @@
 /**
- * Copyright 2012 the original author or authors.
+ * Copyright 2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ import java.util.Map;
 
 /**
  * BitBucket sub-API that allows interaction with code repositories.
- * 
+ *
  * @author ericbottard
  */
 public interface RepoOperations {
@@ -63,21 +63,21 @@ public interface RepoOperations {
      * many are available totally.
      */
     public BitBucketChangesets getChangesets(String user, String repoSlug,
-            String start, int limit);
+                                             String start, int limit);
 
     /**
      * Returns information about a known directory, including children
      * directories and files.
      */
     public BitBucketDirectory getDirectory(String user, String repoSlug,
-            String revision, String path);
+                                           String revision, String path);
 
     /**
      * Returns information and actual contents (as a String) about a known file
      * path.
      */
     public BitBucketFile getFile(String string, String string2, String string3,
-            String string4);
+                                 String string4);
 
     /**
      * Creates a new repository under the account of the currently authenticated

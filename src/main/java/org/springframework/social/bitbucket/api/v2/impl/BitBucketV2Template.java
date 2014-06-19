@@ -1,5 +1,5 @@
 /**
- * Copyright 2012 the original author or authors.
+ * Copyright 2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,10 @@
  */
 package org.springframework.social.bitbucket.api.v2.impl;
 
-import org.springframework.social.bitbucket.api.v2.*;
+import org.springframework.social.bitbucket.api.v2.BitBucketV2;
+import org.springframework.social.bitbucket.api.v2.RepoV2Operations;
+import org.springframework.social.bitbucket.api.v2.TeamV2Operations;
+import org.springframework.social.bitbucket.api.v2.UserV2Operations;
 import org.springframework.social.oauth1.AbstractOAuth1ApiBinding;
 
 public class BitBucketV2Template extends AbstractOAuth1ApiBinding implements

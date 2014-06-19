@@ -1,5 +1,5 @@
 /**
- * Copyright 2012 the original author or authors.
+ * Copyright 2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,24 +15,16 @@
  */
 package org.springframework.social.bitbucket.api.impl;
 
-import static java.util.Arrays.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.social.bitbucket.api.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.social.bitbucket.api.BitBucketChangeset;
-import org.springframework.social.bitbucket.api.BitBucketChangesets;
-import org.springframework.social.bitbucket.api.BitBucketDirectory;
-import org.springframework.social.bitbucket.api.BitBucketFile;
-import org.springframework.social.bitbucket.api.BitBucketRepository;
-import org.springframework.social.bitbucket.api.BitBucketUser;
-import org.springframework.social.bitbucket.api.RepoCreation;
-import org.springframework.social.bitbucket.api.RepoOperations;
-import org.springframework.web.client.RestTemplate;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import static java.util.Arrays.asList;
 
 public class RepoTemplate extends AbstractBitBucketOperations implements
         RepoOperations {
@@ -84,7 +76,7 @@ public class RepoTemplate extends AbstractBitBucketOperations implements
 
     @Override
     public BitBucketChangesets getChangesets(String user, String repoSlug,
-            String start, int limit) {
+                                             String start, int limit) {
         return restTemplate
                 .getForObject(
                         buildUrl(
@@ -95,7 +87,7 @@ public class RepoTemplate extends AbstractBitBucketOperations implements
 
     @Override
     public BitBucketDirectory getDirectory(String user, String repoSlug,
-            String revision, String path) {
+                                           String revision, String path) {
         return restTemplate.getForObject(
                 buildUrl("/repositories/{user}/{slug}/src/{rev}/{path}/")
                         .toString(), BitBucketDirectory.class, user, repoSlug,
@@ -104,7 +96,7 @@ public class RepoTemplate extends AbstractBitBucketOperations implements
 
     @Override
     public BitBucketFile getFile(String user, String repoSlug, String revision,
-            String path) {
+                                 String path) {
         return restTemplate.getForObject(
                 buildUrl("/repositories/{user}/{slug}/src/{rev}/{path}")
                         .toString(), BitBucketFile.class, user, repoSlug,

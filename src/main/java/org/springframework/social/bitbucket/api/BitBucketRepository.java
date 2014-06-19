@@ -1,5 +1,5 @@
 /**
- * Copyright 2012 the original author or authors.
+ * Copyright 2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,20 +15,18 @@
  */
 package org.springframework.social.bitbucket.api;
 
-import java.io.Serializable;
-import java.util.Date;
-
-import org.springframework.social.bitbucket.api.impl.UTCDateDeserializer;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import org.springframework.social.bitbucket.api.impl.UTCDateDeserializer;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * A BitBucket repository, possibly with additional metadata.
- * 
+ *
  * @author ericbottard
- * 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BitBucketRepository implements Serializable {
@@ -86,7 +84,6 @@ public class BitBucketRepository implements Serializable {
 
     /**
      * When this repository was last updated.
-     * 
      */
     public Date getLastUpdatedOn() {
         return lastUpdatedOn;
@@ -95,7 +92,6 @@ public class BitBucketRepository implements Serializable {
     /**
      * A user friendly name for this repository (may differ from its
      * {@link #getSlug() slug}).
-     * 
      */
     public String getName() {
         return name;

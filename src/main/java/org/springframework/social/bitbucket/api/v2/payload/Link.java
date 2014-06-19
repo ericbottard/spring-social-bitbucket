@@ -13,43 +13,50 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.social.bitbucket.api;
+package org.springframework.social.bitbucket.api.v2.payload;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Content as well as metadata about a repository file.
+ * Every 2.0 object contains a links element that points to related resources or alternate representations. Use links to
+ * quickly discover and traverse to related objects. Links serve a "self-documenting" function for each endpoint.
  *
- * @author Eric Bottard
+ * @link https://confluence.atlassian.com/display/BITBUCKET/Version+2
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class BitBucketFile {
+public class Link {
 
     @JsonProperty
-    private String node;
+    private String href;
 
     @JsonProperty
-    private String path;
+    private String name;
 
     @JsonProperty
-    private String data;
+    private String title;
 
-    public String getNode() {
-        return node;
+    @JsonProperty
+    private boolean templated;
+
+    public String getHref() {
+        return href;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getTitle() {
+        return title;
     }
 
     /**
-     * Returns the file path, relative to the root of the repository.
+     * Links can support URI Templates; Those that do contain a "templated": "true" element.
+     *
+     * @link http://tools.ietf.org/html/rfc6570
      */
-    public String getPath() {
-        return path;
-    }
-
-    /**
-     * Returns the actual content of the file, as a String.
-     */
-    public String getData() {
-        return data;
+    public boolean isTemplated() {
+        return templated;
     }
 }

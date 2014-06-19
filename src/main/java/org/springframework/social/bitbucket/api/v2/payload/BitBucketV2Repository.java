@@ -1,5 +1,5 @@
 /**
- * Copyright 2012 the original author or authors.
+ * Copyright 2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.social.bitbucket.api.v2;
+package org.springframework.social.bitbucket.api.v2.payload;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -55,11 +55,14 @@ public class BitBucketV2Repository {
 
     // owner
     @JsonProperty
-    private BitBucketV2User owner;
+    private BitBucketV2Account owner;
 
 //    @JsonProperty("updated_on")
 //    @JsonDeserialize(using = UTCDateDeserializer.class)
 //    private Date updatedOn;
+
+    @JsonProperty
+    private BitBucketV2Repository parent;
 
     @JsonProperty
     private int size;
@@ -70,46 +73,86 @@ public class BitBucketV2Repository {
     @JsonProperty
     private String name;
 
+    /**
+     * The source control manager for the repository. This is either hg or git.
+     */
     public BitBucketSCM getScm() {
         return scm;
     }
 
+    /**
+     * A boolean indicating if the repository has a wiki.
+     */
     public boolean hasWiki() {
         return hasWiki;
     }
 
+    /**
+     * A string containing the repository's description.
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * Control the rules for forking this repository.
+     */
     public BitBucketForkPolicy getForkPolicy() {
         return forkPolicy;
     }
 
+    /**
+     * The main (programming) language of the repository source files.
+     */
     public String getLanguage() {
         return language;
     }
 
+    /**
+     * The unique key into the repository. This key has the format: {owner}/{repo_slug}
+     */
     public String getFullName() {
         return fullName;
     }
 
+    /**
+     * A boolean indicating a repository has an issue tracker.
+     */
     public boolean hasIssues() {
         return hasIssues;
     }
 
-    public BitBucketV2User getOwner() {
+    /**
+     * The owner's account.
+     */
+    public BitBucketV2Account getOwner() {
         return owner;
     }
 
+    /**
+     * The parent repository this repository was forked off (only present on forks). This is a repository object itself.
+     */
+    public BitBucketV2Repository getParent() {
+        return parent;
+    }
+
+    /**
+     * The size of the repository in bytes.
+     */
     public int getSize() {
         return size;
     }
 
+    /**
+     * A boolean indicating if a repository is private or public.
+     */
     public boolean isPrivate() {
         return isPrivate;
     }
 
+    /**
+     * The display name of the repository.
+     */
     public String getName() {
         return name;
     }

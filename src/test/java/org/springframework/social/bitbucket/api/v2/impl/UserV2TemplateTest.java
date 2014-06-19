@@ -17,8 +17,7 @@ package org.springframework.social.bitbucket.api.v2.impl;
 
 import org.junit.Test;
 import org.springframework.http.MediaType;
-import org.springframework.social.bitbucket.api.BitBucketSCM;
-import org.springframework.social.bitbucket.api.v2.*;
+import org.springframework.social.bitbucket.api.v2.payload.BitBucketV2Account;
 
 import static org.junit.Assert.assertEquals;
 import static org.springframework.http.HttpMethod.GET;
@@ -37,7 +36,7 @@ public class UserV2TemplateTest extends BaseV2TemplateTest {
                         withSuccess(jsonResource("get-user"),
                                 MediaType.APPLICATION_JSON));
 
-        BitBucketV2User team = bitBucket.getUserOperations().getUser("tutorials");
+        BitBucketV2Account team = bitBucket.getUserOperations().getUser("tutorials");
         assertEquals("tutorials", team.getUsername());
     }
 

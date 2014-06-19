@@ -1,5 +1,5 @@
 /**
- * Copyright 2012 the original author or authors.
+ * Copyright 2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,16 @@
  */
 package org.springframework.social.bitbucket.api.impl;
 
-import static java.util.Arrays.*;
-
-import java.util.List;
-
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.social.bitbucket.api.BitBucketPrivilege;
 import org.springframework.social.bitbucket.api.PrivilegeOperations;
 import org.springframework.social.bitbucket.api.RepoPrivilege;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
+
+import static java.util.Arrays.asList;
 
 public class PrivilegeTemplate extends AbstractBitBucketOperations implements
         PrivilegeOperations {
@@ -42,7 +42,7 @@ public class PrivilegeTemplate extends AbstractBitBucketOperations implements
 
     @Override
     public RepoPrivilege setPrivilege(String owner, String repoSlug,
-            String recipient, BitBucketPrivilege privilege) {
+                                      String recipient, BitBucketPrivilege privilege) {
 
         return restTemplate.exchange(
                 buildUrl("/privileges/{user}/{repo_slug}/{recipient}"),

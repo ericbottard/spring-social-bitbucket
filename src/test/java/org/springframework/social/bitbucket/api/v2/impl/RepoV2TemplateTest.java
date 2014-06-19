@@ -18,9 +18,9 @@ package org.springframework.social.bitbucket.api.v2.impl;
 import org.junit.Test;
 import org.springframework.http.MediaType;
 import org.springframework.social.bitbucket.api.BitBucketSCM;
-import org.springframework.social.bitbucket.api.v2.BitBucketForkPolicy;
-import org.springframework.social.bitbucket.api.v2.BitBucketV2Repository;
-import org.springframework.social.bitbucket.api.v2.RepositoryPage;
+import org.springframework.social.bitbucket.api.v2.payload.BitBucketForkPolicy;
+import org.springframework.social.bitbucket.api.v2.payload.BitBucketV2Repository;
+import org.springframework.social.bitbucket.api.v2.payload.RepositoryPage;
 
 import static org.junit.Assert.assertEquals;
 import static org.springframework.http.HttpMethod.GET;

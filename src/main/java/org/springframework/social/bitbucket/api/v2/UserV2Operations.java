@@ -1,5 +1,5 @@
 /**
- * Copyright 2012 the original author or authors.
+ * Copyright 2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,23 +15,27 @@
  */
 package org.springframework.social.bitbucket.api.v2;
 
+import org.springframework.social.bitbucket.api.v2.payload.AccountPage;
+import org.springframework.social.bitbucket.api.v2.payload.BitBucketV2Account;
+import org.springframework.social.bitbucket.api.v2.payload.RepositoryPage;
+
 public interface UserV2Operations {
 
-    BitBucketV2User getUser(String username);
+    BitBucketV2Account getUser(String username);
 
-    UserPage getFollowers(String username);
+    AccountPage getFollowers(String username);
 
-    UserPage getFollowers(BitBucketV2User user);
+    AccountPage getFollowers(BitBucketV2Account user);
 
-    UserPage getFollowing(String username);
+    AccountPage getFollowing(String username);
 
-    UserPage getFollowing(BitBucketV2User user);
+    AccountPage getFollowing(BitBucketV2Account user);
 
     RepositoryPage getRepositories(String username);
 
-    RepositoryPage getRepositories(BitBucketV2User user);
+    RepositoryPage getRepositories(BitBucketV2Account user);
 
-    UserPage getNextPage(UserPage page);
+    AccountPage getNextPage(AccountPage page);
 
     RepositoryPage getNextPage(RepositoryPage page);
 

@@ -13,15 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.social.bitbucket.api;
+package org.springframework.social.bitbucket.api.v2.payload;
 
-/**
- * The type of action that can be taken on a repository.
- *
- * @author Eric Bottard
- */
-public enum BitBucketPrivilege {
-
-    read, write, admin;
-
+public enum BitBucketV2Kind {
+    team,
+    user;
 }

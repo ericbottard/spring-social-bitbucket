@@ -1,5 +1,5 @@
 /**
- * Copyright 2012 the original author or authors.
+ * Copyright 2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.social.bitbucket.api.v2;
+package org.springframework.social.bitbucket.api.v2.payload;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -42,34 +42,65 @@ public class BitBucketV2Page<T> {
     @JsonProperty
     private String previous;
 
+    /**
+     * Current number of objects on the existing page. Globally, the minimum length is 10 and the maximum is 100. Some
+     * APIs may specify a different default.
+     */
     public int getPageLength() {
         return pageLength;
     }
 
+    /**
+     * The list of objects. This contains at most pageLength objects.
+     */
     public List<T> getValues() {
         return values;
     }
 
+    /**
+     * Page number of the current results. This is an optional element that is not provided in all responses.
+     */
     public int getPage() {
         return page;
     }
 
+    /**
+     * Total number of objects in the response. This is an optional element that is not provided in all responses, as it
+     * can be expensive to compute.
+     */
     public int getSize() {
         return size;
     }
 
+    /**
+     * Link toe previous page if it exists. A collections first page does not have this value. This is an optional
+     * element that is not provided in all responses. Some result sets strictly support forward navigation and never
+     * provide previous links. Clients must anticipate that backwards navigation is not always available.
+     * <p/>
+     * Use this link to navigate the result set and refrain from constructing your own URLs.
+     */
     public String getNext() {
         return next;
     }
 
+    /**
+     * Link to the next page if it exists. The last page of a collection does not have this value. Use this link to
+     * navigate the result set and refrain from constructing your own URLs.
+     */
     public String getPrevious() {
         return previous;
     }
 
+    /**
+     * @return true if this page has a next page defined.
+     */
     public boolean hasNext() {
         return StringUtils.hasText(next);
     }
 
+    /**
+     * @return true if this page has a previous page defiend.
+     */
     public boolean hasPrevious() {
         return StringUtils.hasText(previous);
     }

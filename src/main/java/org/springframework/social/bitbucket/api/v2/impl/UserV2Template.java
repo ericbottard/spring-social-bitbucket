@@ -1,5 +1,5 @@
 /**
- * Copyright 2012 the original author or authors.
+ * Copyright 2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,10 @@
 package org.springframework.social.bitbucket.api.v2.impl;
 
 import org.springframework.social.bitbucket.api.impl.AbstractBitBucketOperations;
-import org.springframework.social.bitbucket.api.v2.*;
+import org.springframework.social.bitbucket.api.v2.UserV2Operations;
+import org.springframework.social.bitbucket.api.v2.payload.AccountPage;
+import org.springframework.social.bitbucket.api.v2.payload.BitBucketV2Account;
+import org.springframework.social.bitbucket.api.v2.payload.RepositoryPage;
 import org.springframework.web.client.RestTemplate;
 
 public class UserV2Template extends AbstractBitBucketOperations implements UserV2Operations {
@@ -26,36 +29,36 @@ public class UserV2Template extends AbstractBitBucketOperations implements UserV
     }
 
     @Override
-    public BitBucketV2User getUser(String username) {
+    public BitBucketV2Account getUser(String username) {
         return restTemplate.getForObject(
                 buildUrl("/users/{username}"),
-                BitBucketV2User.class,
+                BitBucketV2Account.class,
                 username);
     }
 
     @Override
-    public UserPage getFollowers(String username) {
+    public AccountPage getFollowers(String username) {
         return restTemplate.getForObject(
                 buildUrl("/users/{username}/followers"),
-                UserPage.class,
+                AccountPage.class,
                 username);
     }
 
     @Override
-    public UserPage getFollowers(BitBucketV2User user) {
+    public AccountPage getFollowers(BitBucketV2Account user) {
         return getFollowers(user.getUsername());
     }
 
     @Override
-    public UserPage getFollowing(String username) {
+    public AccountPage getFollowing(String username) {
         return restTemplate.getForObject(
                 buildUrl("/users/{username}/following"),
-                UserPage.class,
+                AccountPage.class,
                 username);
     }
 
     @Override
-    public UserPage getFollowing(BitBucketV2User user) {
+    public AccountPage getFollowing(BitBucketV2Account user) {
         return getFollowing(user.getUsername());
     }
 
@@ -68,15 +71,15 @@ public class UserV2Template extends AbstractBitBucketOperations implements UserV
     }
 
     @Override
-    public RepositoryPage getRepositories(BitBucketV2User user) {
+    public RepositoryPage getRepositories(BitBucketV2Account user) {
         return getRepositories(user.getUsername());
     }
 
     @Override
-    public UserPage getNextPage(UserPage page) {
+    public AccountPage getNextPage(AccountPage page) {
         return restTemplate.getForObject(
                 page.getNext(),
-                UserPage.class);
+                AccountPage.class);
     }
 
     @Override

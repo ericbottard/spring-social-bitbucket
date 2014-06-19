@@ -7,6 +7,7 @@ See https://confluence.atlassian.com/display/BITBUCKET/Use+the+Bitbucket+REST+AP
 Authors
 -------
 Eric BOTTARD
+Guillaume LEDERREY
 
 License
 -------

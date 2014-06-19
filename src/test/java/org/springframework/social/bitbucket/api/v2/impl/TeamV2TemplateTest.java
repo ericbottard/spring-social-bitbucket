@@ -18,7 +18,7 @@ package org.springframework.social.bitbucket.api.v2.impl;
 import org.junit.Test;
 import org.springframework.http.MediaType;
 import org.springframework.social.bitbucket.api.BitBucketSCM;
-import org.springframework.social.bitbucket.api.v2.*;
+import org.springframework.social.bitbucket.api.v2.payload.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.springframework.http.HttpMethod.GET;
@@ -37,7 +37,7 @@ public class TeamV2TemplateTest extends BaseV2TemplateTest {
                         withSuccess(jsonResource("get-team"),
                                 MediaType.APPLICATION_JSON));
 
-        BitBucketV2User team = bitBucket.getTeamOperations().getTeam("1team");
+        BitBucketV2Account team = bitBucket.getTeamOperations().getTeam("1team");
         assertEquals("1team", team.getUsername());
         assertEquals(BitBucketV2Kind.team, team.getKind());
         assertEquals("", team.getWebsite());
@@ -54,12 +54,12 @@ public class TeamV2TemplateTest extends BaseV2TemplateTest {
                         withSuccess(jsonResource("get-team-members"),
                                 MediaType.APPLICATION_JSON));
 
-        UserPage page = bitBucket.getTeamOperations().getMembers("1team");
+        AccountPage page = bitBucket.getTeamOperations().getMembers("1team");
         assertEquals(50, page.getPageLength());
         assertEquals(1, page.getPage());
         assertEquals(1, page.getSize());
         assertEquals(1, page.getValues().size());
-        BitBucketV2User user = page.getValues().get(0);
+        BitBucketV2Account user = page.getValues().get(0);
         assertEquals("tutorials", user.getUsername());
         assertEquals("https://tutorials.bitbucket.org/", user.getWebsite());
         assertEquals("first name last", user.getDisplayName());
@@ -75,12 +75,12 @@ public class TeamV2TemplateTest extends BaseV2TemplateTest {
                         withSuccess(jsonResource("get-team-followers"),
                                 MediaType.APPLICATION_JSON));
 
-        UserPage page = bitBucket.getTeamOperations().getFollowers("1team");
+        AccountPage page = bitBucket.getTeamOperations().getFollowers("1team");
         assertEquals(10, page.getPageLength());
         assertEquals(1, page.getPage());
         assertEquals(1, page.getSize());
         assertEquals(1, page.getValues().size());
-        BitBucketV2User user = page.getValues().get(0);
+        BitBucketV2Account user = page.getValues().get(0);
         assertEquals("tutorials", user.getUsername());
         assertEquals(BitBucketV2Kind.team, user.getKind());
         assertEquals("https://tutorials.bitbucket.org/", user.getWebsite());
@@ -97,12 +97,12 @@ public class TeamV2TemplateTest extends BaseV2TemplateTest {
                         withSuccess(jsonResource("get-team-following"),
                                 MediaType.APPLICATION_JSON));
 
-        UserPage page = bitBucket.getTeamOperations().getFollowing("1team");
+        AccountPage page = bitBucket.getTeamOperations().getFollowing("1team");
         assertEquals(10, page.getPageLength());
         assertEquals(1, page.getPage());
         assertEquals(1, page.getSize());
         assertEquals(1, page.getValues().size());
-        BitBucketV2User user = page.getValues().get(0);
+        BitBucketV2Account user = page.getValues().get(0);
         assertEquals("bitbucket", user.getUsername());
         assertEquals(BitBucketV2Kind.team, user.getKind());
         assertEquals("http://bitbucket.org/", user.getWebsite());
