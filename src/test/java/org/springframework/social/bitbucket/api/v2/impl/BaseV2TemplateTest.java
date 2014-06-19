@@ -18,8 +18,6 @@ package org.springframework.social.bitbucket.api.v2.impl;
 import org.junit.Before;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
-import org.springframework.social.bitbucket.api.impl.BitBucketTemplate;
-import org.springframework.social.bitbucket.api.v2.BitBucketV2;
 import org.springframework.test.web.client.MockRestServiceServer;
 
 public class BaseV2TemplateTest {
