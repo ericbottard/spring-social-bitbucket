@@ -29,7 +29,7 @@ public class UserV2Template extends AbstractBitBucketOperations implements UserV
     }
 
     @Override
-    public BitBucketV2Account getUser(String username) {
+    public final BitBucketV2Account getUser(String username) {
         return restTemplate.getForObject(
                 buildUrl("/users/{username}"),
                 BitBucketV2Account.class,
@@ -37,7 +37,7 @@ public class UserV2Template extends AbstractBitBucketOperations implements UserV
     }
 
     @Override
-    public AccountPage getFollowers(String username) {
+    public final AccountPage getFollowers(String username) {
         return restTemplate.getForObject(
                 buildUrl("/users/{username}/followers"),
                 AccountPage.class,
@@ -45,12 +45,12 @@ public class UserV2Template extends AbstractBitBucketOperations implements UserV
     }
 
     @Override
-    public AccountPage getFollowers(BitBucketV2Account user) {
+    public final AccountPage getFollowers(BitBucketV2Account user) {
         return getFollowers(user.getUsername());
     }
 
     @Override
-    public AccountPage getFollowing(String username) {
+    public final AccountPage getFollowing(String username) {
         return restTemplate.getForObject(
                 buildUrl("/users/{username}/following"),
                 AccountPage.class,
@@ -58,12 +58,12 @@ public class UserV2Template extends AbstractBitBucketOperations implements UserV
     }
 
     @Override
-    public AccountPage getFollowing(BitBucketV2Account user) {
+    public final AccountPage getFollowing(BitBucketV2Account user) {
         return getFollowing(user.getUsername());
     }
 
     @Override
-    public RepositoryPage getRepositories(String username) {
+    public final RepositoryPage getRepositories(String username) {
         return restTemplate.getForObject(
                 buildUrl("/repositories/{username}"),
                 RepositoryPage.class,
@@ -71,19 +71,19 @@ public class UserV2Template extends AbstractBitBucketOperations implements UserV
     }
 
     @Override
-    public RepositoryPage getRepositories(BitBucketV2Account user) {
+    public final RepositoryPage getRepositories(BitBucketV2Account user) {
         return getRepositories(user.getUsername());
     }
 
     @Override
-    public AccountPage getNextPage(AccountPage page) {
+    public final AccountPage getNextPage(AccountPage page) {
         return restTemplate.getForObject(
                 page.getNext(),
                 AccountPage.class);
     }
 
     @Override
-    public RepositoryPage getNextPage(RepositoryPage page) {
+    public final RepositoryPage getNextPage(RepositoryPage page) {
         return restTemplate.getForObject(
                 page.getNext(),
                 RepositoryPage.class);

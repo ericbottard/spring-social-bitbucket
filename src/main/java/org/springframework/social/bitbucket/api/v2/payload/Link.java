@@ -39,15 +39,15 @@ public class Link {
     @JsonProperty
     private boolean templated;
 
-    public String getHref() {
+    public final String getHref() {
         return href;
     }
 
-    public String getName() {
+    public final String getName() {
         return name;
     }
 
-    public String getTitle() {
+    public final String getTitle() {
         return title;
     }
 
@@ -56,7 +56,7 @@ public class Link {
      *
      * @link http://tools.ietf.org/html/rfc6570
      */
-    public boolean isTemplated() {
+    public final boolean isTemplated() {
         return templated;
     }
 }

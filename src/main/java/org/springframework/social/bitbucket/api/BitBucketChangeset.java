@@ -29,35 +29,6 @@ import java.util.List;
 public class BitBucketChangeset {
 
     /**
-     * A modification on a single file.
-     *
-     * @author ericbottard
-     */
-    @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class FileModification {
-
-        @JsonProperty
-        private String file;
-
-        @JsonProperty
-        private FileModificationType type;
-
-        /**
-         * The path of the file (or directory) affected.
-         */
-        public String getFile() {
-            return file;
-        }
-
-        /**
-         * The kind of modification.
-         */
-        public FileModificationType getType() {
-            return type;
-        }
-    }
-
-    /**
      * The kind of modification on a file path.
      */
     public static enum FileModificationType {
@@ -154,6 +125,35 @@ public class BitBucketChangeset {
     @Override
     public String toString() {
         return getNode();
+    }
+
+    /**
+     * A modification on a single file.
+     *
+     * @author ericbottard
+     */
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class FileModification {
+
+        @JsonProperty
+        private String file;
+
+        @JsonProperty
+        private FileModificationType type;
+
+        /**
+         * The path of the file (or directory) affected.
+         */
+        public String getFile() {
+            return file;
+        }
+
+        /**
+         * The kind of modification.
+         */
+        public FileModificationType getType() {
+            return type;
+        }
     }
 
 }

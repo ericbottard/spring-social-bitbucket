@@ -52,7 +52,7 @@ public class BitBucketFileMetadata {
     }
 
     public Date getTimestamp() {
-        return timestamp;
+        return (Date) timestamp.clone();
     }
 
     public int getSize() {

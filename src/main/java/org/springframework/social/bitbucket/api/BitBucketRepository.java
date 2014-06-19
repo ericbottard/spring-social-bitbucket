@@ -34,7 +34,7 @@ public class BitBucketRepository implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @JsonProperty("is_private")
-    private boolean _private;
+    private boolean isPrivate;
 
     @JsonProperty("utc_created_on")
     @JsonDeserialize(using = UTCDateDeserializer.class)
@@ -72,7 +72,7 @@ public class BitBucketRepository implements Serializable {
      * The date when the repository was created.
      */
     public Date getCreatedAt() {
-        return createdAt;
+        return (Date) createdAt.clone();
     }
 
     /**
@@ -86,7 +86,7 @@ public class BitBucketRepository implements Serializable {
      * When this repository was last updated.
      */
     public Date getLastUpdatedOn() {
-        return lastUpdatedOn;
+        return (Date) lastUpdatedOn.clone();
     }
 
     /**
@@ -137,7 +137,7 @@ public class BitBucketRepository implements Serializable {
      * it) or is for everyone to see.
      */
     public boolean isPrivate() {
-        return _private;
+        return isPrivate;
     }
 
     public boolean isReadOnly() {

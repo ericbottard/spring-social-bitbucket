@@ -52,35 +52,35 @@ public class BitBucketV2RepositoryCreation {
      * The SCM type for the new repo. Either "hg" or "git". When omitted, the type of your most recently created
      * repository will be used (optional).
      */
-    public BitBucketV2Kind getScm() {
+    public final BitBucketV2Kind getScm() {
         return scm;
     }
 
     /**
      * The name for the repository. When omitted, this assumes that value of the repo_slug part of the URL (optional).
      */
-    public String getName() {
+    public final String getName() {
         return name;
     }
 
     /**
      * Whether the repository should be public (false) or private (true).
      */
-    public boolean isPrivate() {
+    public final boolean isPrivate() {
         return isPrivate;
     }
 
     /**
      * The human readable description of the repository (optional).
      */
-    public String getDescription() {
+    public final String getDescription() {
         return description;
     }
 
     /**
      * Control the rules for forking this repository.
      */
-    public BitBucketForkPolicy getForkingPolicy() {
+    public final BitBucketForkPolicy getForkingPolicy() {
         return forkingPolicy;
     }
 
@@ -88,21 +88,21 @@ public class BitBucketV2RepositoryCreation {
      * The programming language used in the repository. Must be a valid (lowercase) item as shown in the drop-down list
      * on the repository's admin page (optional).
      */
-    public String getLanguage() {
+    public final String getLanguage() {
         return language;
     }
 
     /**
      * Whether the repository should have an issue tracker (optional – defaults to false).
      */
-    public boolean hasIssues() {
+    public final boolean hasIssues() {
         return hasIssues;
     }
 
     /**
      * Whether the repository should have a wiki (optional – defaults to false).
      */
-    public boolean hasWiki() {
+    public final boolean hasWiki() {
         return hasWiki;
     }
 }

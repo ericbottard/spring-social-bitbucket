@@ -56,6 +56,6 @@ public class BitBucketApiHelper implements ApiHelper<BitBucket> {
         return connection != null ? connection.getApi() : null;
     }
 
-    private final static Log logger = LogFactory
+    private static final Log logger = LogFactory
             .getLog(BitBucketApiHelper.class);
 }

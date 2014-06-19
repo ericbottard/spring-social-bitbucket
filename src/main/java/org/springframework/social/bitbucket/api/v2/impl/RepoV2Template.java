@@ -25,51 +25,54 @@ import static com.google.common.base.Preconditions.*;
 
 public class RepoV2Template extends AbstractBitBucketOperations implements RepoV2Operations {
 
+    public static final String OWNER_IS_REQUIRED = "owner is required";
+    public static final String REPO_SLUG_IS_REQUIRED = "repoSlug is required";
+
     public RepoV2Template(RestTemplate restTemplate, boolean authorized) {
         super(restTemplate, authorized, V2);
     }
 
     @Override
-    public RepositoryPage getRepositories() {
+    public final RepositoryPage getRepositories() {
         return restTemplate.getForObject(
                 buildUrl("/repositories"),
                 RepositoryPage.class);
     }
 
     @Override
-    public RepositoryPage getRepositories(String owner) {
-        checkArgument(StringUtils.hasText(owner), "owner is required");
+    public final RepositoryPage getRepositories(String owner) {
+        checkArgument(StringUtils.hasText(owner), OWNER_IS_REQUIRED);
         return restTemplate.getForObject(
                 buildUrl("/repositories/{owner}"),
                 RepositoryPage.class, owner);
     }
 
     @Override
-    public RepositoryPage getRepositories(BitBucketV2Account owner) {
-        checkNotNull(owner, "owner is required");
+    public final RepositoryPage getRepositories(BitBucketV2Account owner) {
+        checkNotNull(owner, OWNER_IS_REQUIRED);
         return getRepositories(owner.getUsername());
     }
 
     @Override
-    public BitBucketV2Repository getRepository(String owner, String repoSlug) {
-        checkArgument(StringUtils.hasText(owner), "owner is required");
-        checkArgument(StringUtils.hasText(repoSlug), "repoSlug is required");
+    public final BitBucketV2Repository getRepository(String owner, String repoSlug) {
+        checkArgument(StringUtils.hasText(owner), OWNER_IS_REQUIRED);
+        checkArgument(StringUtils.hasText(repoSlug), REPO_SLUG_IS_REQUIRED);
         return restTemplate.getForObject(
                 buildUrl("/repositories/{owner}/{repo_slug}"),
                 BitBucketV2Repository.class, owner, repoSlug);
     }
 
     @Override
-    public BitBucketV2Repository getRepository(BitBucketV2Account owner, String repoSlug) {
-        checkNotNull(owner, "owner is required");
-        checkArgument(StringUtils.hasText(repoSlug), "repoSlug is required");
+    public final BitBucketV2Repository getRepository(BitBucketV2Account owner, String repoSlug) {
+        checkNotNull(owner, OWNER_IS_REQUIRED);
+        checkArgument(StringUtils.hasText(repoSlug), REPO_SLUG_IS_REQUIRED);
         return getRepository(owner.getUsername(), repoSlug);
     }
 
     @Override
-    public void createRepository(String owner, String repoSlug, BitBucketV2RepositoryCreation repository) {
-        checkArgument(StringUtils.hasText(owner), "owner is required");
-        checkArgument(StringUtils.hasText(repoSlug), "repoSlug is required");
+    public final void createRepository(String owner, String repoSlug, BitBucketV2RepositoryCreation repository) {
+        checkArgument(StringUtils.hasText(owner), OWNER_IS_REQUIRED);
+        checkArgument(StringUtils.hasText(repoSlug), REPO_SLUG_IS_REQUIRED);
         checkNotNull(repository, "repository is required");
         restTemplate.postForObject(
                 buildUrl("/repositories/{owner}/{repo_slug}"),
@@ -81,61 +84,61 @@ public class RepoV2Template extends AbstractBitBucketOperations implements RepoV
     }
 
     @Override
-    public void createRepository(BitBucketV2Account owner, String repoSlug, BitBucketV2RepositoryCreation repository) {
-        checkNotNull(owner, "owner is required");
-        checkArgument(StringUtils.hasText(repoSlug), "repoSlug is required");
+    public final void createRepository(BitBucketV2Account owner, String repoSlug, BitBucketV2RepositoryCreation repository) {
+        checkNotNull(owner, OWNER_IS_REQUIRED);
+        checkArgument(StringUtils.hasText(repoSlug), REPO_SLUG_IS_REQUIRED);
         checkNotNull(repository, "repository is required");
         createRepository(owner.getUsername(), repoSlug, repository);
     }
 
     @Override
-    public void deleteRepository(String owner, String repoSlug) {
-        checkArgument(StringUtils.hasText(owner), "owner is required");
-        checkArgument(StringUtils.hasText(repoSlug), "repoSlug is required");
+    public final void deleteRepository(String owner, String repoSlug) {
+        checkArgument(StringUtils.hasText(owner), OWNER_IS_REQUIRED);
+        checkArgument(StringUtils.hasText(repoSlug), REPO_SLUG_IS_REQUIRED);
         restTemplate.delete(buildUrl("/repositories/{owner}/{repo_slug}"), owner, repoSlug);
     }
 
     @Override
-    public void deleteRepository(BitBucketV2Account owner, String repoSlug) {
-        checkNotNull(owner, "owner is required");
-        checkArgument(StringUtils.hasText(repoSlug), "repoSlug is required");
+    public final void deleteRepository(BitBucketV2Account owner, String repoSlug) {
+        checkNotNull(owner, OWNER_IS_REQUIRED);
+        checkArgument(StringUtils.hasText(repoSlug), REPO_SLUG_IS_REQUIRED);
         deleteRepository(owner.getUsername(), repoSlug);
     }
 
     @Override
-    public AccountPage getWatchers(String owner, String repoSlug) {
-        checkArgument(StringUtils.hasText(owner), "owner is required");
-        checkArgument(StringUtils.hasText(repoSlug), "repoSlug is required");
+    public final AccountPage getWatchers(String owner, String repoSlug) {
+        checkArgument(StringUtils.hasText(owner), OWNER_IS_REQUIRED);
+        checkArgument(StringUtils.hasText(repoSlug), REPO_SLUG_IS_REQUIRED);
         return restTemplate.getForObject(
                 buildUrl("/repositories/{owner}/{repo_slug}/watchers"),
                 AccountPage.class, owner, repoSlug);
     }
 
     @Override
-    public AccountPage getWatchers(BitBucketV2Account owner, String repoSlug) {
-        checkNotNull(owner, "owner is required");
-        checkArgument(StringUtils.hasText(repoSlug), "repoSlug is required");
+    public final AccountPage getWatchers(BitBucketV2Account owner, String repoSlug) {
+        checkNotNull(owner, OWNER_IS_REQUIRED);
+        checkArgument(StringUtils.hasText(repoSlug), REPO_SLUG_IS_REQUIRED);
         return getWatchers(owner.getUsername(), repoSlug);
     }
 
     @Override
-    public RepositoryPage getForks(String owner, String repoSlug) {
-        checkArgument(StringUtils.hasText(owner), "owner is required");
-        checkArgument(StringUtils.hasText(repoSlug), "repoSlug is required");
+    public final RepositoryPage getForks(String owner, String repoSlug) {
+        checkArgument(StringUtils.hasText(owner), OWNER_IS_REQUIRED);
+        checkArgument(StringUtils.hasText(repoSlug), REPO_SLUG_IS_REQUIRED);
         return restTemplate.getForObject(
                 buildUrl("/repositories/{owner}/{repo_slug}/forks"),
                 RepositoryPage.class, owner, repoSlug);
     }
 
     @Override
-    public RepositoryPage getForks(BitBucketV2Account owner, String repoSlug) {
-        checkNotNull(owner, "owner is required");
-        checkArgument(StringUtils.hasText(repoSlug), "repoSlug is required");
+    public final RepositoryPage getForks(BitBucketV2Account owner, String repoSlug) {
+        checkNotNull(owner, OWNER_IS_REQUIRED);
+        checkArgument(StringUtils.hasText(repoSlug), REPO_SLUG_IS_REQUIRED);
         return getForks(owner.getUsername(), repoSlug);
     }
 
     @Override
-    public RepositoryPage getNextPage(RepositoryPage page) {
+    public final RepositoryPage getNextPage(RepositoryPage page) {
         checkNotNull(page, "page is required");
         checkState(page.hasNext(), "this page does not have a next page");
         return restTemplate.getForObject(
@@ -144,7 +147,7 @@ public class RepoV2Template extends AbstractBitBucketOperations implements RepoV
     }
 
     @Override
-    public RepositoryPage getPreviousPage(RepositoryPage page) {
+    public final RepositoryPage getPreviousPage(RepositoryPage page) {
         checkNotNull(page, "page is required");
         checkState(page.hasNext(), "this page does not have a previous page");
         return restTemplate.getForObject(

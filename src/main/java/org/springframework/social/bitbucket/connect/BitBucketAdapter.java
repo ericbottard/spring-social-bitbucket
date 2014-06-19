@@ -28,11 +28,7 @@ public class BitBucketAdapter implements ApiAdapter<BitBucket> {
     @Override
     public boolean test(BitBucket api) {
         try {
-            if (null != api.userOperations().getUserWithRepositories()) {
-                return true;
-            } else {
-                return false;
-            }
+            return null != api.userOperations().getUserWithRepositories();
         } catch (ApiException e) {
             return false;
         }

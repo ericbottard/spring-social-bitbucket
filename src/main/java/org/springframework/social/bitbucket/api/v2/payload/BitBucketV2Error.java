@@ -40,14 +40,14 @@ public class BitBucketV2Error extends RuntimeException {
     /**
      * A short description of the problem. This element is always present. Its value may be localized.
      */
-    public String getMessage() {
+    public final String getMessage() {
         return message;
     }
 
     /**
      * An optional detailed explanation of the failure. Its value may be localized.
      */
-    public String getDetail() {
+    public final String getDetail() {
         return detail;
     }
 
@@ -56,7 +56,7 @@ public class BitBucketV2Error extends RuntimeException {
      * a bug in an API and this field is provided, please mention it if you decide to contact support as it will greatly
      * help us narrow down the problem.
      */
-    public String getId() {
+    public final String getId() {
         return id;
     }
 }

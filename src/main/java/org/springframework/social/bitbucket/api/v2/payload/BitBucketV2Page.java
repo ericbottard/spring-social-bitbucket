@@ -46,21 +46,21 @@ public class BitBucketV2Page<T> {
      * Current number of objects on the existing page. Globally, the minimum length is 10 and the maximum is 100. Some
      * APIs may specify a different default.
      */
-    public int getPageLength() {
+    public final int getPageLength() {
         return pageLength;
     }
 
     /**
      * The list of objects. This contains at most pageLength objects.
      */
-    public List<T> getValues() {
+    public final List<T> getValues() {
         return values;
     }
 
     /**
      * Page number of the current results. This is an optional element that is not provided in all responses.
      */
-    public int getPage() {
+    public final int getPage() {
         return page;
     }
 
@@ -68,7 +68,7 @@ public class BitBucketV2Page<T> {
      * Total number of objects in the response. This is an optional element that is not provided in all responses, as it
      * can be expensive to compute.
      */
-    public int getSize() {
+    public final int getSize() {
         return size;
     }
 
@@ -79,7 +79,7 @@ public class BitBucketV2Page<T> {
      * <p/>
      * Use this link to navigate the result set and refrain from constructing your own URLs.
      */
-    public String getNext() {
+    public final String getNext() {
         return next;
     }
 
@@ -87,21 +87,21 @@ public class BitBucketV2Page<T> {
      * Link to the next page if it exists. The last page of a collection does not have this value. Use this link to
      * navigate the result set and refrain from constructing your own URLs.
      */
-    public String getPrevious() {
+    public final String getPrevious() {
         return previous;
     }
 
     /**
      * @return true if this page has a next page defined.
      */
-    public boolean hasNext() {
+    public final boolean hasNext() {
         return StringUtils.hasText(next);
     }
 
     /**
      * @return true if this page has a previous page defiend.
      */
-    public boolean hasPrevious() {
+    public final boolean hasPrevious() {
         return StringUtils.hasText(previous);
     }
 }

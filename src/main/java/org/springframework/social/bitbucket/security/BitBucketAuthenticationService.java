@@ -18,10 +18,9 @@ package org.springframework.social.bitbucket.security;
 import org.springframework.social.bitbucket.api.BitBucket;
 import org.springframework.social.bitbucket.connect.BitBucketConnectionFactory;
 import org.springframework.social.security.provider.OAuth1AuthenticationService;
-import org.springframework.social.security.provider.SocialAuthenticationService;
 
 /**
- * {@link SocialAuthenticationService} implementation for BitBucket.
+ * {@link org.springframework.social.security.provider.SocialAuthenticationService} implementation for BitBucket.
  *
  * @author Eric Bottard
  */

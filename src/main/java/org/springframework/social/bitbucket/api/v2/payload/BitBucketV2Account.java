@@ -40,23 +40,23 @@ public class BitBucketV2Account {
     @JsonProperty
     private String location;
 
-    public String getUsername() {
+    public final String getUsername() {
         return username;
     }
 
-    public BitBucketV2Kind getKind() {
+    public final BitBucketV2Kind getKind() {
         return kind;
     }
 
-    public String getWebsite() {
+    public final String getWebsite() {
         return website;
     }
 
-    public String getDisplayName() {
+    public final String getDisplayName() {
         return displayName;
     }
 
-    public String getLocation() {
+    public final String getLocation() {
         return location;
     }
 }

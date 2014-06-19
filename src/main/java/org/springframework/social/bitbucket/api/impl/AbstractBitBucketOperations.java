@@ -19,7 +19,7 @@ import org.springframework.web.client.RestTemplate;
 
 public class AbstractBitBucketOperations {
 
-    protected final boolean authorized;
+    private final boolean authorized;
 
     protected final RestTemplate restTemplate;
 
@@ -32,13 +32,20 @@ public class AbstractBitBucketOperations {
 
     public AbstractBitBucketOperations(RestTemplate restTemplate,
                                        boolean authorized, String version) {
-        this.authorized = authorized;
         this.restTemplate = restTemplate;
+        this.authorized = authorized;
         this.version = version;
     }
 
-    protected String buildUrl(String string) {
+    protected final String buildUrl(String string) {
         return BASE_API_URL + version + string;
     }
 
+    protected final boolean isAuthorized() {
+        return authorized;
+    }
+
+    protected final RestTemplate getRestTemplate() {
+        return restTemplate;
+    }
 }

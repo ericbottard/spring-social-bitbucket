@@ -15,12 +15,11 @@
  */
 package org.springframework.social.bitbucket.config.xml;
 
-import org.springframework.beans.factory.xml.NamespaceHandler;
 import org.springframework.social.config.xml.AbstractProviderConfigBeanDefinitionParser;
 import org.springframework.social.config.xml.AbstractProviderConfigNamespaceHandler;
 
 /**
- * {@link NamespaceHandler} for BitBucket.
+ * {@link org.springframework.beans.factory.xml.NamespaceHandler} for BitBucket.
  *
  * @author Eric Bottard
  */

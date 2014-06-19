@@ -29,59 +29,59 @@ public interface RepoOperations {
      * Returns the public repository that belongs to {@code user} and that has
      * {@code repoSlug} as its technical name.
      */
-    public BitBucketRepository getRepository(String user, String repoSlug);
+    BitBucketRepository getRepository(String user, String repoSlug);
 
     /**
      * Returns the list of repositories for the current user.
      */
-    public List<BitBucketRepository> getUserRepositories();
+    List<BitBucketRepository> getUserRepositories();
 
     /**
      * Search for public repositories whose name contains the given String.
      */
-    public List<BitBucketRepository> search(String string);
+    List<BitBucketRepository> search(String string);
 
     /**
      * Returns a mapping between tags (keys) and changesets (values) on the
      * given repository.
      */
-    public Map<String, BitBucketChangeset> getTags(String user, String repoSlug);
+    Map<String, BitBucketChangeset> getTags(String user, String repoSlug);
 
     /**
      * Returns the list of users following the given repository.
      */
-    public List<BitBucketUser> getFollowers(String user, String repoSlug);
+    List<BitBucketUser> getFollowers(String user, String repoSlug);
 
     /**
      * Returns the last changesets on a repository, as well as information about
      * how many are available totally.
      */
-    public BitBucketChangesets getChangesets(String user, String repoSlug);
+    BitBucketChangesets getChangesets(String user, String repoSlug);
 
     /**
      * Returns some changesets on a repository, as well as information about how
      * many are available totally.
      */
-    public BitBucketChangesets getChangesets(String user, String repoSlug,
-                                             String start, int limit);
+    BitBucketChangesets getChangesets(String user, String repoSlug,
+                                      String start, int limit);
 
     /**
      * Returns information about a known directory, including children
      * directories and files.
      */
-    public BitBucketDirectory getDirectory(String user, String repoSlug,
-                                           String revision, String path);
+    BitBucketDirectory getDirectory(String user, String repoSlug,
+                                    String revision, String path);
 
     /**
      * Returns information and actual contents (as a String) about a known file
      * path.
      */
-    public BitBucketFile getFile(String string, String string2, String string3,
-                                 String string4);
+    BitBucketFile getFile(String string, String string2, String string3,
+                          String string4);
 
     /**
      * Creates a new repository under the account of the currently authenticated
      * user. The account automatically becomes the owner.
      */
-    public BitBucketRepository createRepository(RepoCreation options);
+    BitBucketRepository createRepository(RepoCreation options);
 }

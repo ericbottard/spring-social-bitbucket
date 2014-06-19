@@ -48,17 +48,17 @@ public class BitBucketV2Template extends AbstractOAuth1ApiBinding implements
     }
 
     @Override
-    public RepoV2Operations getRepoOperations() {
+    public final RepoV2Operations getRepoOperations() {
         return repoV2Operations;
     }
 
     @Override
-    public TeamV2Operations getTeamOperations() {
+    public final TeamV2Operations getTeamOperations() {
         return teamV2Operations;
     }
 
     @Override
-    public UserV2Operations getUserOperations() {
+    public final UserV2Operations getUserOperations() {
         return userV2Operations;
     }
 }
