@@ -25,3 +25,7 @@ Documentation
 As stated above, this BitBucket binding is inspired by Spring Social GitHub. If
 you're familiar with that project, Spring Social BitBucket should feel self
 explanatory.
+
+Build Status
+------------
+[![Build Status](https://travis-ci.org/gehel/puppet-nodejs.svg?branch=master)](https://travis-ci.org/gehel/puppet-nodejs)
