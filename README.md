@@ -28,4 +28,4 @@ explanatory.
 
 Build Status
 ------------
-[![Build Status](https://travis-ci.org/gehel/puppet-nodejs.svg?branch=master)](https://travis-ci.org/gehel/puppet-nodejs)
+[![Build Status](https://travis-ci.org/gehel/spring-social-bitbucket.svg?branch=master)](https://travis-ci.org/gehel/spring-social-bitbucket)
