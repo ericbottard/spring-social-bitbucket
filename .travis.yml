@@ -1,5 +1,13 @@
 language: java
 jdk:
   - openjdk7
-  - oraclejdk7
-script: "mvn verify"
+before_install: "git clone -b travis `git config --get remote.origin.url` target/travis"
+script: "mvn clean verify site --settings target/travis/settings.xml"
+branches:
+  except:
+    - travis
+    - gh-pages
+env:
+  global:
+    - secure: "CmMbWNBZrfbUevt50PpDmGlWkMq5DsSYTZrO9LVHvcepkPzQmIcMCq6milKzmrGtANZNpZiHpu/pBTCVQGMI0HFGrnZp/kXZ2IrAUi9e+gTuBdXz7eJMidpcA/sAeq46zi/4An03ZR0PweD9Nj1gepXKNSBFMOmSh5TG2orjbKs="
+    - secure: "XDL/7CL/CjqaDWyaUecCZu4jUEuVCtC507pCSmhCYqr8rZjktNG3J+kcEadmbza3n8t4aYi06loYmTAWxrhEZcnOmTMqclp3NOQWwmoSkq21EYPNcF9Y3/XQzVRqjHDOr+QWMAiLimPPv7qXUIlSfvm5gF1k1+xmJ1gt5sso8aU="
