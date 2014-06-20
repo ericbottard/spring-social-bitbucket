@@ -325,6 +325,7 @@
                             <report>dependency-convergence</report>
                             <report>dependency-info</report>
                             <report>dependency-management</report>
+                            <report>index</report>
                             <report>issue-tracking</report>
                             <report>license</report>
                             <report>plugin-management</report>
