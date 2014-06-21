@@ -144,14 +144,14 @@ public class BitBucketChangeset {
         /**
          * The path of the file (or directory) affected.
          */
-        public final String getFile() {
+        public String getFile() {
             return file;
         }
 
         /**
          * The kind of modification.
          */
-        public final FileModificationType getType() {
+        public FileModificationType getType() {
             return type;
         }
     }
