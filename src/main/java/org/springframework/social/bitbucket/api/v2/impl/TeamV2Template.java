@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2012 Eric Bottard (eric.bottard+ghpublic@gmail.com)
+ * Copyright (C) 2012 Eric Bottard / Guillaume Lederrey (eric.bottard+ghpublic@gmail.com / guillaume.lederrey@gmail.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,17 +88,4 @@ public class TeamV2Template extends AbstractBitBucketOperations implements TeamV
         return getRepositories(team.getUsername());
     }
 
-    @Override
-    public final RepositoryPage getNextPage(RepositoryPage page) {
-        return restTemplate.getForObject(
-                page.getNext(),
-                RepositoryPage.class);
-    }
-
-    @Override
-    public final AccountPage getNextPage(AccountPage page) {
-        return restTemplate.getForObject(
-                page.getNext(),
-                AccountPage.class);
-    }
 }

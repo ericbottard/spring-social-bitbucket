@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2012 Eric Bottard (eric.bottard+ghpublic@gmail.com)
+ * Copyright (C) 2012 Eric Bottard / Guillaume Lederrey (eric.bottard+ghpublic@gmail.com / guillaume.lederrey@gmail.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public class RepoV2TemplateTest extends BaseV2TemplateTest {
                         withSuccess(jsonResource("get-all-public-repositories"),
                                 MediaType.APPLICATION_JSON));
 
-        RepositoryPage repos = bitBucket.getRepoOperations().getRepositories();
+        RepositoryPage repos = bitBucket.getRepositoriesOperations().getRepositories();
         assertEquals(1, repos.getPage());
         assertEquals(10, repos.getPageLength());
         assertEquals(1, repos.getValues().size());
@@ -67,7 +67,7 @@ public class RepoV2TemplateTest extends BaseV2TemplateTest {
                         withSuccess(jsonResource("get-repositories-for-account"),
                                 MediaType.APPLICATION_JSON));
 
-        RepositoryPage repos = bitBucket.getRepoOperations().getRepositories("evzijst");
+        RepositoryPage repos = bitBucket.getRepositoriesOperations().getRepositories("evzijst");
         assertEquals(1, repos.getPage());
         assertEquals(10, repos.getPageLength());
         assertEquals(1, repos.getValues().size());

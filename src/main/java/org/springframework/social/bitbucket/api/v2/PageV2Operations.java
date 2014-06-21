@@ -13,34 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.social.bitbucket.api;
+package org.springframework.social.bitbucket.api.v2;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.social.bitbucket.api.v2.payload.AccountPage;
+import org.springframework.social.bitbucket.api.v2.payload.PullRequestPage;
+import org.springframework.social.bitbucket.api.v2.payload.RepositoryPage;
 
-import java.util.List;
+public interface PageV2Operations {
 
-/**
- * Container class that holds basic information about an account as well as a
- * list of repositories.
- *
- * @author Eric Bottard
- */
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class UserWithRepositories {
+    AccountPage getNextPage(AccountPage page);
 
-    @JsonProperty
-    private BitBucketUser user;
+    PullRequestPage getNextPage(PullRequestPage page);
 
-    @JsonProperty
-    private List<BitBucketRepository> repositories;
+    RepositoryPage getNextPage(RepositoryPage page);
 
-    public List<BitBucketRepository> getRepositories() {
-        return repositories;
-    }
+    AccountPage getPreviousPage(AccountPage page);
 
-    public BitBucketUser getUser() {
-        return user;
-    }
+    PullRequestPage getPreviousPage(PullRequestPage page);
+
+    RepositoryPage getPreviousPage(RepositoryPage page);
 
 }

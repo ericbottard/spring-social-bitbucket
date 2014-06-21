@@ -13,34 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.social.bitbucket.api;
+package org.springframework.social.bitbucket.api.v2;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.util.List;
-
-/**
- * Container class that holds basic information about an account as well as a
- * list of repositories.
- *
- * @author Eric Bottard
- */
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class UserWithRepositories {
-
-    @JsonProperty
-    private BitBucketUser user;
-
-    @JsonProperty
-    private List<BitBucketRepository> repositories;
-
-    public List<BitBucketRepository> getRepositories() {
-        return repositories;
-    }
-
-    public BitBucketUser getUser() {
-        return user;
-    }
+public interface BranchRestrictionsV2Operations {
 
 }

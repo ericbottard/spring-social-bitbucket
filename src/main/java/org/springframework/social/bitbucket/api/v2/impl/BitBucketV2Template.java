@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2012 Eric Bottard (eric.bottard+ghpublic@gmail.com)
+ * Copyright (C) 2012 Eric Bottard / Guillaume Lederrey (eric.bottard+ghpublic@gmail.com / guillaume.lederrey@gmail.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,20 +15,24 @@
  */
 package org.springframework.social.bitbucket.api.v2.impl;
 
-import org.springframework.social.bitbucket.api.v2.BitBucketV2;
-import org.springframework.social.bitbucket.api.v2.RepoV2Operations;
-import org.springframework.social.bitbucket.api.v2.TeamV2Operations;
-import org.springframework.social.bitbucket.api.v2.UserV2Operations;
+import org.springframework.social.bitbucket.api.v2.*;
 import org.springframework.social.oauth1.AbstractOAuth1ApiBinding;
 
 public class BitBucketV2Template extends AbstractOAuth1ApiBinding implements
         BitBucketV2 {
 
-    private RepoV2Operations repoV2Operations;
+    public static final String OWNER_IS_REQUIRED = "owner is required";
+    public static final String PAGE_IS_REQUIRED = "page is required";
+    public static final String PAGE_DOES_NOT_HAVE_A_PREVIOUS_PAGE = "this page does not have a previous page";
+    public static final String PAGE_DOES_NOT_HAVE_A_NEXT_PAGE = "this page does not have a next page";
+    public static final String REPO_SLUG_IS_REQUIRED = "repoSlug is required";
+    private RepositoriesV2Operations repositoriesV2Operations;
 
     private TeamV2Operations teamV2Operations;
 
     private UserV2Operations userV2Operations;
+
+    private PageV2Operations pageV2Operations;
 
     public BitBucketV2Template(String consumerKey, String consumerSecret,
                                String accessToken, String accessTokenSecret) {
@@ -42,14 +46,15 @@ public class BitBucketV2Template extends AbstractOAuth1ApiBinding implements
     }
 
     private void initSubApis() {
-        repoV2Operations = new RepoV2Template(getRestTemplate(), isAuthorized());
+        repositoriesV2Operations = new RepositoriesV2Template(getRestTemplate(), isAuthorized());
         teamV2Operations = new TeamV2Template(getRestTemplate(), isAuthorized());
         userV2Operations = new UserV2Template(getRestTemplate(), isAuthorized());
+        pageV2Operations = new PageV2Template(getRestTemplate(), isAuthorized());
     }
 
     @Override
-    public final RepoV2Operations getRepoOperations() {
-        return repoV2Operations;
+    public final RepositoriesV2Operations getRepositoriesOperations() {
+        return repositoriesV2Operations;
     }
 
     @Override
@@ -60,5 +65,10 @@ public class BitBucketV2Template extends AbstractOAuth1ApiBinding implements
     @Override
     public final UserV2Operations getUserOperations() {
         return userV2Operations;
+    }
+
+    @Override
+    public final PageV2Operations getPageOperations() {
+        return pageV2Operations;
     }
 }

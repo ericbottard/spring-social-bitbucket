@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2012 Eric Bottard (eric.bottard+ghpublic@gmail.com)
+ * Copyright (C) 2012 Eric Bottard / Guillaume Lederrey (eric.bottard+ghpublic@gmail.com / guillaume.lederrey@gmail.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,9 +20,11 @@ import org.springframework.social.ApiBinding;
 
 public interface BitBucketV2 extends ApiBinding {
 
-    RepoV2Operations getRepoOperations();
+    RepositoriesV2Operations getRepositoriesOperations();
 
     TeamV2Operations getTeamOperations();
 
     UserV2Operations getUserOperations();
+
+    PageV2Operations getPageOperations();
 }

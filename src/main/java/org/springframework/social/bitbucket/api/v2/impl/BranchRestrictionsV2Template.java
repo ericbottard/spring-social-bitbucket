@@ -13,34 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.social.bitbucket.api;
+package org.springframework.social.bitbucket.api.v2.impl;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.social.bitbucket.api.impl.AbstractBitBucketOperations;
+import org.springframework.social.bitbucket.api.v2.BranchRestrictionsV2Operations;
+import org.springframework.web.client.RestTemplate;
 
-import java.util.List;
+public class BranchRestrictionsV2Template extends AbstractBitBucketOperations implements BranchRestrictionsV2Operations {
 
-/**
- * Container class that holds basic information about an account as well as a
- * list of repositories.
- *
- * @author Eric Bottard
- */
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class UserWithRepositories {
-
-    @JsonProperty
-    private BitBucketUser user;
-
-    @JsonProperty
-    private List<BitBucketRepository> repositories;
-
-    public List<BitBucketRepository> getRepositories() {
-        return repositories;
-    }
-
-    public BitBucketUser getUser() {
-        return user;
+    public BranchRestrictionsV2Template(RestTemplate restTemplate, boolean authorized) {
+        super(restTemplate, authorized, V2);
     }
 
 }
