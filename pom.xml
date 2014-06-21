@@ -223,7 +223,7 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <configuration>
                     <suppressionsLocation>src/etc/checkstyle-suppressions.xml</suppressionsLocation>
-                    <maxAllowedViolations>120</maxAllowedViolations>
+                    <maxAllowedViolations>25</maxAllowedViolations>
                 </configuration>
                 <executions>
                     <execution>
@@ -238,4 +238,15 @@
         </plugins>
     </build>
 
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <configuration>
+                    <suppressionsLocation>src/etc/checkstyle-suppressions.xml</suppressionsLocation>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>
