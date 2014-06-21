@@ -1,8 +1,8 @@
 language: java
 jdk:
   - openjdk7
-before_install: "git clone -b travis `git config --get remote.origin.url` target/travis"
-script: "mvn clean verify --settings target/travis/settings.xml"
+before_script: "git clone -b travis `git config --get remote.origin.url` target/travis"
+script: "mvn verify --settings target/travis/settings.xml"
 after_success: "mvn site --settings target/travis/settings.xml"
 branches:
   except:
