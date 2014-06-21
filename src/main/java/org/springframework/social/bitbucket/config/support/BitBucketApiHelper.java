@@ -52,8 +52,9 @@ public class BitBucketApiHelper implements ApiHelper<BitBucket> {
                 .findPrimaryConnection(BitBucket.class);
         if (logger.isDebugEnabled() && connection == null) {
             logger.debug("No current connection; Returning default BitBucketTemplate instance.");
+            return null;
         }
-        return connection != null ? connection.getApi() : null;
+        return connection.getApi();
     }
 
     private static final Log logger = LogFactory

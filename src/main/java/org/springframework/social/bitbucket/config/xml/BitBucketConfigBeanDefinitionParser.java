@@ -35,7 +35,7 @@ public class BitBucketConfigBeanDefinitionParser extends
     }
 
     @Override
-    protected Class<? extends SocialAuthenticationService<?>> getAuthenticationServiceClass() {
+    protected final Class<? extends SocialAuthenticationService<?>> getAuthenticationServiceClass() {
         return BitBucketAuthenticationService.class;
     }
 }

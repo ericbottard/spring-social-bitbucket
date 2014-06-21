@@ -43,19 +43,22 @@ public class BitBucketFileMetadata {
     @JsonProperty
     private int size;
 
-    public String getPath() {
+    public final String getPath() {
         return path;
     }
 
-    public String getRevision() {
+    public final String getRevision() {
         return revision;
     }
 
-    public Date getTimestamp() {
+    public final Date getTimestamp() {
+        if (timestamp == null) {
+            return null;
+        }
         return (Date) timestamp.clone();
     }
 
-    public int getSize() {
+    public final int getSize() {
         return size;
     }
 }

@@ -30,15 +30,15 @@ public class RepoPrivilege {
     @JsonProperty
     private BitBucketUser user;
 
-    public String getRepository() {
+    public final String getRepository() {
         return repository;
     }
 
-    public BitBucketPrivilege getPrivilege() {
+    public final BitBucketPrivilege getPrivilege() {
         return privilege;
     }
 
-    public BitBucketUser getUser() {
+    public final BitBucketUser getUser() {
         return user;
     }
 

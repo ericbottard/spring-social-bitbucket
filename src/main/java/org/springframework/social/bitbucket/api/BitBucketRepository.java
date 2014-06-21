@@ -71,21 +71,27 @@ public class BitBucketRepository implements Serializable {
     /**
      * The date when the repository was created.
      */
-    public Date getCreatedAt() {
+    public final Date getCreatedAt() {
+        if (createdAt == null) {
+            return null;
+        }
         return (Date) createdAt.clone();
     }
 
     /**
      * A description of the repository, as entered by its creator.
      */
-    public String getDescription() {
+    public final String getDescription() {
         return description;
     }
 
     /**
      * When this repository was last updated.
      */
-    public Date getLastUpdatedOn() {
+    public final Date getLastUpdatedOn() {
+        if (lastUpdatedOn == null) {
+            return null;
+        }
         return (Date) lastUpdatedOn.clone();
     }
 
@@ -93,42 +99,42 @@ public class BitBucketRepository implements Serializable {
      * A user friendly name for this repository (may differ from its
      * {@link #getSlug() slug}).
      */
-    public String getName() {
+    public final String getName() {
         return name;
     }
 
     /**
      * The username of the repository owner.
      */
-    public String getOwner() {
+    public final String getOwner() {
         return owner;
     }
 
     /**
      * The source control management system this repository uses.
      */
-    public BitBucketSCM getScm() {
+    public final BitBucketSCM getScm() {
         return scm;
     }
 
     /**
      * The size of this repository, in bytes.
      */
-    public long getSize() {
+    public final long getSize() {
         return size;
     }
 
     /**
      * This repository's "slug", <i>ie.</i> its technical id in BitBucket terms.
      */
-    public String getSlug() {
+    public final String getSlug() {
         return slug;
     }
 
     /**
      * Whether this repository has an attached wiki.
      */
-    public boolean isHasWiki() {
+    public final boolean isHasWiki() {
         return hasWiki;
     }
 
@@ -136,11 +142,11 @@ public class BitBucketRepository implements Serializable {
      * Whether this repository is private (authenticated user needs access to
      * it) or is for everyone to see.
      */
-    public boolean isPrivate() {
+    public final boolean isPrivate() {
         return isPrivate;
     }
 
-    public boolean isReadOnly() {
+    public final boolean isReadOnly() {
         return readOnly;
     }
 

@@ -41,19 +41,19 @@ public class BitBucketDirectory {
     @JsonProperty
     private String node;
 
-    public List<String> getDirectories() {
+    public final List<String> getDirectories() {
         return directories;
     }
 
-    public List<BitBucketFileMetadata> getFiles() {
+    public final List<BitBucketFileMetadata> getFiles() {
         return files;
     }
 
-    public String getPath() {
+    public final String getPath() {
         return path;
     }
 
-    public String getNode() {
+    public final String getNode() {
         return node;
     }
 

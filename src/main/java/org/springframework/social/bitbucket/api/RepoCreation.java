@@ -31,11 +31,11 @@ public class RepoCreation extends ParameterMap {
     /**
      * The name of the repository.
      */
-    public String getName() {
+    public final String getName() {
         return getFirst("name");
     }
 
-    public void setName(String name) {
+    public final void setName(String name) {
         set("name", name);
     }
 
@@ -43,22 +43,22 @@ public class RepoCreation extends ParameterMap {
      * Boolean specifying if the repository is private (true) or public (false).
      * The default is false.
      */
-    public boolean isMakePrivate() {
+    public final boolean isMakePrivate() {
         return Boolean.valueOf(getFirst("is_private"));
     }
 
-    public void setMakePrivate(boolean makePrivate) {
+    public final void setMakePrivate(boolean makePrivate) {
         set("is_private", Boolean.toString(makePrivate));
     }
 
     /**
      * A description of the repository.
      */
-    public String getDescription() {
+    public final String getDescription() {
         return getFirst("description");
     }
 
-    public void setDescription(String description) {
+    public final void setDescription(String description) {
         set("description", description);
     }
 
@@ -66,22 +66,22 @@ public class RepoCreation extends ParameterMap {
      * A value of git or hg. The default is git if you leave this parameter
      * unspecified.
      */
-    public BitBucketSCM getScm() {
+    public final BitBucketSCM getScm() {
         return BitBucketSCM.valueOf(getFirst("scm"));
     }
 
-    public void setScm(BitBucketSCM scm) {
+    public final void setScm(BitBucketSCM scm) {
         set("scm", scm.name());
     }
 
     /**
      * The language used for source code in the repository.
      */
-    public String getLanguage() {
+    public final String getLanguage() {
         return getFirst("language");
     }
 
-    public void setLanguage(String language) {
+    public final void setLanguage(String language) {
         set("language", language);
     }
 

@@ -75,7 +75,7 @@ public class RepositoriesV2Template extends AbstractBitBucketOperations implemen
     }
 
     @Override
-    public DiffV2Operations getDiffOperations() {
+    public final DiffV2Operations getDiffOperations() {
         return diffV2Operations;
     }
 

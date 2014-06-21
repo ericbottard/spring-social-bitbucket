@@ -35,21 +35,21 @@ public class BitBucketFile {
     @JsonProperty
     private String data;
 
-    public String getNode() {
+    public final String getNode() {
         return node;
     }
 
     /**
      * Returns the file path, relative to the root of the repository.
      */
-    public String getPath() {
+    public final String getPath() {
         return path;
     }
 
     /**
      * Returns the actual content of the file, as a String.
      */
-    public String getData() {
+    public final String getData() {
         return data;
     }
 }

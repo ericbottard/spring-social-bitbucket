@@ -65,65 +65,65 @@ public class BitBucketChangeset {
     /**
      * The username of the {@link BitBucketUser} that made the change.
      */
-    public String getAuthor() {
+    public final String getAuthor() {
         return author;
     }
 
     /**
      * The name of the branch where the commit occurred.
      */
-    public String getBranch() {
+    public final String getBranch() {
         return branch;
     }
 
     /**
      * A list of affected files.
      */
-    public List<FileModification> getFiles() {
+    public final List<FileModification> getFiles() {
         return files;
     }
 
     /**
      * The commit message as entered by the {@link #getAuthor() author}.
      */
-    public String getMessage() {
+    public final String getMessage() {
         return message;
     }
 
     /**
      * The short node hash.
      */
-    public String getNode() {
+    public final String getNode() {
         return node;
     }
 
     /**
      * The parent commit(s) of this change.
      */
-    public List<String> getParents() {
+    public final List<String> getParents() {
         return parents;
     }
 
     /**
      * The raw author identifier of this change (includes email address).
      */
-    public String getRawAuthor() {
+    public final String getRawAuthor() {
         return rawAuthor;
     }
 
     /**
      * The full node hash.
      */
-    public String getRawNode() {
+    public final String getRawNode() {
         return rawNode;
     }
 
-    public long getRevision() {
+    public final long getRevision() {
         return revision;
     }
 
     @Override
-    public String toString() {
+    public final String toString() {
         return getNode();
     }
 
@@ -133,7 +133,7 @@ public class BitBucketChangeset {
      * @author ericbottard
      */
     @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class FileModification {
+    public static final class FileModification {
 
         @JsonProperty
         private String file;
@@ -144,14 +144,14 @@ public class BitBucketChangeset {
         /**
          * The path of the file (or directory) affected.
          */
-        public String getFile() {
+        public final String getFile() {
             return file;
         }
 
         /**
          * The kind of modification.
          */
-        public FileModificationType getType() {
+        public final FileModificationType getType() {
             return type;
         }
     }

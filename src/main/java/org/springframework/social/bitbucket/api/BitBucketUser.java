@@ -42,19 +42,19 @@ public class BitBucketUser implements Serializable {
     @JsonProperty("avatar")
     private String avatarImageUrl;
 
-    public String getUsername() {
+    public final String getUsername() {
         return username;
     }
 
-    public String getFirstName() {
+    public final String getFirstName() {
         return firstName;
     }
 
-    public String getLastName() {
+    public final String getLastName() {
         return lastName;
     }
 
-    public String getAvatarImageUrl() {
+    public final String getAvatarImageUrl() {
         return avatarImageUrl;
     }
 

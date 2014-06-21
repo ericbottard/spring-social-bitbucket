@@ -32,7 +32,7 @@ public class BitBucketServiceProvider extends
     }
 
     @Override
-    public BitBucket getApi(String accessToken, String secret) {
+    public final BitBucket getApi(String accessToken, String secret) {
         return new BitBucketTemplate(getConsumerKey(), getConsumerSecret(),
                 accessToken, secret);
     }

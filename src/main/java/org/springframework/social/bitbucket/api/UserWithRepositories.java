@@ -35,11 +35,11 @@ public class UserWithRepositories {
     @JsonProperty
     private List<BitBucketRepository> repositories;
 
-    public List<BitBucketRepository> getRepositories() {
+    public final List<BitBucketRepository> getRepositories() {
         return repositories;
     }
 
-    public BitBucketUser getUser() {
+    public final BitBucketUser getUser() {
         return user;
     }
 

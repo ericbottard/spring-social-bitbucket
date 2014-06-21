@@ -26,7 +26,7 @@ import org.springframework.social.connect.UserProfileBuilder;
 public class BitBucketAdapter implements ApiAdapter<BitBucket> {
 
     @Override
-    public boolean test(BitBucket api) {
+    public final boolean test(BitBucket api) {
         try {
             return null != api.userOperations().getUserWithRepositories();
         } catch (ApiException e) {
@@ -35,7 +35,7 @@ public class BitBucketAdapter implements ApiAdapter<BitBucket> {
     }
 
     @Override
-    public void setConnectionValues(BitBucket api, ConnectionValues values) {
+    public final void setConnectionValues(BitBucket api, ConnectionValues values) {
         BitBucketUser user = api.userOperations().getUserWithRepositories()
                 .getUser();
         values.setImageUrl(user.getAvatarImageUrl());
@@ -45,7 +45,7 @@ public class BitBucketAdapter implements ApiAdapter<BitBucket> {
     }
 
     @Override
-    public UserProfile fetchUserProfile(BitBucket api) {
+    public final UserProfile fetchUserProfile(BitBucket api) {
         BitBucketUser user = api.userOperations().getUserWithRepositories()
                 .getUser();
         return new UserProfileBuilder().setFirstName(user.getFirstName())

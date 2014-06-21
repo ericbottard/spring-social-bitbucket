@@ -34,15 +34,15 @@ public class PrivilegeTemplate extends AbstractBitBucketOperations implements
     }
 
     @Override
-    public List<RepoPrivilege> getRepoPrivileges(String user, String repoSlug) {
+    public final List<RepoPrivilege> getRepoPrivileges(String user, String repoSlug) {
         return asList(restTemplate.getForObject(
                 buildUrl("/privileges/{user}/{repo_slug}"),
                 RepoPrivilege[].class, user, repoSlug));
     }
 
     @Override
-    public RepoPrivilege setPrivilege(String owner, String repoSlug,
-                                      String recipient, BitBucketPrivilege privilege) {
+    public final RepoPrivilege setPrivilege(String owner, String repoSlug,
+                                            String recipient, BitBucketPrivilege privilege) {
 
         return restTemplate.exchange(
                 buildUrl("/privileges/{user}/{repo_slug}/{recipient}"),
@@ -51,7 +51,7 @@ public class PrivilegeTemplate extends AbstractBitBucketOperations implements
     }
 
     @Override
-    public void removePrivilege(String owner, String repoSlug, String recipient) {
+    public final void removePrivilege(String owner, String repoSlug, String recipient) {
         restTemplate.delete(
                 buildUrl("/privileges/{user}/{repo_slug}/{recipient}"), owner,
                 repoSlug, recipient);

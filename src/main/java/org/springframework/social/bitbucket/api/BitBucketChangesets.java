@@ -41,19 +41,19 @@ public class BitBucketChangesets {
     @JsonProperty
     private int count;
 
-    public List<BitBucketChangeset> getChangesets() {
+    public final List<BitBucketChangeset> getChangesets() {
         return changesets;
     }
 
-    public int getLimit() {
+    public final int getLimit() {
         return limit;
     }
 
-    public String getStart() {
+    public final String getStart() {
         return start;
     }
 
-    public int getCount() {
+    public final int getCount() {
         return count;
     }
 }

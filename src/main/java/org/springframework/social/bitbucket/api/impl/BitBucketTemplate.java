@@ -49,17 +49,17 @@ public class BitBucketTemplate extends AbstractOAuth1ApiBinding implements
     }
 
     @Override
-    public RepoOperations repoOperations() {
+    public final RepoOperations repoOperations() {
         return repoOperations;
     }
 
     @Override
-    public UserOperations userOperations() {
+    public final UserOperations userOperations() {
         return userOperations;
     }
 
     @Override
-    public PrivilegeOperations privelegesOperations() {
+    public final PrivilegeOperations privelegesOperations() {
         return privilegeOperations;
     }
 

@@ -27,7 +27,7 @@ public class BitBucketNamespaceHandler extends
         AbstractProviderConfigNamespaceHandler {
 
     @Override
-    protected AbstractProviderConfigBeanDefinitionParser getProviderConfigBeanDefinitionParser() {
+    protected final AbstractProviderConfigBeanDefinitionParser getProviderConfigBeanDefinitionParser() {
         return new BitBucketConfigBeanDefinitionParser();
     }
 

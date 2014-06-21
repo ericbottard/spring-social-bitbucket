@@ -34,26 +34,26 @@ public class RepoTemplate extends AbstractBitBucketOperations implements
     }
 
     @Override
-    public BitBucketRepository getRepository(String user, String repoSlug) {
+    public final BitBucketRepository getRepository(String user, String repoSlug) {
         return restTemplate.getForObject(
                 buildUrl("/repositories/{user}/{slug}/"),
                 BitBucketRepository.class, user, repoSlug);
     }
 
     @Override
-    public List<BitBucketRepository> getUserRepositories() {
+    public final List<BitBucketRepository> getUserRepositories() {
         return asList(restTemplate.getForObject(
                 buildUrl("/user/repositories/"), BitBucketRepository[].class));
     }
 
     @Override
-    public List<BitBucketRepository> search(String query) {
+    public final List<BitBucketRepository> search(String query) {
         return restTemplate.getForObject(buildUrl("/repositories/?name={q}"),
                 SearchResultHolder.class, query).repositories;
     }
 
     @Override
-    public Map<String, BitBucketChangeset> getTags(String user, String repoSlug) {
+    public final Map<String, BitBucketChangeset> getTags(String user, String repoSlug) {
         return restTemplate.getForObject(
                 buildUrl("/repositories/{user}/{slug}/tags/"),
                 Tags.class, user, repoSlug);
@@ -61,22 +61,22 @@ public class RepoTemplate extends AbstractBitBucketOperations implements
     }
 
     @Override
-    public List<BitBucketUser> getFollowers(String user, String repoSlug) {
+    public final List<BitBucketUser> getFollowers(String user, String repoSlug) {
         return restTemplate.getForObject(
                 buildUrl("/repositories/{user}/{slug}/followers/"),
                 FollowersHolder.class, user, repoSlug).followers;
     }
 
     @Override
-    public BitBucketChangesets getChangesets(String user, String repoSlug) {
+    public final BitBucketChangesets getChangesets(String user, String repoSlug) {
         return restTemplate.getForObject(
                 buildUrl("/repositories/{user}/{slug}/changesets/"),
                 BitBucketChangesets.class, user, repoSlug);
     }
 
     @Override
-    public BitBucketChangesets getChangesets(String user, String repoSlug,
-                                             String start, int limit) {
+    public final BitBucketChangesets getChangesets(String user, String repoSlug,
+                                                   String start, int limit) {
         return restTemplate
                 .getForObject(
                         buildUrl(
@@ -86,8 +86,8 @@ public class RepoTemplate extends AbstractBitBucketOperations implements
     }
 
     @Override
-    public BitBucketDirectory getDirectory(String user, String repoSlug,
-                                           String revision, String path) {
+    public final BitBucketDirectory getDirectory(String user, String repoSlug,
+                                                 String revision, String path) {
         return restTemplate.getForObject(
                 buildUrl("/repositories/{user}/{slug}/src/{rev}/{path}/"),
                 BitBucketDirectory.class, user, repoSlug,
@@ -95,8 +95,8 @@ public class RepoTemplate extends AbstractBitBucketOperations implements
     }
 
     @Override
-    public BitBucketFile getFile(String user, String repoSlug, String revision,
-                                 String path) {
+    public final BitBucketFile getFile(String user, String repoSlug, String revision,
+                                       String path) {
         return restTemplate.getForObject(
                 buildUrl("/repositories/{user}/{slug}/src/{rev}/{path}"),
                 BitBucketFile.class, user, repoSlug,
@@ -104,7 +104,7 @@ public class RepoTemplate extends AbstractBitBucketOperations implements
     }
 
     @Override
-    public BitBucketRepository createRepository(RepoCreation options) {
+    public final BitBucketRepository createRepository(RepoCreation options) {
         return restTemplate.postForObject(buildUrl("/repositories"), options,
                 BitBucketRepository.class);
     }

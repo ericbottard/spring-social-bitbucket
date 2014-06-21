@@ -31,7 +31,7 @@ import java.util.TimeZone;
 public class UTCDateDeserializer extends JsonDeserializer<Date> {
 
     @Override
-    public Date deserialize(JsonParser jp, DeserializationContext ctxt)
+    public final Date deserialize(JsonParser jp, DeserializationContext ctxt)
             throws IOException, JsonProcessingException {
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT,
