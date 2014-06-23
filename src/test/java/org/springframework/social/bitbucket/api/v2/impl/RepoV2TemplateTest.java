@@ -56,6 +56,12 @@ public class RepoV2TemplateTest extends BaseV2TemplateTest {
         assertEquals("atlassian-connect-fork", repository.getName());
         assertEquals("evzijst", repository.getOwner().getUsername());
         assertEquals("Erik van Zijst", repository.getOwner().getDisplayName());
+        assertEquals("https://api.bitbucket.org/2.0/impl/evzijst/atlassian-connect-fork/watchers",
+                repository.getLinks().getWatchers().getHref());
+        assertEquals("https://bitbucket.org/evzijst/atlassian-connect-fork.git",
+                repository.getLinks().getClone().get(0).getHref());
+        assertEquals("https", repository.getLinks().getClone().get(0).getName());
+        assertEquals("ssh", repository.getLinks().getClone().get(1).getName());
     }
 
     @Test

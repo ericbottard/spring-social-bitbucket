@@ -32,6 +32,12 @@ public class BitBucketV2Repository {
     private String description;
 
     //private List<Object> links;
+    @JsonProperty
+    private LinkList links;
+
+    public LinkList getLinks() {
+        return links;
+    }
 
     @JsonProperty("fork_policy")
     private BitBucketForkPolicy forkPolicy;
