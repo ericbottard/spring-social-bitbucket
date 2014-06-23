@@ -35,7 +35,7 @@ public class BitBucketV2Repository {
     @JsonProperty
     private LinkList links;
 
-    public LinkList getLinks() {
+    public final LinkList getLinks() {
         return links;
     }
 
