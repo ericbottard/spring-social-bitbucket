@@ -35,26 +35,26 @@ public class RepoTemplate extends AbstractBitBucketOperations implements
 
     @Override
     public final BitBucketRepository getRepository(String user, String repoSlug) {
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 buildUrl("/repositories/{user}/{slug}/"),
                 BitBucketRepository.class, user, repoSlug);
     }
 
     @Override
     public final List<BitBucketRepository> getUserRepositories() {
-        return asList(restTemplate.getForObject(
+        return asList(getRestTemplate().getForObject(
                 buildUrl("/user/repositories/"), BitBucketRepository[].class));
     }
 
     @Override
     public final List<BitBucketRepository> search(String query) {
-        return restTemplate.getForObject(buildUrl("/repositories/?name={q}"),
+        return getRestTemplate().getForObject(buildUrl("/repositories/?name={q}"),
                 SearchResultHolder.class, query).repositories;
     }
 
     @Override
     public final Map<String, BitBucketChangeset> getTags(String user, String repoSlug) {
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 buildUrl("/repositories/{user}/{slug}/tags/"),
                 Tags.class, user, repoSlug);
 
@@ -62,14 +62,14 @@ public class RepoTemplate extends AbstractBitBucketOperations implements
 
     @Override
     public final List<BitBucketUser> getFollowers(String user, String repoSlug) {
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 buildUrl("/repositories/{user}/{slug}/followers/"),
                 FollowersHolder.class, user, repoSlug).followers;
     }
 
     @Override
     public final BitBucketChangesets getChangesets(String user, String repoSlug) {
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 buildUrl("/repositories/{user}/{slug}/changesets/"),
                 BitBucketChangesets.class, user, repoSlug);
     }
@@ -77,7 +77,7 @@ public class RepoTemplate extends AbstractBitBucketOperations implements
     @Override
     public final BitBucketChangesets getChangesets(String user, String repoSlug,
                                                    String start, int limit) {
-        return restTemplate
+        return getRestTemplate()
                 .getForObject(
                         buildUrl(
                                 "/repositories/{user}/{slug}/changesets/?start={start}&limit={limit}"),
@@ -88,7 +88,7 @@ public class RepoTemplate extends AbstractBitBucketOperations implements
     @Override
     public final BitBucketDirectory getDirectory(String user, String repoSlug,
                                                  String revision, String path) {
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 buildUrl("/repositories/{user}/{slug}/src/{rev}/{path}/"),
                 BitBucketDirectory.class, user, repoSlug,
                 revision, path);
@@ -97,7 +97,7 @@ public class RepoTemplate extends AbstractBitBucketOperations implements
     @Override
     public final BitBucketFile getFile(String user, String repoSlug, String revision,
                                        String path) {
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 buildUrl("/repositories/{user}/{slug}/src/{rev}/{path}"),
                 BitBucketFile.class, user, repoSlug,
                 revision, path);
@@ -105,7 +105,7 @@ public class RepoTemplate extends AbstractBitBucketOperations implements
 
     @Override
     public final BitBucketRepository createRepository(RepoCreation options) {
-        return restTemplate.postForObject(buildUrl("/repositories"), options,
+        return getRestTemplate().postForObject(buildUrl("/repositories"), options,
                 BitBucketRepository.class);
     }
 

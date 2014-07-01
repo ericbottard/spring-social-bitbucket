@@ -33,13 +33,13 @@ class UserTemplate extends AbstractBitBucketOperations implements
 
     @Override
     public UserWithRepositories getUserWithRepositories() {
-        return restTemplate.getForObject(buildUrl("/user"),
+        return getRestTemplate().getForObject(buildUrl("/user"),
                 UserWithRepositories.class);
     }
 
     @Override
     public List<BitBucketUser> getFollowers(String user) {
-        return restTemplate.getForObject(buildUrl("/users/{user}/followers"),
+        return getRestTemplate().getForObject(buildUrl("/users/{user}/followers"),
                 FollowersHolder.class, user).followers;
     }
 

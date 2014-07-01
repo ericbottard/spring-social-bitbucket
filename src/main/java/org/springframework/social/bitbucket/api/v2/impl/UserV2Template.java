@@ -30,7 +30,7 @@ public class UserV2Template extends AbstractBitBucketOperations implements UserV
 
     @Override
     public final BitBucketV2Account getUser(String username) {
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 buildUrl("/users/{username}"),
                 BitBucketV2Account.class,
                 username);
@@ -38,7 +38,7 @@ public class UserV2Template extends AbstractBitBucketOperations implements UserV
 
     @Override
     public final AccountPage getFollowers(String username) {
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 buildUrl("/users/{username}/followers"),
                 AccountPage.class,
                 username);
@@ -51,7 +51,7 @@ public class UserV2Template extends AbstractBitBucketOperations implements UserV
 
     @Override
     public final AccountPage getFollowing(String username) {
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 buildUrl("/users/{username}/following"),
                 AccountPage.class,
                 username);
@@ -64,7 +64,7 @@ public class UserV2Template extends AbstractBitBucketOperations implements UserV
 
     @Override
     public final RepositoryPage getRepositories(String username) {
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 buildUrl("/repositories/{username}"),
                 RepositoryPage.class,
                 username);

@@ -44,13 +44,15 @@ public enum BitBucketForkPolicy {
         if (value == null) {
             return null;
         }
-        if (value.equals("allow_forks")) {
-            return allowForks;
-        } else if (value.equals("no_public_forks")) {
-            return noPublicForks;
-        } else if (value.equals("no_forks")) {
-            return noForks;
+        switch (value) {
+            case "allow_forks":
+                return allowForks;
+            case "no_public_forks":
+                return noPublicForks;
+            case "no_forks":
+                return noForks;
+            default:
+                throw new IllegalArgumentException(format("Could not deserialize [%s]", value));
         }
-        throw new IllegalArgumentException(format("Could not deserialize [%s]", value));
     }
 }

@@ -30,7 +30,7 @@ public class TeamV2Template extends AbstractBitBucketOperations implements TeamV
 
     @Override
     public final BitBucketV2Account getTeam(String teamName) {
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 buildUrl("/teams/{teamName}"),
                 BitBucketV2Account.class,
                 teamName);
@@ -38,7 +38,7 @@ public class TeamV2Template extends AbstractBitBucketOperations implements TeamV
 
     @Override
     public final AccountPage getMembers(String teamName) {
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 buildUrl("/teams/{teamName}/members"),
                 AccountPage.class,
                 teamName);
@@ -51,7 +51,7 @@ public class TeamV2Template extends AbstractBitBucketOperations implements TeamV
 
     @Override
     public final AccountPage getFollowers(String teamName) {
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 buildUrl("/teams/{teamName}/followers"),
                 AccountPage.class,
                 teamName);
@@ -64,7 +64,7 @@ public class TeamV2Template extends AbstractBitBucketOperations implements TeamV
 
     @Override
     public final AccountPage getFollowing(String teamName) {
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 buildUrl("/teams/{teamName}/following"),
                 AccountPage.class,
                 teamName);
@@ -77,7 +77,7 @@ public class TeamV2Template extends AbstractBitBucketOperations implements TeamV
 
     @Override
     public final RepositoryPage getRepositories(String teamName) {
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 buildUrl("/teams/{teamName}/repositories"),
                 RepositoryPage.class,
                 teamName);

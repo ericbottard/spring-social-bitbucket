@@ -21,7 +21,7 @@ public class AbstractBitBucketOperations {
 
     private final boolean authorized;
 
-    protected final RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
 
     private final String version;
 

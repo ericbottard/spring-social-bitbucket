@@ -39,7 +39,7 @@ public class RepositoryV2Template extends AbstractBitBucketOperations implements
     public final BitBucketV2Repository getRepository(String owner, String repoSlug) {
         checkArgument(StringUtils.hasText(owner), OWNER_IS_REQUIRED);
         checkArgument(StringUtils.hasText(repoSlug), REPO_SLUG_IS_REQUIRED);
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 buildUrl("/repositories/{owner}/{repo_slug}"),
                 BitBucketV2Repository.class, owner, repoSlug);
     }
@@ -56,7 +56,7 @@ public class RepositoryV2Template extends AbstractBitBucketOperations implements
         checkArgument(StringUtils.hasText(owner), OWNER_IS_REQUIRED);
         checkArgument(StringUtils.hasText(repoSlug), REPO_SLUG_IS_REQUIRED);
         checkNotNull(repository, "repository is required");
-        restTemplate.postForObject(
+        getRestTemplate().postForObject(
                 buildUrl("/repositories/{owner}/{repo_slug}"),
                 repository,
                 null,
@@ -77,7 +77,7 @@ public class RepositoryV2Template extends AbstractBitBucketOperations implements
     public final void deleteRepository(String owner, String repoSlug) {
         checkArgument(StringUtils.hasText(owner), OWNER_IS_REQUIRED);
         checkArgument(StringUtils.hasText(repoSlug), REPO_SLUG_IS_REQUIRED);
-        restTemplate.delete(buildUrl("/repositories/{owner}/{repo_slug}"), owner, repoSlug);
+        getRestTemplate().delete(buildUrl("/repositories/{owner}/{repo_slug}"), owner, repoSlug);
     }
 
     @Override
@@ -91,7 +91,7 @@ public class RepositoryV2Template extends AbstractBitBucketOperations implements
     public final AccountPage getWatchers(String owner, String repoSlug) {
         checkArgument(StringUtils.hasText(owner), OWNER_IS_REQUIRED);
         checkArgument(StringUtils.hasText(repoSlug), REPO_SLUG_IS_REQUIRED);
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 buildUrl("/repositories/{owner}/{repo_slug}/watchers"),
                 AccountPage.class, owner, repoSlug);
     }
@@ -107,7 +107,7 @@ public class RepositoryV2Template extends AbstractBitBucketOperations implements
     public final RepositoryPage getForks(String owner, String repoSlug) {
         checkArgument(StringUtils.hasText(owner), OWNER_IS_REQUIRED);
         checkArgument(StringUtils.hasText(repoSlug), REPO_SLUG_IS_REQUIRED);
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 buildUrl("/repositories/{owner}/{repo_slug}/forks"),
                 RepositoryPage.class, owner, repoSlug);
     }

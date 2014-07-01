@@ -45,7 +45,7 @@ public class RepositoriesV2Template extends AbstractBitBucketOperations implemen
 
     @Override
     public final RepositoryPage getRepositories() {
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 buildUrl("/repositories"),
                 RepositoryPage.class);
     }
@@ -53,7 +53,7 @@ public class RepositoriesV2Template extends AbstractBitBucketOperations implemen
     @Override
     public final RepositoryPage getRepositories(String owner) {
         checkArgument(StringUtils.hasText(owner), OWNER_IS_REQUIRED);
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 buildUrl("/repositories/{owner}"),
                 RepositoryPage.class, owner);
     }

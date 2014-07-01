@@ -36,7 +36,7 @@ public class PageV2Template extends AbstractBitBucketOperations implements PageV
     public final AccountPage getNextPage(AccountPage page) {
         checkNotNull(page, PAGE_IS_REQUIRED);
         checkState(page.hasNext(), PAGE_DOES_NOT_HAVE_A_NEXT_PAGE);
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 page.getNext(),
                 AccountPage.class);
     }
@@ -45,7 +45,7 @@ public class PageV2Template extends AbstractBitBucketOperations implements PageV
     public final PullRequestPage getNextPage(PullRequestPage page) {
         checkNotNull(page, PAGE_IS_REQUIRED);
         checkState(page.hasNext(), PAGE_DOES_NOT_HAVE_A_NEXT_PAGE);
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 page.getNext(),
                 PullRequestPage.class);
     }
@@ -54,7 +54,7 @@ public class PageV2Template extends AbstractBitBucketOperations implements PageV
     public final RepositoryPage getNextPage(RepositoryPage page) {
         checkNotNull(page, PAGE_IS_REQUIRED);
         checkState(page.hasNext(), PAGE_DOES_NOT_HAVE_A_NEXT_PAGE);
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 page.getNext(),
                 RepositoryPage.class);
     }
@@ -63,7 +63,7 @@ public class PageV2Template extends AbstractBitBucketOperations implements PageV
     public final AccountPage getPreviousPage(AccountPage page) {
         checkNotNull(page, PAGE_IS_REQUIRED);
         checkState(page.hasNext(), PAGE_DOES_NOT_HAVE_A_PREVIOUS_PAGE);
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 page.getPrevious(),
                 AccountPage.class);
     }
@@ -73,7 +73,7 @@ public class PageV2Template extends AbstractBitBucketOperations implements PageV
     public final PullRequestPage getPreviousPage(PullRequestPage page) {
         checkNotNull(page, PAGE_IS_REQUIRED);
         checkState(page.hasNext(), PAGE_DOES_NOT_HAVE_A_PREVIOUS_PAGE);
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 page.getPrevious(),
                 PullRequestPage.class);
     }
@@ -82,7 +82,7 @@ public class PageV2Template extends AbstractBitBucketOperations implements PageV
     public final RepositoryPage getPreviousPage(RepositoryPage page) {
         checkNotNull(page, PAGE_IS_REQUIRED);
         checkState(page.hasNext(), PAGE_DOES_NOT_HAVE_A_PREVIOUS_PAGE);
-        return restTemplate.getForObject(
+        return getRestTemplate().getForObject(
                 page.getPrevious(),
                 RepositoryPage.class);
     }
