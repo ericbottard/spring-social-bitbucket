@@ -16,6 +16,9 @@
 package org.springframework.social.bitbucket.api.v2.payload;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.common.collect.ImmutableMap;
+
+import java.util.Map;
 
 import static java.lang.String.format;
 
@@ -34,6 +37,13 @@ public enum BitBucketForkPolicy {
      */
     noForks;
 
+    private static final Map<String, BitBucketForkPolicy> NAME_TO_POLICY =
+            ImmutableMap.<String, BitBucketForkPolicy>builder()
+                    .put("allow_forks", allowForks)
+                    .put("no_public_forks", noPublicForks)
+                    .put("no_forks", noForks)
+                    .build();
+
     /**
      * Helper method for deserialization.
      *
@@ -44,15 +54,10 @@ public enum BitBucketForkPolicy {
         if (value == null) {
             return null;
         }
-        switch (value) {
-            case "allow_forks":
-                return allowForks;
-            case "no_public_forks":
-                return noPublicForks;
-            case "no_forks":
-                return noForks;
-            default:
-                throw new IllegalArgumentException(format("Could not deserialize [%s]", value));
+        BitBucketForkPolicy forkPolicy = NAME_TO_POLICY.get(value);
+        if (forkPolicy != null) {
+            return forkPolicy;
         }
+        throw new IllegalArgumentException(format("Could not deserialize [%s]", value));
     }
 }
