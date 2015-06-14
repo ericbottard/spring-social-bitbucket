@@ -17,6 +17,7 @@ package org.springframework.social.bitbucket.api;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
 
 import java.util.List;
 
@@ -29,18 +30,10 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserWithRepositories {
 
-    @JsonProperty
+    @JsonProperty @Getter
     private BitBucketUser user;
 
-    @JsonProperty
+    @JsonProperty @Getter
     private List<BitBucketRepository> repositories;
-
-    public final List<BitBucketRepository> getRepositories() {
-        return repositories;
-    }
-
-    public final BitBucketUser getUser() {
-        return user;
-    }
 
 }

@@ -17,6 +17,7 @@ package org.springframework.social.bitbucket.api;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
 
 /**
  * Content as well as metadata about a repository file.
@@ -26,30 +27,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BitBucketFile {
 
-    @JsonProperty
+    @JsonProperty @Getter
     private String node;
 
-    @JsonProperty
+    /** Returns the file path, relative to the root of the repository. */
+    @JsonProperty @Getter
     private String path;
 
-    @JsonProperty
+    /** Returns the actual content of the file, as a String. */
+    @JsonProperty @Getter
     private String data;
 
-    public final String getNode() {
-        return node;
-    }
-
-    /**
-     * Returns the file path, relative to the root of the repository.
-     */
-    public final String getPath() {
-        return path;
-    }
-
-    /**
-     * Returns the actual content of the file, as a String.
-     */
-    public final String getData() {
-        return data;
-    }
 }

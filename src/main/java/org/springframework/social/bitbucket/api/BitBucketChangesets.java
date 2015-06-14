@@ -17,6 +17,7 @@ package org.springframework.social.bitbucket.api;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
 
 import java.util.List;
 
@@ -29,31 +30,16 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BitBucketChangesets {
 
-    @JsonProperty
+    @JsonProperty @Getter
     private List<BitBucketChangeset> changesets;
 
-    @JsonProperty
+    @JsonProperty @Getter
     private int limit;
 
-    @JsonProperty
+    @JsonProperty @Getter
     private String start;
 
-    @JsonProperty
+    @JsonProperty @Getter
     private int count;
 
-    public final List<BitBucketChangeset> getChangesets() {
-        return changesets;
-    }
-
-    public final int getLimit() {
-        return limit;
-    }
-
-    public final String getStart() {
-        return start;
-    }
-
-    public final int getCount() {
-        return count;
-    }
 }

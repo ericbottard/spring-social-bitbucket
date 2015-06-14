@@ -17,6 +17,7 @@ package org.springframework.social.bitbucket.api;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
 
 import java.util.List;
 
@@ -29,32 +30,16 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BitBucketDirectory {
 
-    @JsonProperty
+    @JsonProperty @Getter
     private List<String> directories;
 
-    @JsonProperty
+    @JsonProperty @Getter
     private List<BitBucketFileMetadata> files;
 
-    @JsonProperty
+    @JsonProperty @Getter
     private String path;
 
-    @JsonProperty
+    @JsonProperty  @Getter
     private String node;
-
-    public final List<String> getDirectories() {
-        return directories;
-    }
-
-    public final List<BitBucketFileMetadata> getFiles() {
-        return files;
-    }
-
-    public final String getPath() {
-        return path;
-    }
-
-    public final String getNode() {
-        return node;
-    }
 
 }

@@ -17,6 +17,7 @@ package org.springframework.social.bitbucket.api;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
 
 import java.io.Serializable;
 
@@ -31,24 +32,13 @@ public final class BitBucketEmailAddress implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("active")
+    @JsonProperty("active") @Getter
     private Boolean active;
 
-    @JsonProperty("email")
+    @JsonProperty("email") @Getter
     private String email;
 
-    @JsonProperty("primary")
+    @JsonProperty("primary") @Getter
     private Boolean primary;
 
-    public Boolean getActive() {
-        return active;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public Boolean getPrimary() {
-        return primary;
-    }
 }

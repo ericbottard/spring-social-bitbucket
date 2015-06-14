@@ -22,14 +22,10 @@ package org.springframework.social.bitbucket.api;
  */
 public enum BitBucketSCM {
 
-    /**
-     * Mercurial.
-     */
+    /** Mercurial. */
     hg,
 
-    /**
-     * Git.
-     */
-    git;
+    /** Git. */
+    git
 
 }

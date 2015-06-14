@@ -18,6 +18,7 @@ package org.springframework.social.bitbucket.api;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import lombok.Getter;
 import org.springframework.social.bitbucket.api.impl.UTCDateDeserializer;
 
 import java.io.Serializable;
@@ -40,7 +41,8 @@ public class BitBucketRepository implements Serializable {
     @JsonDeserialize(using = UTCDateDeserializer.class)
     private Date createdAt;
 
-    @JsonProperty
+    /** A description of the repository, as entered by its creator. */
+    @JsonProperty @Getter
     private String description;
 
     @JsonProperty("has_wiki")
@@ -50,27 +52,30 @@ public class BitBucketRepository implements Serializable {
     @JsonDeserialize(using = UTCDateDeserializer.class)
     private Date lastUpdatedOn;
 
-    @JsonProperty
+    /** A user friendly name for this repository (may differ from its {@link #getSlug() slug}). */
+    @JsonProperty @Getter
     private String name;
 
-    @JsonProperty
+    /** The username of the repository owner. */
+    @JsonProperty @Getter
     private String owner;
 
-    @JsonProperty("read_only")
+    @JsonProperty("read_only") @Getter
     private boolean readOnly;
 
-    @JsonProperty
+    /** The source control management system this repository uses. */
+    @JsonProperty @Getter
     private BitBucketSCM scm;
 
-    @JsonProperty
+    /** The size of this repository, in bytes. */
+    @JsonProperty @Getter
     private long size;
 
-    @JsonProperty
+    /** This repository's "slug", <i>ie.</i> its technical id in BitBucket terms. */
+    @JsonProperty @Getter
     private String slug;
 
-    /**
-     * The date when the repository was created.
-     */
+    /** The date when the repository was created. */
     public final Date getCreatedAt() {
         if (createdAt == null) {
             return null;
@@ -78,57 +83,12 @@ public class BitBucketRepository implements Serializable {
         return (Date) createdAt.clone();
     }
 
-    /**
-     * A description of the repository, as entered by its creator.
-     */
-    public final String getDescription() {
-        return description;
-    }
-
-    /**
-     * When this repository was last updated.
-     */
+    /** When this repository was last updated. */
     public final Date getLastUpdatedOn() {
         if (lastUpdatedOn == null) {
             return null;
         }
         return (Date) lastUpdatedOn.clone();
-    }
-
-    /**
-     * A user friendly name for this repository (may differ from its
-     * {@link #getSlug() slug}).
-     */
-    public final String getName() {
-        return name;
-    }
-
-    /**
-     * The username of the repository owner.
-     */
-    public final String getOwner() {
-        return owner;
-    }
-
-    /**
-     * The source control management system this repository uses.
-     */
-    public final BitBucketSCM getScm() {
-        return scm;
-    }
-
-    /**
-     * The size of this repository, in bytes.
-     */
-    public final long getSize() {
-        return size;
-    }
-
-    /**
-     * This repository's "slug", <i>ie.</i> its technical id in BitBucket terms.
-     */
-    public final String getSlug() {
-        return slug;
     }
 
     /**
@@ -144,10 +104,6 @@ public class BitBucketRepository implements Serializable {
      */
     public final boolean isPrivate() {
         return isPrivate;
-    }
-
-    public final boolean isReadOnly() {
-        return readOnly;
     }
 
 }

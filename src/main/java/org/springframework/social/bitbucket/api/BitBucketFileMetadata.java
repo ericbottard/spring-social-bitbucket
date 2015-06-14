@@ -18,6 +18,7 @@ package org.springframework.social.bitbucket.api;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import lombok.Getter;
 import org.springframework.social.bitbucket.api.impl.UTCDateDeserializer;
 
 import java.util.Date;
@@ -30,35 +31,23 @@ import java.util.Date;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BitBucketFileMetadata {
 
-    @JsonProperty
+    @JsonProperty @Getter
     private String path;
 
-    @JsonProperty
+    @JsonProperty @Getter
     private String revision;
 
     @JsonProperty("utctimestamp")
     @JsonDeserialize(using = UTCDateDeserializer.class)
     private Date timestamp;
 
-    @JsonProperty
+    @JsonProperty @Getter
     private int size;
-
-    public final String getPath() {
-        return path;
-    }
-
-    public final String getRevision() {
-        return revision;
-    }
 
     public final Date getTimestamp() {
         if (timestamp == null) {
             return null;
         }
         return (Date) timestamp.clone();
-    }
-
-    public final int getSize() {
-        return size;
     }
 }

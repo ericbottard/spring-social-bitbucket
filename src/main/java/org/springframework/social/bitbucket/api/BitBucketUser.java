@@ -17,6 +17,7 @@ package org.springframework.social.bitbucket.api;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
 
 import java.io.Serializable;
 
@@ -30,32 +31,16 @@ public class BitBucketUser implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty
+    @JsonProperty @Getter
     private String username;
 
-    @JsonProperty("first_name")
+    @JsonProperty("first_name") @Getter
     private String firstName;
 
-    @JsonProperty("last_name")
+    @JsonProperty("last_name") @Getter
     private String lastName;
 
-    @JsonProperty("avatar")
+    @JsonProperty("avatar") @Getter
     private String avatarImageUrl;
-
-    public final String getUsername() {
-        return username;
-    }
-
-    public final String getFirstName() {
-        return firstName;
-    }
-
-    public final String getLastName() {
-        return lastName;
-    }
-
-    public final String getAvatarImageUrl() {
-        return avatarImageUrl;
-    }
 
 }

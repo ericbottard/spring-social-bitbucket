@@ -17,6 +17,7 @@ package org.springframework.social.bitbucket.api;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
 
 import java.util.List;
 
@@ -28,99 +29,45 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BitBucketChangeset {
 
-    /**
-     * The kind of modification on a file path.
-     */
-    public static enum FileModificationType {
-        modified, added, removed;
+    /** The kind of modification on a file path. */
+    public enum FileModificationType {
+        modified, added, removed
     }
 
-    @JsonProperty
+    /** The username of the {@link BitBucketUser} that made the change. */
+    @JsonProperty @Getter
     private String author;
 
-    @JsonProperty
+    /** The name of the branch where the commit occurred. */
+    @JsonProperty @Getter
     private String branch;
 
-    @JsonProperty
+    /** A list of affected files. */
+    @JsonProperty @Getter
     private List<FileModification> files;
 
-    @JsonProperty
+    /** The commit message as entered by the {@link #getAuthor() author}. */
+    @JsonProperty @Getter
     private String message;
 
-    @JsonProperty
+    /** The short node hash. */
+    @JsonProperty @Getter
     private String node;
 
-    @JsonProperty
+    /** The parent commit(s) of this change. */
+    @JsonProperty @Getter
     private List<String> parents;
 
-    @JsonProperty("raw_author")
+    /** The raw author identifier of this change (includes email address). */
+    @JsonProperty("raw_author") @Getter
     private String rawAuthor;
 
-    @JsonProperty("raw_node")
+    /** The full node hash. */
+    @JsonProperty("raw_node") @Getter
     private String rawNode;
 
-    @JsonProperty
+    @JsonProperty @Getter
     private long revision;
-
-    /**
-     * The username of the {@link BitBucketUser} that made the change.
-     */
-    public final String getAuthor() {
-        return author;
-    }
-
-    /**
-     * The name of the branch where the commit occurred.
-     */
-    public final String getBranch() {
-        return branch;
-    }
-
-    /**
-     * A list of affected files.
-     */
-    public final List<FileModification> getFiles() {
-        return files;
-    }
-
-    /**
-     * The commit message as entered by the {@link #getAuthor() author}.
-     */
-    public final String getMessage() {
-        return message;
-    }
-
-    /**
-     * The short node hash.
-     */
-    public final String getNode() {
-        return node;
-    }
-
-    /**
-     * The parent commit(s) of this change.
-     */
-    public final List<String> getParents() {
-        return parents;
-    }
-
-    /**
-     * The raw author identifier of this change (includes email address).
-     */
-    public final String getRawAuthor() {
-        return rawAuthor;
-    }
-
-    /**
-     * The full node hash.
-     */
-    public final String getRawNode() {
-        return rawNode;
-    }
-
-    public final long getRevision() {
-        return revision;
-    }
 
     @Override
     public final String toString() {
@@ -135,25 +82,14 @@ public class BitBucketChangeset {
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static final class FileModification {
 
-        @JsonProperty
+        /** The path of the file (or directory) affected. */
+        @JsonProperty @Getter
         private String file;
 
-        @JsonProperty
+        /** The kind of modification. */
+        @JsonProperty @Getter
         private FileModificationType type;
 
-        /**
-         * The path of the file (or directory) affected.
-         */
-        public String getFile() {
-            return file;
-        }
-
-        /**
-         * The kind of modification.
-         */
-        public FileModificationType getType() {
-            return type;
-        }
     }
 
 }
