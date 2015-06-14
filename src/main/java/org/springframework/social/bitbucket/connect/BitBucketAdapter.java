@@ -15,13 +15,18 @@
  */
 package org.springframework.social.bitbucket.connect;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.social.ApiException;
 import org.springframework.social.bitbucket.api.BitBucket;
+import org.springframework.social.bitbucket.api.BitBucketEmailAddress;
 import org.springframework.social.bitbucket.api.BitBucketUser;
 import org.springframework.social.connect.ApiAdapter;
 import org.springframework.social.connect.ConnectionValues;
 import org.springframework.social.connect.UserProfile;
 import org.springframework.social.connect.UserProfileBuilder;
+import org.springframework.web.client.HttpClientErrorException;
+
+import java.util.List;
 
 public class BitBucketAdapter implements ApiAdapter<BitBucket> {
 
@@ -46,10 +51,23 @@ public class BitBucketAdapter implements ApiAdapter<BitBucket> {
 
     @Override
     public final UserProfile fetchUserProfile(BitBucket api) {
-        BitBucketUser user = api.userOperations().getUserWithRepositories()
-                .getUser();
+        BitBucketUser user = api.userOperations().getUserWithRepositories().getUser();
+        String primaryEmail = null;
+        try {
+            List<BitBucketEmailAddress> emailAddresses = api.usersOperations()
+                    .emailsOperations().getListOfUserEmailAddresses(user.getUsername());
+            for (BitBucketEmailAddress emailAddress : emailAddresses) {
+                if (emailAddress.getPrimary()) {
+                    primaryEmail = emailAddress.getEmail();
+                }
+            }
+        } catch (HttpClientErrorException clientError) {
+            if (!HttpStatus.FORBIDDEN.equals(clientError.getStatusCode())) {
+                throw clientError;
+            }
+        }
         return new UserProfileBuilder().setFirstName(user.getFirstName())
-                .setLastName(user.getLastName())
+                .setLastName(user.getLastName()).setEmail(primaryEmail)
                 .setUsername(user.getUsername()).build();
     }
 
