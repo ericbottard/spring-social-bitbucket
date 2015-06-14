@@ -15,37 +15,40 @@
  */
 package org.springframework.social.bitbucket.api;
 
-import org.springframework.social.ApiBinding;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.io.Serializable;
 
 /**
- * Main interface for interacting with BitBucket.
+ * BitBucket email address structure
  *
- * @author ericbottard
+ * @author Cyprian Śniegota
+ * @since 2.0.0
  */
-public interface BitBucket extends ApiBinding {
+@JsonIgnoreProperties(ignoreUnknown = true)
+public final class BitBucketEmailAddress implements Serializable {
 
-    /**
-     * Returns the portion of the BitBucket API that allow interaction with
-     * repositories.
-     */
-    RepoOperations repoOperations();
+    private static final long serialVersionUID = 1L;
 
-    /**
-     * Returns the portion of the BitBucket API that allow interaction with user
-     * accounts.
-     */
-    UserOperations userOperations();
+    @JsonProperty("active")
+    private Boolean active;
 
-    /**
-     * Returns the portion of the BitBucket API that allow messing with
-     * privileges.
-     */
-    PrivilegeOperations privelegesOperations();
+    @JsonProperty("email")
+    private String email;
 
-    /**
-     * Users managemet API
-     *
-     * @return users management API
-     */
-    UsersOperations usersOperations();
+    @JsonProperty("primary")
+    private Boolean primary;
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Boolean getPrimary() {
+        return primary;
+    }
 }

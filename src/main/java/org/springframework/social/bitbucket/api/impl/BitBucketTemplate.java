@@ -15,10 +15,7 @@
  */
 package org.springframework.social.bitbucket.api.impl;
 
-import org.springframework.social.bitbucket.api.BitBucket;
-import org.springframework.social.bitbucket.api.PrivilegeOperations;
-import org.springframework.social.bitbucket.api.RepoOperations;
-import org.springframework.social.bitbucket.api.UserOperations;
+import org.springframework.social.bitbucket.api.*;
 import org.springframework.social.oauth1.AbstractOAuth1ApiBinding;
 
 public class BitBucketTemplate extends AbstractOAuth1ApiBinding implements
@@ -29,6 +26,8 @@ public class BitBucketTemplate extends AbstractOAuth1ApiBinding implements
     private RepoOperations repoOperations;
 
     private PrivilegeOperations privilegeOperations;
+
+    private UsersOperations usersOperations;
 
     public BitBucketTemplate(String consumerKey, String consumerSecret,
                              String accessToken, String accessTokenSecret) {
@@ -46,6 +45,7 @@ public class BitBucketTemplate extends AbstractOAuth1ApiBinding implements
         repoOperations = new RepoTemplate(getRestTemplate(), isAuthorized());
         privilegeOperations = new PrivilegeTemplate(getRestTemplate(),
                 isAuthorized());
+        usersOperations = new UsersTemplate(getRestTemplate(), isAuthorized());
     }
 
     @Override
@@ -63,4 +63,8 @@ public class BitBucketTemplate extends AbstractOAuth1ApiBinding implements
         return privilegeOperations;
     }
 
+    @Override
+    public final UsersOperations usersOperations() {
+        return usersOperations;
+    }
 }

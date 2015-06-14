@@ -15,37 +15,20 @@
  */
 package org.springframework.social.bitbucket.api;
 
-import org.springframework.social.ApiBinding;
-
 /**
- * Main interface for interacting with BitBucket.
+ * The /users endpoints gets information related to an individual or team account.
+ * Aggregates users operations
+ * https://confluence.atlassian.com/display/BITBUCKET/users+Endpoint+-+1.0
  *
- * @author ericbottard
+ * @author Cyprian Śniegota
+ * @since 2.0.0
  */
-public interface BitBucket extends ApiBinding {
+public interface UsersOperations {
 
     /**
-     * Returns the portion of the BitBucket API that allow interaction with
-     * repositories.
-     */
-    RepoOperations repoOperations();
-
-    /**
-     * Returns the portion of the BitBucket API that allow interaction with user
-     * accounts.
-     */
-    UserOperations userOperations();
-
-    /**
-     * Returns the portion of the BitBucket API that allow messing with
-     * privileges.
-     */
-    PrivilegeOperations privelegesOperations();
-
-    /**
-     * Users managemet API
+     * Emails managemet API
      *
-     * @return users management API
+     * @return emails management API template
      */
-    UsersOperations usersOperations();
+    EmailsOperations emailsOperations();
 }
