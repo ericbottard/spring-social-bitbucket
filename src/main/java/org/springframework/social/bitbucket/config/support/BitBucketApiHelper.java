@@ -29,7 +29,7 @@ import org.springframework.social.connect.UsersConnectionRepository;
  *
  * @author Eric Bottard
  */
-public class BitBucketApiHelper implements ApiHelper<BitBucket> {
+public final class BitBucketApiHelper implements ApiHelper<BitBucket> {
     private final UsersConnectionRepository usersConnectionRepository;
 
     private final UserIdSource userIdSource;
@@ -57,6 +57,5 @@ public class BitBucketApiHelper implements ApiHelper<BitBucket> {
         return connection.getApi();
     }
 
-    private static final Log logger = LogFactory
-            .getLog(BitBucketApiHelper.class);
+    private final Log logger = LogFactory.getLog(BitBucketApiHelper.class);
 }

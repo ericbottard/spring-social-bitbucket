@@ -32,7 +32,7 @@ import java.util.List;
 
 public class BitBucketAdapter implements ApiAdapter<BitBucket> {
 
-    private static final Log logger = LogFactory.getLog(BitBucketAdapter.class);
+    private final Log logger = LogFactory.getLog(BitBucketAdapter.class);
 
     @Override
     public final boolean test(BitBucket api) {
@@ -76,9 +76,9 @@ public class BitBucketAdapter implements ApiAdapter<BitBucket> {
                 throw clientError;
             } else {
                 if (logger.isWarnEnabled()) {
-                    logger.warn("BitBucket consumer configuration: Permissions:Acount:Email is not granted." +
-                            " Email property will be set to 'null' in UserProfile" +
-                            " [username:'" + user.getUsername() + "']");
+                    logger.warn("BitBucket consumer configuration: Permissions:Acount:Email is not granted."
+                            + " Email property will be set to 'null' in UserProfile"
+                            + " [username:'" + user.getUsername() + "']");
                 }
             }
         }
