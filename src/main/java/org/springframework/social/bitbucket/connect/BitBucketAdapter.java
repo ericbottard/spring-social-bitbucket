@@ -15,15 +15,24 @@
  */
 package org.springframework.social.bitbucket.connect;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.social.ApiException;
 import org.springframework.social.bitbucket.api.BitBucket;
+import org.springframework.social.bitbucket.api.BitBucketEmailAddress;
 import org.springframework.social.bitbucket.api.BitBucketUser;
 import org.springframework.social.connect.ApiAdapter;
 import org.springframework.social.connect.ConnectionValues;
 import org.springframework.social.connect.UserProfile;
 import org.springframework.social.connect.UserProfileBuilder;
+import org.springframework.web.client.HttpClientErrorException;
+
+import java.util.List;
 
 public class BitBucketAdapter implements ApiAdapter<BitBucket> {
+
+    private final Log logger = LogFactory.getLog(BitBucketAdapter.class);
 
     @Override
     public final boolean test(BitBucket api) {
@@ -46,11 +55,34 @@ public class BitBucketAdapter implements ApiAdapter<BitBucket> {
 
     @Override
     public final UserProfile fetchUserProfile(BitBucket api) {
-        BitBucketUser user = api.userOperations().getUserWithRepositories()
-                .getUser();
+        BitBucketUser user = api.userOperations().getUserWithRepositories().getUser();
+        String primaryEmail = fetchPrimaryEmailIfAvailableForUserProfile(api, user);
         return new UserProfileBuilder().setFirstName(user.getFirstName())
-                .setLastName(user.getLastName())
+                .setLastName(user.getLastName()).setEmail(primaryEmail)
                 .setUsername(user.getUsername()).build();
+    }
+
+    private String fetchPrimaryEmailIfAvailableForUserProfile(BitBucket api, BitBucketUser user) {
+        try {
+            List<BitBucketEmailAddress> emailAddresses = api.usersOperations()
+                    .emailsOperations().getListOfUserEmailAddresses(user.getUsername());
+            for (BitBucketEmailAddress emailAddress : emailAddresses) {
+                if (emailAddress.getPrimary()) {
+                    return emailAddress.getEmail();
+                }
+            }
+        } catch (HttpClientErrorException clientError) {
+            if (!HttpStatus.FORBIDDEN.equals(clientError.getStatusCode())) {
+                throw clientError;
+            } else {
+                if (logger.isWarnEnabled()) {
+                    logger.warn("BitBucket consumer configuration: Permissions:Acount:Email is not granted."
+                            + " Email property will be set to 'null' in UserProfile"
+                            + " [username:'" + user.getUsername() + "']");
+                }
+            }
+        }
+        return null;
     }
 
     @Override
