@@ -31,6 +31,7 @@ public class UsersTemplate extends AbstractBitBucketOperations implements UsersO
         super(restTemplate, authorized, V1);
         emailsOperations = new EmailsTemplate(getRestTemplate(), isAuthorized());
     }
+
     @Override
     public final EmailsOperations emailsOperations() {
         return emailsOperations;

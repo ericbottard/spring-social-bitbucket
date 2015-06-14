@@ -19,8 +19,9 @@ import org.springframework.social.bitbucket.api.BitBucketEmailAddress;
 import org.springframework.social.bitbucket.api.EmailsOperations;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Arrays;
 import java.util.List;
+
+import static java.util.Arrays.asList;
 
 /**
  * @author Cyprian Śniegota
@@ -34,7 +35,7 @@ public class EmailsTemplate extends AbstractBitBucketOperations implements Email
 
     @Override
     public final List<BitBucketEmailAddress> getListOfUserEmailAddresses(String accountName) {
-        return Arrays.asList(getRestTemplate().getForObject(buildUrl("/users/{accountname}/emails"),
+        return asList(getRestTemplate().getForObject(buildUrl("/users/{accountname}/emails"),
                 BitBucketEmailAddress[].class, accountName));
     }
 
