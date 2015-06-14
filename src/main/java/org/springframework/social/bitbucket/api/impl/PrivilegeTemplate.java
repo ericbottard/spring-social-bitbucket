@@ -1,11 +1,11 @@
 /**
- * Copyright 2012 the original author or authors.
+ * Copyright (C) 2012 Eric Bottard / Guillaume Lederrey (eric.bottard+ghpublic@gmail.com / guillaume.lederrey@gmail.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *         http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,10 +15,6 @@
  */
 package org.springframework.social.bitbucket.api.impl;
 
-import static java.util.Arrays.*;
-
-import java.util.List;
-
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.social.bitbucket.api.BitBucketPrivilege;
@@ -26,33 +22,37 @@ import org.springframework.social.bitbucket.api.PrivilegeOperations;
 import org.springframework.social.bitbucket.api.RepoPrivilege;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
+
+import static java.util.Arrays.asList;
+
 public class PrivilegeTemplate extends AbstractBitBucketOperations implements
         PrivilegeOperations {
 
     public PrivilegeTemplate(RestTemplate restTemplate, boolean authorized) {
-        super(restTemplate, authorized);
+        super(restTemplate, authorized, V1);
     }
 
     @Override
-    public List<RepoPrivilege> getRepoPrivileges(String user, String repoSlug) {
-        return asList(restTemplate.getForObject(
+    public final List<RepoPrivilege> getRepoPrivileges(String user, String repoSlug) {
+        return asList(getRestTemplate().getForObject(
                 buildUrl("/privileges/{user}/{repo_slug}"),
                 RepoPrivilege[].class, user, repoSlug));
     }
 
     @Override
-    public RepoPrivilege setPrivilege(String owner, String repoSlug,
-            String recipient, BitBucketPrivilege privilege) {
+    public final RepoPrivilege setPrivilege(String owner, String repoSlug,
+                                            String recipient, BitBucketPrivilege privilege) {
 
-        return restTemplate.exchange(
+        return getRestTemplate().exchange(
                 buildUrl("/privileges/{user}/{repo_slug}/{recipient}"),
                 HttpMethod.PUT, new HttpEntity<String>(privilege.toString()),
                 RepoPrivilege[].class, owner, repoSlug, recipient).getBody()[0];
     }
 
     @Override
-    public void removePrivilege(String owner, String repoSlug, String recipient) {
-        restTemplate.delete(
+    public final void removePrivilege(String owner, String repoSlug, String recipient) {
+        getRestTemplate().delete(
                 buildUrl("/privileges/{user}/{repo_slug}/{recipient}"), owner,
                 repoSlug, recipient);
     }

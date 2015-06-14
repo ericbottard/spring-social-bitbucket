@@ -1,11 +1,11 @@
 /**
- * Copyright 2012 the original author or authors.
+ * Copyright (C) 2012 Eric Bottard / Guillaume Lederrey (eric.bottard+ghpublic@gmail.com / guillaume.lederrey@gmail.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *         http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -17,39 +17,25 @@ package org.springframework.social.bitbucket.api;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
 
 /**
  * Content as well as metadata about a repository file.
- * 
+ *
  * @author Eric Bottard
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BitBucketFile {
 
-    @JsonProperty
+    @JsonProperty @Getter
     private String node;
 
-    @JsonProperty
+    /** Returns the file path, relative to the root of the repository. */
+    @JsonProperty @Getter
     private String path;
 
-    @JsonProperty
+    /** Returns the actual content of the file, as a String. */
+    @JsonProperty @Getter
     private String data;
 
-    public String getNode() {
-        return node;
-    }
-
-    /**
-     * Returns the file path, relative to the root of the repository.
-     */
-    public String getPath() {
-        return path;
-    }
-
-    /**
-     * Returns the actual content of the file, as a String.
-     */
-    public String getData() {
-        return data;
-    }
 }

@@ -1,11 +1,11 @@
 /**
- * Copyright 2012 the original author or authors.
+ * Copyright (C) 2012 Eric Bottard / Guillaume Lederrey (eric.bottard+ghpublic@gmail.com / guillaume.lederrey@gmail.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *         http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,147 +15,81 @@
  */
 package org.springframework.social.bitbucket.api;
 
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+
+import java.util.List;
 
 /**
  * A changeset, <i>aka</i> commit.
- * 
+ *
  * @author ericbottard
- * 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BitBucketChangeset {
 
-    /**
-     * A modification on a single file.
-     * 
-     * @author ericbottard
-     * 
-     */
-    @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class FileModification {
-
-        @JsonProperty
-        private String file;
-
-        @JsonProperty
-        private FileModificationType type;
-
-        /**
-         * The path of the file (or directory) affected.
-         */
-        public String getFile() {
-            return file;
-        }
-
-        /**
-         * The kind of modification.
-         */
-        public FileModificationType getType() {
-            return type;
-        }
+    /** The kind of modification on a file path. */
+    public enum FileModificationType {
+        modified, added, removed
     }
 
-    /**
-     * The kind of modification on a file path.
-     */
-    public static enum FileModificationType {
-        modified, added, removed;
-    }
-
-    @JsonProperty
+    /** The username of the {@link BitBucketUser} that made the change. */
+    @JsonProperty @Getter
     private String author;
 
-    @JsonProperty
+    /** The name of the branch where the commit occurred. */
+    @JsonProperty @Getter
     private String branch;
 
-    @JsonProperty
+    /** A list of affected files. */
+    @JsonProperty @Getter
     private List<FileModification> files;
 
-    @JsonProperty
+    /** The commit message as entered by the {@link #getAuthor() author}. */
+    @JsonProperty @Getter
     private String message;
 
-    @JsonProperty
+    /** The short node hash. */
+    @JsonProperty @Getter
     private String node;
 
-    @JsonProperty
+    /** The parent commit(s) of this change. */
+    @JsonProperty @Getter
     private List<String> parents;
 
-    @JsonProperty("raw_author")
+    /** The raw author identifier of this change (includes email address). */
+    @JsonProperty("raw_author") @Getter
     private String rawAuthor;
 
-    @JsonProperty("raw_node")
+    /** The full node hash. */
+    @JsonProperty("raw_node") @Getter
     private String rawNode;
 
-    @JsonProperty
+    @JsonProperty @Getter
     private long revision;
 
-    /**
-     * The username of the {@link BitBucketUser} that made the change.
-     */
-    public String getAuthor() {
-        return author;
-    }
-
-    /**
-     * The name of the branch where the commit occurred.
-     */
-    public String getBranch() {
-        return branch;
-    }
-
-    /**
-     * A list of affected files.
-     */
-    public List<FileModification> getFiles() {
-        return files;
-    }
-
-    /**
-     * The commit message as entered by the {@link #getAuthor() author}.
-     */
-    public String getMessage() {
-        return message;
-    }
-
-    /**
-     * The short node hash.
-     */
-    public String getNode() {
-        return node;
-    }
-
-    /**
-     * The parent commit(s) of this change.
-     */
-    public List<String> getParents() {
-        return parents;
-    }
-
-    /**
-     * The raw author identifier of this change (includes email address).
-     */
-    public String getRawAuthor() {
-        return rawAuthor;
-    }
-
-    /**
-     * The full node hash.
-     */
-    public String getRawNode() {
-        return rawNode;
-    }
-
-    public long getRevision() {
-        return revision;
-    }
-
     @Override
-    public String toString() {
+    public final String toString() {
         return getNode();
+    }
+
+    /**
+     * A modification on a single file.
+     *
+     * @author ericbottard
+     */
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static final class FileModification {
+
+        /** The path of the file (or directory) affected. */
+        @JsonProperty @Getter
+        private String file;
+
+        /** The kind of modification. */
+        @JsonProperty @Getter
+        private FileModificationType type;
+
     }
 
 }

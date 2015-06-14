@@ -1,0 +1,255 @@
+{
+    "pagelen": 10,
+    "values": [
+        {
+            "scm": "git",
+            "has_wiki": false,
+            "description": "",
+            "links": {
+                "watchers": {
+                    "href": "https://bitbucket.org/!api/2.0/repositories/1team/myarfx/watchers"
+                },
+                "commits": {
+                    "href": "https://bitbucket.org/!api/2.0/repositories/1team/myarfx/commits"
+                },
+                "self": {
+                    "href": "https://bitbucket.org/!api/2.0/repositories/1team/myarfx"
+                },
+                "html": {
+                    "href": "https://bitbucket.org/1team/myarfx"
+                },
+                "avatar": {
+                    "href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/fb6487397759/img/language-avatars/java_16.png"
+                },
+                "forks": {
+                    "href": "https://bitbucket.org/!api/2.0/repositories/1team/myarfx/forks"
+                },
+                "clone": [
+                    {
+                        "href": "https://bitbucket.org/1team/myarfx.git",
+                        "name": "https"
+                    },
+                    {
+                        "href": "ssh://git@bitbucket.org/1team/myarfx.git",
+                        "name": "ssh"
+                    }
+                ],
+                "pullrequests": {
+                    "href": "https://bitbucket.org/!api/2.0/repositories/1team/myarfx/pullrequests"
+                }
+            },
+            "fork_policy": "allow_forks",
+            "language": "java",
+            "created_on": "2013-06-27T21:42:26.164998+00:00",
+            "full_name": "1team/myarfx",
+            "has_issues": false,
+            "owner": {
+                "username": "1team",
+                "display_name": "the team",
+                "links": {
+                    "self": {
+                        "href": "https://bitbucket.org/!api/2.0/teams/1team"
+                    },
+                    "avatar": {
+                        "href": "https://secure.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2Ffb6487397759%2Fimg%2Fdefault_team_avatar%2F32%2Fteam_blue.png&s=32"
+                    }
+                }
+            },
+            "updated_on": "2013-09-10T22:20:02.512070+00:00",
+            "size": 203173,
+            "is_private": false,
+            "name": "MyArfX"
+        },
+        {
+            "scm": "git",
+            "has_wiki": false,
+            "description": "",
+            "links": {
+                "watchers": {
+                    "href": "https://bitbucket.org/!api/2.0/repositories/1team/moxie/watchers"
+                },
+                "commits": {
+                    "href": "https://bitbucket.org/!api/2.0/repositories/1team/moxie/commits"
+                },
+                "self": {
+                    "href": "https://bitbucket.org/!api/2.0/repositories/1team/moxie"
+                },
+                "html": {
+                    "href": "https://bitbucket.org/1team/moxie"
+                },
+                "avatar": {
+                    "href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/fb6487397759/img/language-avatars/default_16.png"
+                },
+                "forks": {
+                    "href": "https://bitbucket.org/!api/2.0/repositories/1team/moxie/forks"
+                },
+                "clone": [
+                    {
+                        "href": "https://bitbucket.org/1team/moxie.git",
+                        "name": "https"
+                    },
+                    {
+                        "href": "ssh://git@bitbucket.org/1team/moxie.git",
+                        "name": "ssh"
+                    }
+                ],
+                "pullrequests": {
+                    "href": "https://bitbucket.org/!api/2.0/repositories/1team/moxie/pullrequests"
+                }
+            },
+            "fork_policy": "allow_forks",
+            "language": "",
+            "created_on": "2013-11-08T01:11:03.222520+00:00",
+            "full_name": "1team/moxie",
+            "has_issues": false,
+            "owner": {
+                "username": "1team",
+                "display_name": "the team",
+                "links": {
+                    "self": {
+                        "href": "https://bitbucket.org/!api/2.0/teams/1team"
+                    },
+                    "avatar": {
+                        "href": "https://secure.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2Ffb6487397759%2Fimg%2Fdefault_team_avatar%2F32%2Fteam_blue.png&s=32"
+                    }
+                }
+            },
+            "updated_on": "2013-11-08T01:11:03.263237+00:00",
+            "size": 33348,
+            "is_private": false,
+            "name": "moxie"
+        },
+        {
+            "scm": "git",
+            "has_wiki": false,
+            "description": "",
+            "links": {
+                "watchers": {
+                    "href": "https://bitbucket.org/!api/2.0/repositories/1team/testfoobar/watchers"
+                },
+                "commits": {
+                    "href": "https://bitbucket.org/!api/2.0/repositories/1team/testfoobar/commits"
+                },
+                "self": {
+                    "href": "https://bitbucket.org/!api/2.0/repositories/1team/testfoobar"
+                },
+                "html": {
+                    "href": "https://bitbucket.org/1team/testfoobar"
+                },
+                "avatar": {
+                    "href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/fb6487397759/img/language-avatars/default_16.png"
+                },
+                "forks": {
+                    "href": "https://bitbucket.org/!api/2.0/repositories/1team/testfoobar/forks"
+                },
+                "clone": [
+                    {
+                        "href": "https://bitbucket.org/1team/testfoobar.git",
+                        "name": "https"
+                    },
+                    {
+                        "href": "ssh://git@bitbucket.org/1team/testfoobar.git",
+                        "name": "ssh"
+                    }
+                ],
+                "pullrequests": {
+                    "href": "https://bitbucket.org/!api/2.0/repositories/1team/testfoobar/pullrequests"
+                }
+            },
+            "fork_policy": "allow_forks",
+            "language": "",
+            "created_on": "2013-11-08T01:10:10.411699+00:00",
+            "full_name": "1team/testfoobar",
+            "has_issues": false,
+            "owner": {
+                "username": "1team",
+                "display_name": "the team",
+                "links": {
+                    "self": {
+                        "href": "https://bitbucket.org/!api/2.0/teams/1team"
+                    },
+                    "avatar": {
+                        "href": "https://secure.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2Ffb6487397759%2Fimg%2Fdefault_team_avatar%2F32%2Fteam_blue.png&s=32"
+                    }
+                }
+            },
+            "updated_on": "2013-11-08T01:10:10.448686+00:00",
+            "size": 33348,
+            "is_private": false,
+            "name": "testfoobar"
+        },
+        {
+            "scm": "hg",
+            "has_wiki": true,
+            "description": "",
+            "links": {
+                "watchers": {
+                    "href": "https://bitbucket.org/!api/2.0/repositories/1team/myquotefork/watchers"
+                },
+                "commits": {
+                    "href": "https://bitbucket.org/!api/2.0/repositories/1team/myquotefork/commits"
+                },
+                "self": {
+                    "href": "https://bitbucket.org/!api/2.0/repositories/1team/myquotefork"
+                },
+                "html": {
+                    "href": "https://bitbucket.org/1team/myquotefork"
+                },
+                "avatar": {
+                    "href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/fb6487397759/img/language-avatars/html5_16.png"
+                },
+                "forks": {
+                    "href": "https://bitbucket.org/!api/2.0/repositories/1team/myquotefork/forks"
+                },
+                "clone": [
+                    {
+                        "href": "https://bitbucket.org/1team/myquotefork",
+                        "name": "https"
+                    },
+                    {
+                        "href": "ssh://hg@bitbucket.org/1team/myquotefork",
+                        "name": "ssh"
+                    }
+                ],
+                "pullrequests": {
+                    "href": "https://bitbucket.org/!api/2.0/repositories/1team/myquotefork/pullrequests"
+                }
+            },
+            "fork_policy": "allow_forks",
+            "language": "html/css",
+            "created_on": "2013-06-27T21:25:47.254192+00:00",
+            "parent": {
+                "links": {
+                    "self": {
+                        "href": "https://bitbucket.org/!api/2.0/repositories/tutorials/tutorials.bitbucket.org"
+                    },
+                    "avatar": {
+                        "href": "https://bitbucket-assetroot.s3.amazonaws.com/c/photos/2012/Nov/28/tutorials.bitbucket.org-logo-1456883302-9_avatar.png"
+                    }
+                },
+                "full_name": "tutorials/tutorials.bitbucket.org",
+                "name": "tutorials.bitbucket.org"
+            },
+            "full_name": "1team/myquotefork",
+            "has_issues": true,
+            "owner": {
+                "username": "1team",
+                "display_name": "the team",
+                "links": {
+                    "self": {
+                        "href": "https://bitbucket.org/!api/2.0/teams/1team"
+                    },
+                    "avatar": {
+                        "href": "https://secure.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2Ffb6487397759%2Fimg%2Fdefault_team_avatar%2F32%2Fteam_blue.png&s=32"
+                    }
+                }
+            },
+            "updated_on": "2014-01-13T22:07:54.497721+00:00",
+            "size": 75531453,
+            "is_private": false,
+            "name": "myquotefork"
+        }
+    ],
+    "page": 1,
+    "size": 4
+}

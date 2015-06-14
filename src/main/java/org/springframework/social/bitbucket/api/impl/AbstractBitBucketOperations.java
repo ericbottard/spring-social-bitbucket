@@ -1,11 +1,11 @@
 /**
- * Copyright 2012 the original author or authors.
+ * Copyright (C) 2012 Eric Bottard / Guillaume Lederrey (eric.bottard+ghpublic@gmail.com / guillaume.lederrey@gmail.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *         http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -19,20 +19,33 @@ import org.springframework.web.client.RestTemplate;
 
 public class AbstractBitBucketOperations {
 
-    protected final boolean authorized;
+    private final boolean authorized;
 
-    protected final RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
 
-    private static final String BASE_API_URL = "https://api.bitbucket.org/1.0";
+    private final String version;
+
+    public static final String V1 = "1.0";
+    public static final String V2 = "2.0";
+
+    private static final String BASE_API_URL = "https://api.bitbucket.org/";
 
     public AbstractBitBucketOperations(RestTemplate restTemplate,
-            boolean authorized) {
-        this.authorized = authorized;
+                                       boolean authorized, String version) {
         this.restTemplate = restTemplate;
+        this.authorized = authorized;
+        this.version = version;
     }
 
-    protected String buildUrl(String string) {
-        return BASE_API_URL + string;
+    protected final String buildUrl(String string) {
+        return BASE_API_URL + version + string;
     }
 
+    protected final boolean isAuthorized() {
+        return authorized;
+    }
+
+    protected final RestTemplate getRestTemplate() {
+        return restTemplate;
+    }
 }

@@ -1,0 +1,12 @@
+[
+  {
+    "active": true,
+    "email": "2team.bb@gmail.com",
+    "primary": true
+  },
+  {
+    "active": false,
+    "email": "ourteam@gmail.com",
+    "primary": false
+  }
+]

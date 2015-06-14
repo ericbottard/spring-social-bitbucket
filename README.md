@@ -2,11 +2,12 @@ Spring Social BitBucket
 =======================
 Spring Social BitBucket is an extension to Spring Social to enable connectivity
 with the BitBucket API.
-See http://confluence.atlassian.com/display/BITBUCKET/Using+the+bitbucket+REST+APIs
+See https://confluence.atlassian.com/display/BITBUCKET/Use+the+Bitbucket+REST+APIs
 
 Authors
 -------
-Eric BOTTARD
+* Eric BOTTARD
+* Guillaume LEDERREY
 
 License
 -------
@@ -24,3 +25,7 @@ Documentation
 As stated above, this BitBucket binding is inspired by Spring Social GitHub. If
 you're familiar with that project, Spring Social BitBucket should feel self
 explanatory.
+
+Build Status
+------------
+[![Build Status](https://travis-ci.org/gehel/spring-social-bitbucket.svg?branch=master)](https://travis-ci.org/gehel/spring-social-bitbucket)

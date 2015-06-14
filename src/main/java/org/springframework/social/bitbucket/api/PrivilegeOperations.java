@@ -1,11 +1,11 @@
 /**
- * Copyright 2012 the original author or authors.
+ * Copyright (C) 2012 Eric Bottard / Guillaume Lederrey (eric.bottard+ghpublic@gmail.com / guillaume.lederrey@gmail.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *         http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -21,40 +21,31 @@ public interface PrivilegeOperations {
 
     /**
      * Get the privileges on a given repository.
-     * 
-     * @param user
-     *            repository owner
-     * @param repoSlug
-     *            name of the repository
+     *
+     * @param user     repository owner
+     * @param repoSlug name of the repository
      */
-    public List<RepoPrivilege> getRepoPrivileges(String user, String repoSlug);
+    List<RepoPrivilege> getRepoPrivileges(String user, String repoSlug);
 
     /**
      * Set or change the privilege for the given recipient on some repository.
-     * 
-     * @param owner
-     *            the repository owner
-     * @param repoSlug
-     *            the repository name
-     * @param recipient
-     *            user for which to set the privilege
-     * @param privilege
-     *            new privilege value to set
+     *
+     * @param owner     the repository owner
+     * @param repoSlug  the repository name
+     * @param recipient user for which to set the privilege
+     * @param privilege new privilege value to set
      */
-    public RepoPrivilege setPrivilege(String owner, String repoSlug,
-            String recipient, BitBucketPrivilege privilege);
+    RepoPrivilege setPrivilege(String owner, String repoSlug,
+                               String recipient, BitBucketPrivilege privilege);
 
     /**
      * Removes the current privilege of the given recipient from some
      * repository.
-     * 
-     * @param owner
-     *            the repository owner
-     * @param repoSlug
-     *            the repository name
-     * @param recipient
-     *            user for which to remove the privilege
+     *
+     * @param owner     the repository owner
+     * @param repoSlug  the repository name
+     * @param recipient user for which to remove the privilege
      */
-    public void removePrivilege(String owner, String repoSlug, String recipient);
+    void removePrivilege(String owner, String repoSlug, String recipient);
 
 }

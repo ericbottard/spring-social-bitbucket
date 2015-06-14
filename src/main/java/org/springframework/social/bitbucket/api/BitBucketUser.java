@@ -1,11 +1,11 @@
 /**
- * Copyright 2012 the original author or authors.
+ * Copyright (C) 2012 Eric Bottard / Guillaume Lederrey (eric.bottard+ghpublic@gmail.com / guillaume.lederrey@gmail.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *         http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,14 +15,15 @@
  */
 package org.springframework.social.bitbucket.api;
 
-import java.io.Serializable;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+
+import java.io.Serializable;
 
 /**
  * A BitBucket user account.
- * 
+ *
  * @author Eric Bottard
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -30,32 +31,16 @@ public class BitBucketUser implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty
+    @JsonProperty @Getter
     private String username;
 
-    @JsonProperty("first_name")
+    @JsonProperty("first_name") @Getter
     private String firstName;
 
-    @JsonProperty("last_name")
+    @JsonProperty("last_name") @Getter
     private String lastName;
 
-    @JsonProperty("avatar")
+    @JsonProperty("avatar") @Getter
     private String avatarImageUrl;
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getAvatarImageUrl() {
-        return avatarImageUrl;
-    }
 
 }
