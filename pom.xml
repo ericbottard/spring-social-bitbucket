@@ -14,7 +14,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<org.springframework.social.version>1.1.0.BUILD-SNAPSHOT</org.springframework.social.version>
-		<org.springframework.version>3.2.0.RELEASE</org.springframework.version>
+		<org.springframework.version>5.3.18</org.springframework.version>
 		<com.fasterxml.jackson.version>2.2.2</com.fasterxml.jackson.version>
 	</properties>
 
